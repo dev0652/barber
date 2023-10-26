@@ -6,6 +6,7 @@
 */
 
 @import url('./reset.css');
+@import url('./variables.css');
 @import url('./header.css');
 
 :root {
@@ -27,6 +28,11 @@
 body {
   font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
+
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  /* temp */
+  min-height: 100vw;
 
   /* Hide scrollbar for IE, Edge and Firefox */
   -ms-overflow-style: none; /* IE and Edge */
@@ -63,10 +69,6 @@ button {
     background-color var(--d) var(--tf), transform var(--d) var(--tf);
 
   font-family: inherit;
-
-  &:disabled {
-    cursor: auto;
-  }
 }
 
 button,
@@ -78,26 +80,13 @@ button,
   text-align: center;
   -webkit-user-select: none;
   user-select: none;
-}
 
-input {
-  &::-moz-placeholder {
-    opacity: 1;
-  }
-
-  /* Chrome, Safari, Edge, Opera */
-  &::-webkit-outer-spin-button,
-  &::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  &:disabled {
+    cursor: auto;
   }
 }
 
 /* Firefox  */
-input[type='number'] {
-  -moz-appearance: textfield;
-}
-
 input,
 textarea,
 select {
@@ -106,10 +95,17 @@ select {
   font-family: inherit;
 }
 
-textarea::-moz-placeholder {
-  opacity: 1;
+/* Firefox  */
+input[type='number'] {
+  -moz-appearance: textfield;
 }
 
+input,
+textarea {
+  &::-moz-placeholder {
+    opacity: 1;
+  }
+}
 address {
   font-style: normal;
 }
