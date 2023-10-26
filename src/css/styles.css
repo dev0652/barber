@@ -9,7 +9,7 @@
 @import url('./header.css');
 
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Inter, Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
@@ -22,4 +22,92 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body.mobile-menu-open {
+  overflow-y: hidden;
+}
+
+ul {
+  list-style: none;
+}
+
+img,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a,
+button {
+  --d: 200ms;
+  --tf: linear;
+
+  transition: color var(--d) var(--tf), border var(--d) var(--tf),
+    background-color var(--d) var(--tf), transform var(--d) var(--tf);
+
+  font-family: inherit;
+}
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  cursor: pointer;
+  font-family: inherit;
+  text-align: center;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+button:disabled {
+  cursor: auto;
+}
+
+input::-moz-placeholder {
+  opacity: 1;
+}
+
+textarea::-moz-placeholder {
+  opacity: 1;
+}
+
+input,
+textarea,
+select {
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+address {
+  font-style: normal;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox  */
+input[type='number'] {
+  -moz-appearance: textfield;
 }
