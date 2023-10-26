@@ -8,38 +8,39 @@
 
     <title>Barber</title>
 
-    <!-- Favicons -->
+    <!-- Favicon -->
     <link
-      type="image/x-icon"
-      rel="shortcut icon"
-      href="/barber/assets/favicon-35ba6409.ico"
-    />
-    <link
-      type="image/png"
-      sizes="16x16"
-      rel="icon"
-      href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAnBJREFUOE+Nkz9s00AUxt+dz3actpRGkCZNBSKkcZRWcVEZQZSNiZEBCRAgoS4wMAADC+rAwABiqYBOCIkRiQHEygCCoa3Tf1aaikoNTWukJpQqTmzfHTqXoIYUwQ227u693/f0vncI/rIiqdQ+mWiHOWMYM2VtvTj9ba9Q9OdhLDM8ioDdA0AnEMZY3HPGxNcCQI/KlvlUbJp5LYCYblzGEp5UtA5MZCWIEZEIIfDdBnhODXxGH25Y5s02QCKV6wdVXgp1dYeA81+qAFiSgli3XgPm+0B973vZMve3AeK6MaZ2dk0IZc65kA2URfnOj6r4v+KAHiNGB8qF2Wd7Ae4qWnicqCq4dQeo54GshsBrOCK5Qpl/2i7Mm71Hc9GN5bzdDsgY14gaehKUSf0iALwFgIsIQKMNesj+MrchkqJHhnoVr7pVKpUcsf/dxETGSHOMLeCAOGdnypb5rk83bjMEN9YtM9FUjKYHDbswn2860eJCXM9NAkJXAfGR8mJ+qi977DoHNE5dd8Quzi3vQEZJJLUZ2yzmSy0VBOXpQzkJSa/L2EvDwoKbGDo+oYY7x5ytygr2+cmvxXypL50+UHPDfnVlptoG6Ekmu2WlI2tbsx8PDgwPhzu1D5KsaH6jIZppSbKyiCVytl6rj9iFabMNsHsq4xnjfri7545wA2EMjNLAFWer8sZzvCvNpraNchMS13PPZS18gcgqYEKCSRSLeu7L1fzn83uO8u4Kdt4Ef4EwTkhEBjFgkqJCw9l+vzrz6dQ/ASKgf3AwQn1yjgNPIkCXsEyinPMHa/NTt/4L0PpSR0ksW9HXwVsSDjXvfgIVFwkgcIXkFAAAAABJRU5ErkJggg=="
-    />
-    <link
-      type="image/png"
-      sizes="32x32"
-      rel="icon"
-      href="data:image/png;base64,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"
-    />
-    <link
-      type="image/png"
-      sizes="192x192"
-      rel="icon"
-      href="/barber/assets/android-chrome-192x192-077a4987.png"
-    />
-    <link
-      type="image/png"
-      sizes="512x512"
-      rel="icon"
-      href="/barber/assets/android-chrome-512x512-81c3dcf0.png"
-    />
-    <link rel="apple-touch-icon" href="/barber/assets/apple-touch-icon-b577c6bf.png" />
-    <link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjoiIiwic2hvcnRfbmFtZSI6IiIsImljb25zIjpbeyJzcmMiOiIvYW5kcm9pZC1jaHJvbWUtMTkyeDE5Mi5wbmciLCJzaXplcyI6IjE5MngxOTIiLCJ0eXBlIjoiaW1hZ2UvcG5nIn0seyJzcmMiOiIvYW5kcm9pZC1jaHJvbWUtNTEyeDUxMi5wbmciLCJzaXplcyI6IjUxMng1MTIiLCJ0eXBlIjoiaW1hZ2UvcG5nIn1dLCJ0aGVtZV9jb2xvciI6IiNmZmZmZmYiLCJiYWNrZ3JvdW5kX2NvbG9yIjoiI2ZmZmZmZiIsImRpc3BsYXkiOiJzdGFuZGFsb25lIn0=" />
+  type="image/x-icon"
+  rel="shortcut icon"
+  href="/barber/assets/favicon-35ba6409.ico"
+/>
+<link
+  type="image/png"
+  sizes="16x16"
+  rel="icon"
+  href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAnBJREFUOE+Nkz9s00AUxt+dz3actpRGkCZNBSKkcZRWcVEZQZSNiZEBCRAgoS4wMAADC+rAwABiqYBOCIkRiQHEygCCoa3Tf1aaikoNTWukJpQqTmzfHTqXoIYUwQ227u693/f0vncI/rIiqdQ+mWiHOWMYM2VtvTj9ba9Q9OdhLDM8ioDdA0AnEMZY3HPGxNcCQI/KlvlUbJp5LYCYblzGEp5UtA5MZCWIEZEIIfDdBnhODXxGH25Y5s02QCKV6wdVXgp1dYeA81+qAFiSgli3XgPm+0B973vZMve3AeK6MaZ2dk0IZc65kA2URfnOj6r4v+KAHiNGB8qF2Wd7Ae4qWnicqCq4dQeo54GshsBrOCK5Qpl/2i7Mm71Hc9GN5bzdDsgY14gaehKUSf0iALwFgIsIQKMNesj+MrchkqJHhnoVr7pVKpUcsf/dxETGSHOMLeCAOGdnypb5rk83bjMEN9YtM9FUjKYHDbswn2860eJCXM9NAkJXAfGR8mJ+qi977DoHNE5dd8Quzi3vQEZJJLUZ2yzmSy0VBOXpQzkJSa/L2EvDwoKbGDo+oYY7x5ytygr2+cmvxXypL50+UHPDfnVlptoG6Ekmu2WlI2tbsx8PDgwPhzu1D5KsaH6jIZppSbKyiCVytl6rj9iFabMNsHsq4xnjfri7545wA2EMjNLAFWer8sZzvCvNpraNchMS13PPZS18gcgqYEKCSRSLeu7L1fzn83uO8u4Kdt4Ef4EwTkhEBjFgkqJCw9l+vzrz6dQ/ASKgf3AwQn1yjgNPIkCXsEyinPMHa/NTt/4L0PpSR0ksW9HXwVsSDjXvfgIVFwkgcIXkFAAAAABJRU5ErkJggg=="
+/>
+<link
+  type="image/png"
+  sizes="32x32"
+  rel="icon"
+  href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAABbpJREFUWEfFV1uIW1UUXefce5ObzKujpU1i1ammk3SmmXQY/SmtVRHFBzKC2h8/FAVfIGo/RH+sfihosYofRVAUHygVBAWrRYRCsSC0tEnnkUynMj7ozXRqO50mk8d9bNk3yTTTSWYSK3h/ws05Z++11957nX0F/udHtOw/HPYGNX8/SPQIom6SEA6QlaDTZKrjmcljM63YbBaADEbjw0T0uBC4HRD6Mk7SAH0DoXxgjB/7fSUwKwIIheODpOIjAIMLxoSAlAqELB8nh+A4NkBU668E0G6jTduFo0fNRkCWBRDqjQ2TFF9yxEIIqF4dqscLRdXq2rMtC1apAKtYAFXAENH+TLs23AhEQwDB3vhWSPwMwKPpfnh8fjAIjpKNuw74twJFKkp5nRkhglnIwyzMl/eCXsukkrvqoa4LoKenRy/oXWNCiPV6eydUzVM2ZNsLkdUak6q64JxB2ZYJZoMcx2WEiKaNVCLQNIBgJP4UBPa6zj1eOI4DRsoGq9RWjbmRS+m+msUCSvmcu6/2IaJTmXQy3DyAaPyA6vHe6W3rKDsmgmPb5fOVNLBj97XivJi76AIopwBvAeKIEM4OEB5wCE9OTyQ/bBpAIDpg+DtWBWzbhserg3+llAvOag1x9VulIkrzuZq/nZuM1Imj/EcgPNinW+d/m5qaKqO77KlbA4FovOT1tWnVyndZAFx6Ob/cgh5fW5n2wjzMUvFSCwr61hhPDtf6WR2N955NJSaaBhCMxgtCCK/e3gWmmqnlKB3bWrDB1HM7Wia3+0L//1S0cg+em5ycq3UWjMaGqow0xUAwMvAHhLjW19kNs5iHbZaWFNbiKgMXyKNGOvFFhaxFy9zSxkTil3prdVMQjMZ/BHCX3tGFQnbOpdyxTQeEnSaUfZq0AyDxPoAtFU8zRiqxph7Fbh1EN/c4lqWcmRw51RwD0YGXAfEGKx+rGlPt2ObXp8cTD1cNhHqHVpO0WOv9EDRujCf76gEIhUJ+6rz6EaPN83E9NWxQhJt7ADophVSJHAipgCz7RWMisWdxbuOjAPogcMgYT9zSiIG1kYH7p9PJ75ouQt4YjAzsgRDPVw8R0TOZdHJvrZHQxsEkgWIgOmykElvr5Zj3d98w1OVRzOj0yeSvTaXA3RQOewOKf1QIcSO/EpzHMqkTnywC0D/4p6J61lnFIu94x0gldjZiYU1085YzqeOHmwfALFRqAaCirTrXnxkZma4aWB2JdHjV9lm9rUOapYJ7+RDwaiaVeL0eiEC4vy8zOTrWEoBAdHC7gHOQpTWTTrxUezgQiT3k0f37WK5ZqnOzf5f1gOgFI518t7o30Nt/c8lRDMWyrJmpsUxLAIIbNm0kKT/Vi3PbaqV0zfpNaxWvcsjX0bXBnQ2EcNvV1Qsink+ecBRzv+qonyma9w6pqNliLndHazUAYF1//1WM+K/R0XOLo49/pWjaDn/nqir1rlZwx7i3oe3w5THja+8MsGLyRWVb1ptG6vgrLTFQv6BuVYPR87N6e2ebonlQms+6DLh3Q0WSC9kLUL0+aF4d+YuzzMwRkHjPSCc+v2IA10TjvQ6QXpgVbNul3p0JKzMDDzA8RzCw+QvnULRynWfT6WzTUtyolcqyGtsuIA9ydB5/u+ucmSg7t1HMZXkEc69PX0cXSvl5FEvzsenx5EhLQtQIRKA3do+Q8nvOrVRUV6Y52uqAUj1XKsxD1bzuLVrI556bTiX47ljyrDiWX36CLxZB9AMEorxWBcLR8/CqVajnNR7lbLOIQja7pI2rdlsGwAdDoSG/02G+LYR4mjFwrjnv1bFN0TR4dL8LjhnIZ+caCtS/AnBJZGJ3Cyl3A5QniJAAgguRSQkuVJbpUj53b2bixP7/JAXLFKhYGxm4TQrxLID7+HvCLUxgMtOm9rX8YbJcJ6y01nVdrFv3iW1CoNuW1oGZsaUSfEU1sBKAVtb/AWrYmT8FZon1AAAAAElFTkSuQmCC"
+/>
+<link
+  type="image/png"
+  sizes="192x192"
+  rel="icon"
+  href="/barber/assets/android-chrome-192x192-077a4987.png"
+/>
+<link
+  type="image/png"
+  sizes="512x512"
+  rel="icon"
+  href="/barber/assets/android-chrome-512x512-81c3dcf0.png"
+/>
+<link rel="apple-touch-icon" href="/barber/assets/apple-touch-icon-b577c6bf.png" />
+<link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjoiIiwic2hvcnRfbmFtZSI6IiIsImljb25zIjpbeyJzcmMiOiIvYW5kcm9pZC1jaHJvbWUtMTkyeDE5Mi5wbmciLCJzaXplcyI6IjE5MngxOTIiLCJ0eXBlIjoiaW1hZ2UvcG5nIn0seyJzcmMiOiIvYW5kcm9pZC1jaHJvbWUtNTEyeDUxMi5wbmciLCJzaXplcyI6IjUxMng1MTIiLCJ0eXBlIjoiaW1hZ2UvcG5nIn1dLCJ0aGVtZV9jb2xvciI6IiNmZmZmZmYiLCJiYWNrZ3JvdW5kX2NvbG9yIjoiI2ZmZmZmZiIsImRpc3BsYXkiOiJzdGFuZGFsb25lIn0=" />
+
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -50,10 +51,11 @@
     />
 
     
-    <script type="module" crossorigin src="/barber/assets/index-23358be3.js"></script>
-    <link rel="stylesheet" href="/barber/assets/index-6073d082.css">
+    <script type="module" crossorigin src="/barber/assets/index-3d90cdd5.js"></script>
+    <link rel="stylesheet" href="/barber/assets/index-b2537672.css">
   </head>
   <body>
+    <!-- Loads the specified .html file -->
     <header class="header">
   <nav class="nav">
     <ul class="nav-list">
@@ -72,57 +74,8 @@
     <section>
       <h1>Welcome Coders of Light!</h1>
       <!-- Path to images as from index.html file -->
-      <img src="/barber/assets/javascript-8dac5379.svg" alt="" />
+      <!-- <img src="./img/javascript.svg" alt="" /> -->
     </section>
-
-    <!-- Loads the specified .html file -->
-    <section class="vite-promo">
-  <div class="container">
-    <div class="wrapper">
-      <h2 class="title">
-        <span class="gradient">Vite</span>
-      </h2>
-      <p class="text">Next Generation Frontend Tooling</p>
-      <p class="tagline">
-        Get ready for a development environment that can finally catch up with
-        you.
-      </p>
-
-      <ul class="actions">
-        <li class="action">
-          <a
-            class="link"
-            href="https://vitejs.dev/guide/"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Get Started</a
-          >
-        </li>
-        <li class="action">
-          <a
-            class="link"
-            href="https://github.com/vitejs/vite"
-            target="_blank"
-            rel="noopener noreferrer"
-            >View on GitHub</a
-          >
-        </li>
-      </ul>
-    </div>
-
-    <div class="thumb">
-      <!-- Path to images as from index.html file -->
-      <img
-        class="pic"
-        src="/barber/assets/vite-logo-51249ca9.png"
-        alt="Vite logo"
-        width="640"
-        height="640"
-      />
-    </div>
-  </div>
-</section>
-
 
     
   </body>
