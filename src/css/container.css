@@ -3,6 +3,8 @@
     width: var(--mobile);
     margin-left: auto;
     margin-right: auto;
+
+    outline: 5px solid darkorange;
   }
 
   @media screen and (min-width: var(--tablet)) {
@@ -12,4 +14,8 @@
   @media screen and (min-width: var(--desktop)) {
     width: var(--desktop);
   }
+
+  background-color: var(--text-color-faded);
+  /* width: var(--desktop); */
+  /* outline: 5px solid darkorange; */
 }
