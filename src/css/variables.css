@@ -2,4 +2,10 @@
   /* Colors */
   --bg-color: #151515;
   --text-color: white;
+  --text-color-faded: #fbfbfb;
+
+  /* Breakpoints */
+  --mobile: 360px;
+  --tablet: 834px;
+  --desktop: 1920px;
 }
