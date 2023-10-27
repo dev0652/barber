@@ -6,6 +6,7 @@
   z-index: 100;
 
   padding: 20px 0;
+<<<<<<< HEAD:src/css/header.css
   height: 72px;
 
   @media screen and (min-width: 768px) {
@@ -13,6 +14,14 @@
   }
 
   background-color: beige;
+=======
+  background-color: darkgray;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+>>>>>>> main:src/sass/_header.scss
 }
 
 .nav-list {
