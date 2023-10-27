@@ -1,14 +1,12 @@
-window.onscroll = () => changeHeaderBackground();
-
-function changeHeaderBackground() {
+const changeHeaderBackground = () => {
   const header = document.querySelector('.header');
   const { height } = header.getBoundingClientRect();
 
-  window.onscroll = () => {
-    if (window.scrollY > height) {
-      header.classList.add('no-transparency');
-    } else {
-      header.classList.remove('no-transparency');
-    }
-  };
-}
+  if (window.scrollY > height) {
+    header.classList.add('sticky-header');
+  } else {
+    header.classList.remove('sticky-header');
+  }
+};
+
+window.onscroll = () => changeHeaderBackground();

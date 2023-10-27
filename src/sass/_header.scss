@@ -5,39 +5,201 @@
   right: 0;
   z-index: 100;
 
-  padding: 20px 0;
-<<<<<<< HEAD:src/css/header.css
-  height: 72px;
+  padding: 50px 0;
 
-  @media screen and (min-width: 768px) {
-    height: 84px;
+  transition: padding 200ms ease-out;
+
+  &.sticky-header {
+    background-color: rgb(1, 1, 24, 0.5);
+    backdrop-filter: blur(10px);
+
+    padding: 10px 0;
   }
+}
 
-  background-color: beige;
-=======
-  background-color: darkgray;
+body {
+  padding-top: 200px;
+  height: 200vh;
+}
+
+.header-container {
+  @extend .container;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+
+  padding-top: 10px;
 }
 
 .nav {
-  display: flex;
-  justify-content: center;
->>>>>>> main:src/sass/_header.scss
+  display: none;
+
+  @media screen and (min-width: $desktop) {
+    display: block;
+    flex-grow: 1;
+  }
 }
 
 .nav-list {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  gap: 40px;
+  // justify-content: flex-end;
+  gap: 50px;
+}
+
+.nav-item {
+  @media screen and (max-width: calc($desktop - 1px)) {
+    position: relative;
+
+    width: 150px;
+    padding: 15px 0;
+
+    border: 1px solid transparent;
+    border-radius: 10px;
+
+    text-align: center;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 10px;
+    }
+
+    $percentage: 55%;
+
+    &::before {
+      top: 0;
+      bottom: $percentage;
+
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      border-bottom: none;
+    }
+
+    &::after {
+      top: $percentage;
+      bottom: 0;
+
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      border-top: none;
+    }
+
+    a {
+      font-family: 'Arial Black', sans-serif;
+      font-size: 14px;
+      font-weight: 900;
+      line-height: 110%;
+      letter-spacing: -0.28px;
+      text-transform: uppercase;
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    &:last-child {
+      margin-left: auto;
+    }
+  }
 }
 
 .nav-link {
+  font-family: Inter;
+  font-size: 16px;
   font-weight: 500;
-  letter-spacing: 0.02em;
-  line-height: 1.5;
+  line-height: 110%;
+  letter-spacing: -0.32px;
+  text-transform: capitalize;
+
+  color: inherit;
+
+  &:hover,
+  &:focus-visible {
+    color: gray;
+  }
 }
 
-.nav-link:hover,
-.nav-link:focus {
-  color: #747bff;
+.header-button {
+  @extend .generic-button;
+
+  padding: 11px 20px;
+  border-radius: 100px;
+  border: 1px solid #e1e1e1;
+  font-size: 18px;
+
+  display: none;
+
+  @media screen and (min-width: $desktop) {
+    display: block;
+  }
+}
+
+.header-logo {
+  @media screen and (min-width: $desktop) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+  }
+}
+
+.burger-button {
+  display: flex;
+
+  display: flex;
+  align-items: center;
+
+  color: white;
+  background-color: transparent;
+  border: none;
+
+  font-family: 'Arial Black';
+  font-weight: 900;
+  line-height: 110%;
+  text-transform: uppercase;
+
+  font-size: 14px;
+  letter-spacing: -0.28px;
+  gap: 20px;
+
+  @media screen and (min-width: $tablet) {
+    font-size: 25.378px;
+    letter-spacing: -0.508px;
+    gap: 34px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    display: none;
+  }
+}
+
+.burger-button-icon {
+  width: auto;
+  height: 15px;
+
+  @media screen and (min-width: $tablet) {
+    height: 32px;
+  }
+}
+
+.logo-image {
+  width: auto;
+  height: 18px;
+  transform: scaleX(0.8);
+
+  @media screen and (min-width: $tablet) {
+    height: 27 px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    height: 25px;
+    transform: scaleX(1);
+  }
 }
