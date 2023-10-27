@@ -18,8 +18,8 @@ body {
   font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
 
-  color: var(--text-color);
-  background-color: var(--bg-color);
+  color: $text-color;
+  background-color: $bg-color;
   /* temp */
   min-height: 100vw;
 
