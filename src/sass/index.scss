@@ -1,6 +1,11 @@
 @import 'reset';
 @import 'variables';
 
+@import 'utils/animations';
+@import 'utils/functions';
+@import 'utils/mixins';
+@import 'utils/placeholders';
+
 @import 'defaults';
 @import 'container';
 

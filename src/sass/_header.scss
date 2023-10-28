@@ -16,11 +16,6 @@
   }
 }
 
-body {
-  padding-top: 200px;
-  // height: 200vh;
-}
-
 .header-container {
   @extend .container;
 
@@ -64,11 +59,12 @@ body {
 
   .sticky-header & {
     padding: 25px 0;
-  }
 
-  &:hover,
-  &:focus-visible {
-    color: silver;
+    $offset: 1px;
+    $blur-radius: 15px;
+    $color: black;
+
+    text-shadow: $offset $offset $blur-radius $color;
   }
 }
 
@@ -150,11 +146,6 @@ body {
 .header-logo-link {
   color: white;
 
-  &:hover,
-  &:focus-visible {
-    color: silver;
-  }
-
   @media screen and (min-width: $desktop) {
     position: absolute;
     top: 50%;
@@ -208,11 +199,6 @@ body {
   @media screen and (min-width: $desktop) {
     display: none;
   }
-
-  &:hover,
-  &:focus-visible {
-    color: silver;
-  }
 }
 
 .burger-button-icon {
@@ -223,5 +209,14 @@ body {
 
   @media screen and (min-width: $tablet) {
     height: 32px;
+  }
+}
+
+.header-logo-link,
+.nav-link,
+.burger-button {
+  &:hover,
+  &:focus-visible {
+    color: silver;
   }
 }
