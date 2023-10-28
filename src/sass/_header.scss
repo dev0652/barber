@@ -5,21 +5,20 @@
   right: 0;
   z-index: 100;
 
-  padding: 50px 0;
-
   transition: padding 200ms ease-out;
+
+  padding: 10px 0;
 
   &.sticky-header {
     background-color: rgb(1, 1, 24, 0.5);
     backdrop-filter: blur(10px);
-
-    padding: 10px 0;
+    padding: 0;
   }
 }
 
 body {
   padding-top: 200px;
-  height: 200vh;
+  // height: 200vh;
 }
 
 .header-container {
@@ -29,8 +28,6 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 50px;
-
-  padding-top: 10px;
 }
 
 .nav {
@@ -47,6 +44,32 @@ body {
   align-items: center;
   // justify-content: flex-end;
   gap: 50px;
+}
+
+.nav-link {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 110%;
+  letter-spacing: -0.32px;
+  text-transform: capitalize;
+
+  color: inherit;
+  display: block;
+  height: 100%;
+
+  @media screen and (min-width: $desktop) {
+    padding: 35px 0;
+  }
+
+  .sticky-header & {
+    padding: 25px 0;
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: silver;
+  }
 }
 
 .nav-item {
@@ -109,22 +132,6 @@ body {
   }
 }
 
-.nav-link {
-  font-family: Inter;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 110%;
-  letter-spacing: -0.32px;
-  text-transform: capitalize;
-
-  color: inherit;
-
-  &:hover,
-  &:focus-visible {
-    color: gray;
-  }
-}
-
 .header-button {
   @extend .generic-button;
 
@@ -140,7 +147,14 @@ body {
   }
 }
 
-.header-logo {
+.header-logo-link {
+  color: white;
+
+  &:hover,
+  &:focus-visible {
+    color: silver;
+  }
+
   @media screen and (min-width: $desktop) {
     position: absolute;
     top: 50%;
@@ -150,13 +164,29 @@ body {
   }
 }
 
-.burger-button {
-  display: flex;
+.header-logo {
+  fill: currentColor;
 
+  width: auto;
+  height: 18px;
+  transform: scaleX(0.8);
+
+  @media screen and (min-width: $tablet) {
+    height: 27px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 150px;
+    height: 25px;
+    transform: scaleX(1);
+  }
+}
+
+.burger-button {
   display: flex;
   align-items: center;
 
-  color: white;
+  color: inherit;
   background-color: transparent;
   border: none;
 
@@ -178,28 +208,20 @@ body {
   @media screen and (min-width: $desktop) {
     display: none;
   }
+
+  &:hover,
+  &:focus-visible {
+    color: silver;
+  }
 }
 
 .burger-button-icon {
+  stroke: currentColor;
+
   width: auto;
   height: 15px;
 
   @media screen and (min-width: $tablet) {
     height: 32px;
-  }
-}
-
-.logo-image {
-  width: auto;
-  height: 18px;
-  transform: scaleX(0.8);
-
-  @media screen and (min-width: $tablet) {
-    height: 27 px;
-  }
-
-  @media screen and (min-width: $desktop) {
-    height: 25px;
-    transform: scaleX(1);
   }
 }
