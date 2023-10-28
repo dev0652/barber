@@ -31,7 +31,6 @@
 }
 
 .preference_item {
-  //   flex-basis: calc((100% - 18px * 2) / 3);
   height: 270px;
   display: flex;
   padding: 50px;
@@ -54,7 +53,6 @@
 
 .preference_item_description {
   color: rgba(255, 255, 255, 0.8);
-
   font-family: $inter;
   font-size: 18px;
   font-weight: $font-weight-500;
@@ -72,11 +70,11 @@
 }
 
 .preference_offline {
-  max-width: 954px;
+  max-width: 847px;
   flex-grow: 1;
 }
 
 .preference_location {
-  max-width: 468px;
+  max-width: 415px;
   flex-grow: 1;
 }
