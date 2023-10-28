@@ -10,7 +10,7 @@
 
 .success-story_item {
   display: flex;
-  //   border: 1px solid red;
+
   border-radius: 20px;
   max-width: 1280px;
   height: 170px;
@@ -26,14 +26,14 @@
 
 .success-story_info_wrapper {
   display: flex;
-  //   border: 1px solid red;
+
   border-radius: 20px;
   height: 170px;
 }
 
 .success-story_img_wrapper {
   max-width: 302px;
-  //   height: 170px;
+
   flex-grow: 1;
   border-radius: 20px;
   overflow: hidden;
@@ -116,7 +116,6 @@
   max-width: 601px;
   padding-top: 25px;
   align-items: center;
-  //   border: 1px solid red;
 }
 
 .success-story_article {
