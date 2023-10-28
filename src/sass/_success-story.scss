@@ -1,0 +1,130 @@
+.success-story {
+  margin-bottom: 105px;
+}
+
+.success-story_list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.success-story_item {
+  display: flex;
+  //   border: 1px solid red;
+  border-radius: 20px;
+  max-width: 1280px;
+  height: 170px;
+
+  &:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  &:last-child {
+    justify-content: space-between;
+  }
+}
+
+.success-story_info_wrapper {
+  display: flex;
+  //   border: 1px solid red;
+  border-radius: 20px;
+  height: 170px;
+}
+
+.success-story_img_wrapper {
+  max-width: 302px;
+  //   height: 170px;
+  flex-grow: 1;
+  border-radius: 20px;
+  overflow: hidden;
+  background: $color-dark-grey;
+}
+
+.success-story_img {
+  width: 100%;
+  height: 100%;
+}
+
+.success-story_description_wrapper {
+  display: inline-flex;
+  max-width: 345px;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 40px 40px 40px 40px;
+  border-radius: 20px;
+  border: 1px solid $color-grey;
+  background-color: $text-color;
+
+  margin-left: -40px;
+}
+
+.success-story_description {
+  color: $text-color-brown;
+  font-family: $inter;
+  font-size: 18px;
+  font-weight: $font-weight-600;
+  line-height: 24.877px;
+  letter-spacing: -0.32px;
+}
+
+.accent--description {
+  color: $text-color-navy;
+  margin-top: 15px;
+}
+
+.success-story_svg_wrapper {
+  display: flex;
+  margin-bottom: -80px;
+}
+
+.success-story_result_wrapper {
+  display: inline-flex;
+  max-width: 345px;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 37px 40px 49px 40px;
+  border-radius: 20px;
+  border: 1px solid $color-grey;
+  background: $color-dark-grey;
+
+  backdrop-filter: blur(40px);
+
+  margin-left: -40px;
+}
+
+.success-story_result-text {
+  color: $text-color;
+  font-family: $inter;
+  font-size: 18px;
+  font-weight: $font-weight-600;
+  line-height: 25px;
+  letter-spacing: -0.306px;
+}
+
+.result-text_accent {
+  display: block;
+  padding: 6px;
+  border-radius: 6px;
+  background: $color-yellow;
+  color: $text-color-brown;
+}
+
+.success-story_article_wrapper {
+  max-width: 601px;
+  padding-top: 25px;
+  align-items: center;
+  //   border: 1px solid red;
+}
+
+.success-story_article {
+  color: rgba(243, 243, 243, 0.8);
+
+  font-family: $inter;
+  font-size: 18px;
+  font-weight: $font-weight-600;
+  line-height: 150%;
+  letter-spacing: -0.3px;
+}
