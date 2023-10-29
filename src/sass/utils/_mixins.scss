@@ -1,16 +1,44 @@
 // Media queries
 
-@mixin media($device, $min-max: min) {
-  // Borrowed from https://engageinteractive.co.uk/blog/top-10-scss-mixins
+// For values in pixels
+@mixin media-px(
+  $property,
+  $mobile-value,
+  $tablet-value,
+  $desktop-value: false
+) {
+  @if $mobile-value != '_' {
+    #{$property}: #{$mobile-value}px;
+  }
 
-  @if map_has_key($breakpoints, $device) {
-    $device: map_get($breakpoints, $device);
-
-    @if $min-max == max {
-      $device: $device - 1px;
+  @if $tablet-value != '_' {
+    @media screen and (min-width: $tablet) {
+      #{$property}: #{$tablet-value}px;
     }
-    @media screen and (#{$min-max}-width: $device) {
-      @content;
+  }
+
+  @if $desktop-value {
+    @media screen and (min-width: $desktop) {
+      #{$property}: #{$desktop-value}px;
+    }
+  }
+}
+
+// For all values
+@mixin media($property, $mobile-value, $tablet-value, $desktop-value: false) {
+  @if $mobile-value != '_' {
+    #{$property}: $mobile-value;
+  }
+
+  @if $tablet-value != '_' {
+    @media screen and (min-width: $tablet) {
+      #{$property}: $tablet-value;
+    }
+  }
+
+  @if $desktop-value {
+    @media screen and (min-width: $desktop) {
+      #{$property}: $desktop-value;
     }
   }
 }

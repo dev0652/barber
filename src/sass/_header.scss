@@ -2,17 +2,24 @@
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  z-index: 100;
+  z-index: 1000;
+
+  width: 100vw;
+  padding: 10px 0;
 
   transition: padding 200ms ease-out;
-
-  padding: 10px 0;
 
   &.sticky-header {
     background-color: rgb(1, 1, 24, 0.5);
     backdrop-filter: blur(10px);
-    padding: 0;
+  }
+
+  &:not(.sticky-header) {
+    @media screen and (max-width: calc($desktop - 1px)) {
+      display: flex;
+      align-items: center;
+      height: $vertical-offset;
+    }
   }
 }
 
@@ -145,6 +152,8 @@
 
 .header-logo-link {
   color: white;
+
+  display: block;
 
   @media screen and (min-width: $desktop) {
     position: absolute;

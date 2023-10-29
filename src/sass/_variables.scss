@@ -1,18 +1,32 @@
-/* Colors */
+// Colors
 $bg-color: #151515;
 $text-color: white;
 $text-color-faded: #fbfbfb;
 
-/* Breakpoints */
+// Breakpoints
 $mobile: 360px;
 $tablet: 834px;
 $desktop: 1280px;
 
-/* Font-family */
+// Font-family
 $arial: Arial;
 $inter: Inter;
 
-/* Font-weight */
+// Font-weight
 $font-weight-500: 500;
 $font-weight-600: 600;
 $font-weight-900: 900;
+
+// Vertical offset (Hero / header)
+:root {
+  --vertical-offset: 70px;
+
+  @media screen and (min-width: $tablet) {
+    --vertical-offset: 130px;
+  }
+  @media screen and (min-width: $desktop) {
+    --vertical-offset: 140px;
+  }
+}
+
+$vertical-offset: var(--vertical-offset);
