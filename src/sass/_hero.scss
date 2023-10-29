@@ -1,0 +1,231 @@
+.hero {
+  height: 652px;
+
+  @media screen and (min-width: $tablet) {
+    height: 100vh;
+  }
+
+  $grad-color: rgba(black, 0.6);
+  $bg-image: url('/img/bkp/hero.png');
+
+  /* for retina displays */
+  @media only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
+    $bg-image: url('/img/bkp/hero.png');
+  }
+
+  background-color: $bg-color;
+  background-image: linear-gradient(0deg, $grad-color, $grad-color), $bg-image;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  --bracket-height: 22px;
+
+  @media screen and (min-width: $desktop) {
+    --bracket-height: 30px;
+  }
+}
+
+.hero-container {
+  @extend .container;
+
+  position: relative;
+
+  display: flex;
+  height: 100%;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+  @media screen and (max-width: calc($desktop - 1px )) {
+    padding-bottom: $vertical-offset;
+  }
+}
+
+.brackets {
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+
+    border: 1px solid rgba(white, 0.3);
+    border-radius: 10px;
+    height: var(--bracket-height);
+  }
+
+  &::before {
+    top: 0;
+
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: none;
+  }
+
+  &::after {
+    bottom: $vertical-offset;
+
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-top: none;
+  }
+}
+
+.hero-text-block {
+  display: flex;
+  flex-direction: column;
+
+  @include media(gap, 9px, 34px, 40px);
+
+  text-align: center;
+}
+
+.hero-title {
+  font-family: 'Arial Black';
+  font-weight: 900;
+  line-height: 100%;
+
+  text-transform: uppercase;
+
+  @include media(font-size, 55px, 80px, 106px);
+
+  @include media(letter-spacing, -1.1px, -1.6px, -2.12px);
+
+  @media screen and (max-width: calc($tablet - 1px)) {
+    max-width: 80%;
+    align-self: center;
+  }
+
+  $offset: 1px;
+  $blur-radius: 22px;
+  $color: rgba(black, 0.5);
+
+  text-shadow: $offset $offset $blur-radius $color;
+}
+
+.paragraph-group {
+  text-align: center;
+
+  @media screen and (max-width: calc($tablet - 1px)) {
+    .hero-paragraph {
+      display: inline;
+
+      &:first-child::after {
+        content: ',';
+      }
+
+      &:last-child {
+        text-transform: lowercase;
+      }
+    }
+  }
+}
+
+.hero-paragraph {
+  font-family: Inter;
+  font-weight: 600;
+  line-height: 150%;
+
+  @include media(font-size, 18px, 26px, 32px);
+
+  @include media(letter-spacing, normal, -1.28px, -1.28px);
+}
+
+.hero-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media screen and (min-width: $tablet) {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+
+    // background-color: dimgray;
+  }
+
+  @media screen and (min-width: $tablet) {
+    position: absolute;
+
+    bottom: calc($vertical-offset / 2);
+    transform: translateY(50%);
+  }
+}
+
+.small-groups {
+  @media screen and (max-width: calc($tablet - 1px)) {
+    position: absolute;
+
+    bottom: calc($vertical-offset / 2);
+    transform: translateY(50%);
+  }
+}
+
+.tag-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media screen and (min-width: $tablet) {
+    justify-content: center;
+    gap: 9px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    gap: 17px;
+  }
+}
+
+.tag {
+  padding: 5px 18px;
+
+  border-radius: 456.818px;
+  background: rgba(black, 0.05);
+  backdrop-filter: blur(12px);
+
+  @media screen and (max-width: calc($desktop - 1px)) {
+    &:nth-child(1) {
+      order: 2;
+    }
+    &:nth-child(2) {
+      order: 1;
+    }
+    &:nth-child(3) {
+      order: 3;
+    }
+  }
+
+  &:last-of-type {
+    @media screen and (min-width: $desktop) {
+      display: none;
+    }
+  }
+}
+
+.hero-button {
+  @extend .generic-button;
+  white-space: nowrap;
+
+  @include media(font-size, 14px, 28px, 32px);
+
+  @include media(letter-spacing, 1.82px, 3.7px, -1.28px);
+
+  @include media(padding, 18px 13px, 38px, 24px 30px);
+
+  @include media(border-radius, 50px, 102px, 80px);
+
+  @media screen and (min-width: $desktop) {
+    position: absolute;
+    bottom: 40px; // hero footer height / 2 + pb
+    left: 50%;
+
+    //   transform: translate(-50%, -50%);
+    transform: translateX(-50%);
+
+    font-size: 18px;
+    letter-spacing: 2.34px;
+  }
+}
