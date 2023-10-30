@@ -1,0 +1,23 @@
+.swiper {
+  width: 100%;
+  height: 100%;
+  @extend %flex-centered;
+  @include media(padding, 25px 0, 70px 0, 120px 0);
+  background: url('../img/gradient.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.swiper-slide {
+  max-width: 100%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.swiper-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
