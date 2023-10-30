@@ -1,4 +1,5 @@
-import Swiper, { Autoplay } from 'swiper';
+import Swiper from 'swiper';
+import { Autoplay } from 'swiper/modules';
 
 const mySwiper = new Swiper('.swiper', {
   modules: [Autoplay],
