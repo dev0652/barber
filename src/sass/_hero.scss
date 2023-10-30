@@ -209,9 +209,9 @@
   @extend .generic-button;
   white-space: nowrap;
 
-  @include media-px(font-size, 14, 28, 32);
+  @include media-px(font-size, 14, 28, 18);
 
-  @include media-px(letter-spacing, 1.82, 3.7, -1.28);
+  @include media-px(letter-spacing, 1.82, 3.7, 2.34);
 
   @include media(padding, 18px 13px, 38px, 24px 30px);
 
@@ -222,10 +222,8 @@
     bottom: 40px; // hero footer height / 2 + pb
     left: 50%;
 
-    //   transform: translate(-50%, -50%);
     transform: translateX(-50%);
-
-    font-size: 18px;
-    letter-spacing: 2.34px;
   }
+
+  z-index: 10;
 }
