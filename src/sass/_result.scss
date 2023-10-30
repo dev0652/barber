@@ -1,0 +1,58 @@
+.result-section {
+  @include media-px(padding, 14, 3, _);
+}
+
+.result-title {
+  margin-bottom: 29px;
+  @include media(padding, 0px 35px, 0px 100px, _);
+  padding: 0 35px;
+  text-align: center;
+  font-family: $arial;
+  @include media-px(font-size, 26, 36, 40);
+  @include media(line-height, 90%, 110%, 90%);
+  @include media-px(letter-spacing, -0.39, -1.8, -2);
+  font-weight: $font-weight-900;
+  color: $text-color;
+}
+
+.result-list {
+  display: flex;
+  flex-wrap: wrap;
+  @include media(flex-direction, column, row, row);
+}
+
+.result-item {
+  box-sizing: border-box;
+  @extend %flex-centered;
+  text-align: center;
+
+  @include media(padding, 30px 30px, 44px 24px, 45px 25px);
+  @include media(gap, 15px, 24px, 25px);
+
+  border-top: 0.75px solid $color-border-result;
+  border-right: 0.75px solid $color-border-result;
+  border-left: 0.75px solid $color-border-result;
+
+  @media screen and (min-width: $tablet) {
+  }
+
+  @media screen and (min-width: $desktop) {
+  }
+}
+
+.result-description {
+  font-family: $inter;
+  @include media-px(font-size, 18, 20, 21);
+  line-height: 120%;
+  @include media-px(letter-spacing, -0.36, -0.41, -0.42);
+  font-weight: $font-weight-600;
+  color: $text-color;
+}
+
+.result-icon-bg {
+  @extend %flex-centered;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: $color-icon-grey;
+}
