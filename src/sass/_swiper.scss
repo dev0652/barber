@@ -1,6 +1,6 @@
 .swiper-section {
   @extend %flex-centered;
-  padding: 120px 0;
+  @include media(padding, 25px 0, 70px 0, 120px 0);
   background: url('../img/gradient.svg'), no-repeat;
   background-size: cover;
   background-position: center center;
