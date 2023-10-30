@@ -167,24 +167,24 @@
 .tag-group {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 
-  @media screen and (min-width: $tablet) {
-    justify-content: center;
-    gap: 9px;
-  }
-
-  @media screen and (min-width: $desktop) {
-    gap: 17px;
-  }
+  @include media-px(gap, 19, 10, 17);
+  @include media(justify-content, space-between, _, center);
 }
 
 .tag {
-  padding: 5px 18px;
-
-  border-radius: 456.818px;
-  background: rgba(black, 0.05);
+  border-radius: 25px;
+  background: rgba(black, 0.1);
   backdrop-filter: blur(12px);
+
+  @include media(padding, 5px 18px, 10px 25px, 5px 18px);
+
+  font-family: 'Arial Black';
+  font-weight: 900;
+
+  @include media-px(font-size, 14, 21, 16);
+  @include media(line-height, 150%, 100%, 150%);
+  @include media-px(letter-spacing, -0.56, -1.47, -0.64);
 
   @media screen and (max-width: calc($desktop - 1px)) {
     &:nth-child(1) {
@@ -209,13 +209,13 @@
   @extend .generic-button;
   white-space: nowrap;
 
-  @include media(font-size, 14px, 28px, 32px);
+  @include media-px(font-size, 14, 28, 32);
 
-  @include media(letter-spacing, 1.82px, 3.7px, -1.28px);
+  @include media-px(letter-spacing, 1.82, 3.7, -1.28);
 
   @include media(padding, 18px 13px, 38px, 24px 30px);
 
-  @include media(border-radius, 50px, 102px, 80px);
+  @include media-px(border-radius, 50, 102, 80);
 
   @media screen and (min-width: $desktop) {
     position: absolute;
