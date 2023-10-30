@@ -1,5 +1,5 @@
 .actuality {
-  margin-bottom: 107px;
+  @include media(padding-bottom, 44px, 88px, 107px);
 }
 
 // grid container

@@ -1,43 +1,57 @@
 .success-story {
-  margin-bottom: 105px;
+  @include media(padding-bottom, 43px, 70px, 105px);
 }
 
 .success-story_list {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  @include media(gap, 25px, 36px, 8px);
+
+  @include media(width, 360px, 834px, 1280px);
 }
 
 .success-story_item {
   display: flex;
-
   border-radius: 20px;
-  max-width: 1280px;
-  height: 170px;
 
-  &:nth-child(even) {
-    flex-direction: row-reverse;
+  width: 100%;
+  @include media(height, 93px, 165px, 180px);
+
+  @media screen and (min-width: $tablet) {
+    position: relative;
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+    }
   }
 
-  &:last-child {
-    justify-content: space-between;
+  @media screen and (min-width: $tablet) and (max-width: calc(($desktop - 1px))) {
+    &:last-child {
+      gap: 50px;
+      flex-direction: column;
+      height: 360px;
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    &:last-child {
+      justify-content: space-between;
+    }
   }
 }
 
 .success-story_info_wrapper {
   display: flex;
-
   border-radius: 20px;
-  height: 170px;
+  height: 100%;
+  z-index: 10;
 }
 
 .success-story_img_wrapper {
-  max-width: 302px;
-
-  flex-grow: 1;
-  border-radius: 20px;
+  border-radius: 20px 0 0 20px;
   overflow: hidden;
   background: $color-dark-grey;
+
+  @include media(width, 150px, 275px, 302px);
 }
 
 .success-story_img {
@@ -47,61 +61,88 @@
 
 .success-story_description_wrapper {
   display: inline-flex;
-  max-width: 345px;
-  flex-grow: 1;
   flex-direction: column;
   justify-content: center;
-
-  padding: 40px 40px 40px 40px;
   border-radius: 20px;
   border: 1px solid $color-grey;
   background-color: $text-color;
 
-  margin-left: -40px;
+  @include media(width, 230px, 280px, 345px);
+  @include media(padding, 20px 22px, 27px 20px, 40px);
+  @include media(margin-left, -20px, -50px, -40px);
 }
 
 .success-story_description {
   color: $text-color-brown;
   font-family: $inter;
-  font-size: 18px;
   font-weight: $font-weight-600;
-  line-height: 24.877px;
-  letter-spacing: -0.32px;
+
+  @include media(font-size, 12px, 18px, 18px);
+  @include media(line-height, calc(15 / 12), calc(25 / 18), calc(25 / 18));
+  @include media(letter-spacing, -0.2px, -0.32px, -0.32px);
 }
 
 .accent--description {
   color: $text-color-navy;
-  margin-top: 15px;
+  @include media(margin-top, 5px, 10px, 15px);
 }
 
 .success-story_svg_wrapper {
-  display: flex;
-  margin-bottom: -80px;
+  position: absolute;
+  @media screen and (max-width: ($tablet - 1px)) {
+    display: none;
+  }
+
+  &.icon-arrow-left {
+    @media screen and (min-width: $tablet) and (max-width: ($desktop - 1px)) {
+      top: 50%;
+      right: 40%;
+    }
+    @media screen and (min-width: $desktop) {
+      right: 45%;
+      top: 40%;
+    }
+  }
+
+  &.icon-arrow-right {
+    @media screen and (min-width: $tablet) and (max-width: ($desktop - 1px)) {
+      top: 50%;
+      left: 40%;
+    }
+    @media screen and (min-width: $desktop) {
+      left: 45%;
+      top: 40%;
+    }
+  }
 }
 
 .success-story_result_wrapper {
   display: inline-flex;
-  max-width: 345px;
-  flex-grow: 1;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 37px 40px 49px 40px;
   border-radius: 20px;
   border: 1px solid $color-grey;
   background: $color-dark-grey;
-
   backdrop-filter: blur(40px);
 
-  margin-left: -40px;
+  @include media(width, 230px, 333px, 345px);
+  @include media(margin-left, -20px, -50px, -40px);
+  @include media(padding, 20px 22px, 30px 35px, 40px);
+  @include media(gap, 7px, 10px, 12px);
+
+  @media screen and (max-width: ($tablet - 1px)) {
+    align-items: center;
+  }
 }
 
 .success-story_result-text {
   color: $text-color;
   font-family: $inter;
-  font-size: 18px;
   font-weight: $font-weight-600;
-  line-height: 25px;
-  letter-spacing: -0.306px;
+  line-height: calc(25 / 18);
+
+  @include media(font-size, 12px, 18px, 18px);
+  @include media(line-height, calc(14 / 12), calc(25 / 18), calc(25 / 18));
+  @include media(letter-spacing, -0.2px, -0.3px, -0.3px);
 }
 
 .result-text_accent {
@@ -114,16 +155,30 @@
 
 .success-story_article_wrapper {
   max-width: 601px;
-  padding-top: 25px;
   align-items: center;
+
+  @include media(padding-top, _, _, 25px);
+  @media screen and (max-width: ($tablet - 1px)) {
+    display: none;
+  }
+  @media screen and (max-width: ($desktop - 1px)) {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .success-story_article {
   color: rgba(243, 243, 243, 0.8);
-
   font-family: $inter;
-  font-size: 18px;
   font-weight: $font-weight-600;
   line-height: 150%;
   letter-spacing: -0.3px;
+
+  text-align: center;
+  font-size: 21px;
+
+  @media screen and (min-width: $desktop) {
+    font-size: 18px;
+    text-align: start;
+  }
 }
