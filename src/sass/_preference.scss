@@ -1,6 +1,6 @@
-.preference {
-  @include media(padding-bottom, 25px, 68px, 120px);
-}
+// .preference {
+//   @include media(padding-bottom, 25px, 68px, 120px);
+// }
 
 .preference_title {
   color: $text-color;
@@ -72,6 +72,11 @@
 
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(22.12802505493164px);
+
+  @media screen and (max-width: calc(($mobile - 1px))) {
+    padding: 20px 8px;
+    align-items: center;
+  }
 
   @include media(height, 114px, 175px, 270px);
   @include media(padding, 20px, 31px, 47px);
