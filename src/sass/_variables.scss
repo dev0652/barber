@@ -27,14 +27,14 @@ $font-weight-900: 900;
 
 // Vertical offset (Hero / header)
 :root {
-  --vertical-offset: 70px;
+  --lower-bracket-offset: 70px;
 
   @media screen and (min-width: $tablet) {
-    --vertical-offset: 130px;
+    --lower-bracket-offset: 130px;
   }
   @media screen and (min-width: $desktop) {
-    --vertical-offset: 140px;
+    --lower-bracket-offset: 140px;
   }
 }
 
-$vertical-offset: var(--vertical-offset);
+$lower-bracket-offset: var(--lower-bracket-offset);

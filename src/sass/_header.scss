@@ -5,7 +5,7 @@
   z-index: 1000;
 
   width: 100vw;
-  padding: 10px 0;
+  // padding: 10px 0; // initial layout
 
   transition: padding 200ms ease-out;
 
@@ -18,7 +18,7 @@
     @media screen and (max-width: calc($desktop - 1px)) {
       display: flex;
       align-items: center;
-      height: $vertical-offset;
+      height: $lower-bracket-offset;
     }
   }
 }
