@@ -1,6 +1,23 @@
-
 .preference {
-  @include media(padding-bottom, 25px, 68px, 120px);
+  background: url('../img/gradient.svg');
+  background-size: 800px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  @include media(padding-bottom, 25px, 70px, 120px);
+
+  @media screen and (min-width: $tablet) {
+    background: url('../img/gradient.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+  }
+
+  @media screen and (min-width: $desktop) {
+    background: url('../img/gradient.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+  }
 }
 
 .preference_title {
