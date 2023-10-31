@@ -3,11 +3,17 @@
 }
 
 .success-story_list {
+  @media screen and (max-width: calc(($mobile - 1px))) {
+    margin-left: auto;
+    margin-right: auto;
+    width: 310px;
+  }
+
   display: flex;
   flex-direction: column;
   @include media(gap, 25px, 36px, 8px);
 
-  @include media(width, 360px, 834px, 1280px);
+  @include media(width, 340px, 804px, 1240px);
 }
 
 .success-story_item {
@@ -60,6 +66,11 @@
 }
 
 .success-story_description_wrapper {
+  @media screen and (max-width: calc(($mobile - 1px))) {
+    width: 180px;
+    padding: 8px 10px;
+  }
+
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
@@ -67,8 +78,8 @@
   border: 1px solid $color-grey;
   background-color: $text-color;
 
-  @include media(width, 230px, 280px, 345px);
-  @include media(padding, 20px 22px, 27px 20px, 40px);
+  @include media(width, 210px, 280px, 345px);
+  @include media(padding, 15px 20px, 27px 20px, 40px);
   @include media(margin-left, -20px, -50px, -40px);
 }
 
@@ -117,6 +128,11 @@
 }
 
 .success-story_result_wrapper {
+  @media screen and (max-width: calc(($mobile - 1px))) {
+    width: 180px;
+    padding: 8px 10px;
+  }
+
   display: inline-flex;
   flex-direction: column;
   border-radius: 20px;
@@ -124,9 +140,9 @@
   background: $color-dark-grey;
   backdrop-filter: blur(40px);
 
-  @include media(width, 230px, 333px, 345px);
+  @include media(width, 210px, 333px, 345px);
   @include media(margin-left, -20px, -50px, -40px);
-  @include media(padding, 20px 22px, 30px 35px, 40px);
+  @include media(padding, 20px 10px, 30px 35px, 40px);
   @include media(gap, 7px, 10px, 12px);
 
   @media screen and (max-width: ($tablet - 1px)) {

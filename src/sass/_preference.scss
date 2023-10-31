@@ -91,6 +91,11 @@
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(22.12802505493164px);
 
+  @media screen and (max-width: calc(($mobile - 1px))) {
+    padding: 20px 8px;
+    align-items: center;
+  }
+
   @include media(height, 114px, 175px, 270px);
   @include media(padding, 20px, 31px, 47px);
   @include media(border-radius, 7px, 10px, 16px);
