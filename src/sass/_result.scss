@@ -1,5 +1,6 @@
 .result-section {
-  @include media-px(padding, 14, 3, _);
+  @include media(padding, 0px 14px, 0px 3px, _);
+  @include media(padding-bottom, 16px, 100px, 110px);
   @extend %flex-centered;
 }
 
@@ -75,7 +76,7 @@
 }
 
 .group-list-2 > .result-item {
-  @include media-px(padding-left, 0, 20, 24);
+  @include media-px(padding-left, _, 20, 24);
   @media screen and (min-width: $tablet) {
     border-right: none;
   }
