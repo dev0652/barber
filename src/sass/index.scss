@@ -10,15 +10,18 @@
 @import 'container';
 @import 'main';
 
-@import 'buttons';
+@import 'components/buttons';
+@import 'components/typography';
 
 @import 'header';
 @import 'hero';
 @import 'actuality';
 @import 'preference';
-@import 'progress-bar';
-@import 'success-story';
 @import 'swiper/scss';
 @import 'swiper';
 @import 'result';
+@import 'program';
+@import 'syllabus';
+@import 'success-story';
+@import 'progress-bar';
 @import 'author';
