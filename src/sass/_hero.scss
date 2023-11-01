@@ -141,13 +141,22 @@
 
   @media screen and (min-width: $tablet) {
     position: absolute;
+    bottom: calc($lower-bracket-offset / 2);
+    transform: translateY(50%);
 
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
 
-    bottom: calc($lower-bracket-offset / 2);
-    transform: translateY(50%);
+    @media screen and (min-width: $tablet) {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
   }
 }
 
