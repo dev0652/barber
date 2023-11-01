@@ -1,0 +1,29 @@
+.author-section {
+  @include media(padding-bottom, 41px, 70px, 120px);
+}
+
+.author-title-wrapper {
+  @extend %flex-centered;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.author-title {
+  color: $text-color;
+  font-family: $arial;
+  @include media-px(font-size, 26, 43, 60);
+  font-weight: $font-weight-900;
+  line-height: 110%;
+  @include media-px(letter-spacing, -0.52, -0.86, -1.2);
+}
+
+.author-description {
+  text-align: center;
+  @include media(display, block, block, none);
+  font-family: $inter;
+  color: $text-color;
+  @include media-px(font-size, 21, 26, _);
+  font-weight: $font-weight-700;
+  line-height: 120%;
+  @include media-px(letter-spacing, -0.42, -0.52, _);
+}
