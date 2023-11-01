@@ -1,6 +1,23 @@
-
 .preference {
-  @include media(padding-bottom, 25px, 68px, 120px);
+  background: url('../img/gradient.svg');
+  background-size: 1000px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  @include media(padding-bottom, 25px, 70px, 120px);
+
+  @media screen and (min-width: $tablet) {
+    background: url('../img/gradient.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+  }
+
+  @media screen and (min-width: $desktop) {
+    background: url('../img/gradient.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+  }
 }
 
 .preference_title {
@@ -12,7 +29,7 @@
 
   margin-bottom: 11px;
 
-  @include media(font-size, 26px, 36px, 60px);
+  @include media(font-size, 22px, 36px, 60px);
   @include media(letter-spacing, -1.5px, -1.074px, -1.5px);
 }
 
@@ -73,6 +90,11 @@
 
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(22.12802505493164px);
+
+  @media screen and (max-width: calc(($mobile - 1px))) {
+    padding: 20px 8px;
+    align-items: center;
+  }
 
   @include media(height, 114px, 175px, 270px);
   @include media(padding, 20px, 31px, 47px);
