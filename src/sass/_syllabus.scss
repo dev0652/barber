@@ -1,0 +1,143 @@
+// .syllabus {
+// }
+
+.syllabus-item {
+  &:not(:last-of-type) {
+    @media screen and (max-width: calc($tablet - 1px)) {
+      margin-bottom: 16px;
+    }
+  }
+}
+
+// .syllabus-card {
+// }
+
+.syllabus-card-description {
+  @media screen and (max-width: calc($tablet - 1px)) {
+    position: relative;
+  }
+
+  @include media(padding, 20px 15px 25px, 26px 0 18px, 40px);
+
+  border-top: 0.5px solid rgba(243, 243, 243, 0.2);
+
+  .syllabus-card.details-expanded & {
+    border-radius: 8px;
+    background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.2) 0%,
+        rgba(0, 0, 0, 0.2) 100%
+      ),
+      rgba(52, 52, 52, 0.7);
+  }
+}
+
+.week {
+  font-family: Inter;
+  font-weight: 700;
+  line-height: 120%;
+
+  @include media(font-weight, 700, 600);
+  @include media-px(font-size, 21, 24, 16);
+
+  @media screen and (max-width: calc($tablet - 1px)) {
+    margin-bottom: 24px;
+  }
+
+  span:last-child {
+    @media screen and (min-width: $tablet) {
+      display: none;
+    }
+  }
+}
+
+.syllabus-card-title-mobile {
+  @media screen and (min-width: $tablet) {
+    display: none;
+  }
+}
+.syllabus-card-title-tablet {
+  @media screen and (max-width: calc($tablet - 1px)) {
+    display: none;
+  }
+}
+
+.syllabus-card-details {
+  display: none;
+
+  .syllabus-card.details-expanded & {
+    display: block;
+
+    @include media(padding, 19px 27px 16px, 35px 66px, 40px 83px);
+  }
+}
+
+.hours-distribution {
+  display: flex;
+  @include media-px(gap, 6, _, 8);
+}
+
+.hours-distribution-item {
+  display: flex;
+  @include media-px(gap, 4, _, 8);
+
+  border: 1px solid rgba(white, 0.2);
+  border-radius: 27px;
+
+  padding: 0 10px;
+
+  @include media(padding, 0 10px, 6px 14px, 4px 15px);
+}
+
+.hours-distribution-text {
+  font-family: Montserrat;
+  font-weight: 600;
+  line-height: 120%;
+
+  @include media-px(font-size, 8, 16);
+}
+
+.details-toggle-button {
+  @media screen and (max-width: calc($tablet - 1px)) {
+    position: absolute;
+    right: -9px;
+    bottom: -14px;
+    // z-index: 10;
+  }
+
+  @include media-px(--size, 75, 123, 121);
+  height: var(--size);
+  width: var(--size);
+
+  font-family: Inter;
+  line-height: 120%;
+
+  @include media-px(font-size, 11, 18, 16);
+  @include media(font-weight, 400, 500);
+  @include media(text-transform, none, capitalize);
+
+  border: none;
+  border-radius: 50%;
+
+  color: inherit;
+  background-color: rgba(243, 243, 243, 0.1);
+  backdrop-filter: blur(9px);
+}
+
+.syllabus-card-expand-icon {
+  @include media-px(--size, 8, 15, 10);
+  height: var(--size);
+  width: var(--size);
+
+  stroke: currentColor;
+
+  @media screen and (max-width: calc($tablet - 1px)) {
+    position: absolute;
+    top: 17px;
+    right: 15px;
+  }
+
+  .syllabus-card.details-expanded & {
+    transform: rotate(180deg);
+  }
+}
