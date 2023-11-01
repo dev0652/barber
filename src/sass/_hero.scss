@@ -220,7 +220,7 @@
   user-select: none;
 
   border-radius: 25px;
-  background: rgba(black, 0.05);
+  background-color: rgba(black, 0.05);
   backdrop-filter: blur(37px);
 
   @include media(padding, 5px 18px, 10px 25px, 5px 18px);
