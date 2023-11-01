@@ -152,8 +152,8 @@
 
 .header-logo-link {
   color: white;
-
-  display: block;
+  // background-color: green;
+  //
 
   @media screen and (min-width: $desktop) {
     position: absolute;
@@ -161,24 +161,48 @@
     left: 50%;
 
     transform: translate(-50%, -50%);
+    transform: scaleX(1.2) translate(-50%, -50%);
   }
 }
 
-.header-logo {
+.header-logo-icon {
   fill: currentColor;
 
-  width: auto;
+  width: 82px;
   height: 18px;
-  transform: scaleX(0.8);
+
+  .logo-tablet,
+  .logo-desktop {
+    opacity: 0;
+  }
+  .logo-mobile {
+    opacity: 1;
+  }
 
   @media screen and (min-width: $tablet) {
+    width: 146px;
     height: 27px;
+
+    .logo-mobile,
+    .logo-desktop {
+      opacity: 0;
+    }
+    .logo-tablet {
+      opacity: 1;
+    }
   }
 
   @media screen and (min-width: $desktop) {
     width: 150px;
     height: 25px;
-    transform: scaleX(1);
+
+    .logo-mobile,
+    .logo-tablet {
+      opacity: 0;
+    }
+    .logo-desktop {
+      opacity: 1;
+    }
   }
 }
 

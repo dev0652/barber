@@ -49,8 +49,8 @@
   &::after {
     content: '';
     position: absolute;
-    left: 0;
-    right: 0;
+    left: $container-padding;
+    right: $container-padding;
 
     border: 1px solid rgba(white, 0.3);
     border-radius: 10px;

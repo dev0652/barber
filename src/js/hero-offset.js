@@ -1,9 +1,12 @@
-const header = document.querySelector('.header');
+const setHeroTopPadding = () => {
+  const header = document.querySelector('.header');
+  const hero = document.querySelector('.hero');
 
-const hero = document.querySelector('.hero');
+  const { height } = header.getBoundingClientRect();
+  const headerHeight = `${height}px`;
 
-const { height } = header.getBoundingClientRect();
+  hero.style.paddingTop = headerHeight;
+};
 
-const headerHeight = `${height}px`;
-
-hero.style.paddingTop = headerHeight;
+window.onload = () => setHeroTopPadding();
+window.onresize = () => setHeroTopPadding();
