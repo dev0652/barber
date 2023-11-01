@@ -167,12 +167,14 @@
   @media screen and (max-width: calc($tablet - 1px)) {
     position: absolute;
 
-    gap: 10px;
-
     bottom: calc($lower-bracket-offset / 2);
     transform: translateY(50%);
 
     flex-direction: column-reverse;
+  }
+
+  @media screen and (min-width: $tablet) {
+    gap: 10px;
   }
 }
 
@@ -183,6 +185,10 @@
 
   @include media-px(font-size, 10, 12, 14);
   @include media-px(letter-spacing, 0.3, 0.36, 0.42);
+
+  span {
+    display: block;
+  }
 }
 
 .avatar-group {
@@ -190,10 +196,6 @@
 }
 
 .avatar-thumb {
-  // @include media(--size, 25, 57);
-  // max-height: var(--size);
-  // max-width: var(--size);
-
   &:not(:first-child) {
     @include media-px(margin-left, -7, -16);
   }
