@@ -7,7 +7,7 @@ const toggleSyllabusCard = event => {
 
   card.classList.toggle('details-expanded');
 
-  const isShown = details.classList.contains('is-shown');
+  const isShown = card.classList.contains('details-expanded');
   button.innerHTML = isShown ? 'менше' : 'більше';
 };
 
