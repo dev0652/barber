@@ -1,12 +1,24 @@
 .author-section {
   @include media(padding-bottom, 41px, 70px, 120px);
+
+  @media screen and (min-width: $desktop) {
+    background: url('../img/author/author_gradient.svg');
+    background-size: 800px;
+    background-repeat: no-repeat;
+    background-position: center left;
+  }
 }
 
 .author-title-wrapper {
   @include media(margin-bottom, 25px, 30px, _);
-  @extend %flex-centered;
-  flex-direction: column;
-  gap: 13px;
+
+  @media screen and (min-width: 300px) and (max-width: calc(($desktop) - 1px)) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 13px;
+  }
 }
 
 .author-title {
@@ -30,10 +42,19 @@
   @include media-px(letter-spacing, -0.42, -0.52, _);
 }
 
-.author-credits-list {
-  display: grid;
+.author-credits-list_tablet {
+  @include media(display, grid, grid, none);
   grid-template-columns: repeat(3, 1fr);
   @include media(gap, 5px, 10px, _);
+}
+
+.author-credits-list_desktop {
+  @include media(display, none, none, grid);
+  grid-template-columns: repeat(3, 1fr);
+  @include media(gap, 5px, 10px, 8px);
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 14px;
+  }
 }
 
 .author-credits-item {
@@ -55,7 +76,7 @@
     padding: 30px;
   }
   @media screen and (min-width: $desktop) {
-    padding: 24px;
+    padding: 23px;
   }
 }
 
@@ -66,7 +87,7 @@
 .author-credits-title {
   color: $text-color;
   font-family: $arial;
-  @include media-px(font-size, 32, 70, _);
+  @include media-px(font-size, 32, 70, 54);
   font-weight: $font-weight-900;
   line-height: 90%;
   @include media-px(letter-spacing, -0.64, -1.4, _);
@@ -75,7 +96,7 @@
 .author-credits-description {
   color: $text-color;
   font-family: $inter;
-  @include media-px(font-size, 9, 19, _);
+  @include media-px(font-size, 9, 19, 15);
   font-weight: $font-weight-600;
   line-height: 120%;
   @include media-px(letter-spacing, -0.18, -0.4, _);
@@ -86,7 +107,7 @@
   max-width: 330px;
   height: 368px;
   overflow: hidden;
-  border-radius: 8px;
+  @include media-px(border-radius, 8, 8, 13);
   margin-top: -15px;
   margin-left: auto;
   margin-right: auto;
@@ -94,6 +115,12 @@
 
   @media screen and (min-width: $tablet) {
     margin: 0;
+  }
+  @media screen and (min-width: $desktop) {
+    min-width: 640px;
+    width: 640px;
+    max-width: 640px;
+    height: 653px;
   }
 }
 
@@ -108,7 +135,7 @@
   margin-bottom: 15px;
   color: $text-color;
   font-family: $arial;
-  font-size: 18px;
+  @include media-px(font-size, 18, 18, 20);
   font-weight: $font-weight-900;
   line-height: 150%;
   letter-spacing: -0.36px;
@@ -120,9 +147,9 @@
   text-align: start;
   color: $text-color;
   font-family: $inter;
-  font-size: 16px;
+  @include media-px(font-size, 16, 16, 20);
   font-weight: $font-weight-400;
-  line-height: 150%;
+  @include media(line-height, 150%, 150%, 140%);
   letter-spacing: -0.051px;
 }
 
@@ -132,4 +159,18 @@
     display: flex;
     gap: 20px;
   }
+  @media screen and (min-width: $desktop) {
+    gap: 33px;
+  }
+}
+
+.author-description_desktop {
+  @include media(display, none, none, block);
+  margin-bottom: 37px;
+  color: $text-color;
+  font-family: $inter;
+  font-size: 18px;
+  font-weight: $font-weight-600;
+  line-height: 150%;
+  letter-spacing: -0.36px;
 }
