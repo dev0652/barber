@@ -49,8 +49,8 @@
   &::after {
     content: '';
     position: absolute;
-    left: 0;
-    right: 0;
+    left: $container-padding;
+    right: $container-padding;
 
     border: 1px solid rgba(white, 0.3);
     border-radius: 10px;
@@ -140,42 +140,99 @@
   align-items: center;
 
   @media screen and (min-width: $tablet) {
+    position: absolute;
+    bottom: calc($lower-bracket-offset / 2);
+    transform: translateY(50%);
+
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
 
-    // background-color: dimgray;
-  }
+    @media screen and (min-width: $tablet) {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
 
-  @media screen and (min-width: $tablet) {
-    position: absolute;
-
-    bottom: calc($lower-bracket-offset / 2);
-    transform: translateY(50%);
+    @media screen and (min-width: $desktop) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
   }
 }
 
-.small-groups {
+.small-groups-block {
+  @extend %flex-centered;
+  gap: 4px;
+
   @media screen and (max-width: calc($tablet - 1px)) {
     position: absolute;
 
     bottom: calc($lower-bracket-offset / 2);
     transform: translateY(50%);
+
+    flex-direction: column-reverse;
   }
+
+  @media screen and (min-width: $tablet) {
+    gap: 10px;
+  }
+}
+
+.small-groups-text {
+  font-family: Inter;
+  font-weight: 700;
+  line-height: 1;
+
+  @include media-px(font-size, 10, 12, 14);
+  @include media-px(letter-spacing, 0.3, 0.36, 0.42);
+
+  span {
+    display: block;
+  }
+}
+
+.avatar-group {
+  display: flex;
+}
+
+.avatar-thumb {
+  &:not(:first-child) {
+    @include media-px(margin-left, -7, -16);
+  }
+
+  &:first-child {
+    z-index: 3;
+  }
+
+  &:nth-child(2) {
+    z-index: 2;
+  }
+
+  &:last-child {
+    z-index: 1;
+  }
+}
+
+.avatar-image {
+  @include media-px(--size, 25, 57);
+  height: var(--size);
+  width: var(--size);
 }
 
 .tag-group {
   display: flex;
   align-items: center;
 
-  @include media-px(gap, 19, 10, 17);
+  @include media-px(gap, 15, 10, 17);
   @include media(justify-content, space-between, _, center);
 }
 
 .tag {
+  user-select: none;
+
   border-radius: 25px;
-  background: rgba(black, 0.1);
-  backdrop-filter: blur(12px);
+  background-color: rgba(black, 0.05);
+  backdrop-filter: blur(37px);
 
   @include media(padding, 5px 18px, 10px 25px, 5px 18px);
 
@@ -187,7 +244,7 @@
   @include media-px(letter-spacing, -0.56, -1.47, -0.64);
 
   @media screen and (max-width: calc($desktop - 1px)) {
-    &:nth-child(1) {
+    &:first-child {
       order: 2;
     }
     &:nth-child(2) {
@@ -198,7 +255,7 @@
     }
   }
 
-  &:last-of-type {
+  &:last-child {
     @media screen and (min-width: $desktop) {
       display: none;
     }

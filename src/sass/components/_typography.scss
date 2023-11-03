@@ -1,0 +1,14 @@
+// Headings
+%heading {
+  font-family: 'Arial Black';
+  font-weight: 900;
+}
+
+.heading-level-2 {
+  @extend %heading;
+
+  @include media-px(font-size, 26, 43, 60);
+  @include media-px(letter-spacing, -0.52, -0.86, -1.2);
+
+  text-align: center;
+}

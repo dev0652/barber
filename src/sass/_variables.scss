@@ -10,6 +10,7 @@ $color-grey: #d9d9d9;
 $color-dark-grey: rgba(255, 255, 255, 0.08);
 $color-icon-grey: #262626;
 $color-border-result: #363636;
+$color-feedback-bg: #b2b2b229;
 
 // Breakpoints
 $mobile: 360px;
@@ -30,9 +31,11 @@ $font-weight-900: 900;
 // Vertical offset (Hero / header)
 :root {
   --lower-bracket-offset: 70px;
+  --container-padding: 10px;
 
   @media screen and (min-width: $tablet) {
     --lower-bracket-offset: 130px;
+    --container-padding: 15px;
   }
   @media screen and (min-width: $desktop) {
     --lower-bracket-offset: 140px;
@@ -40,5 +43,6 @@ $font-weight-900: 900;
 }
 
 $lower-bracket-offset: var(--lower-bracket-offset);
+$container-padding: var(--container-padding);
 
 $transition-duration: 250ms linear;

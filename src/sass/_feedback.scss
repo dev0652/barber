@@ -1,0 +1,55 @@
+.feedback-title {
+  text-align: center;
+  color: $text-color;
+  font-family: $arial;
+  font-size: 26px;
+  font-weight: $font-weight-900;
+  line-height: 110%;
+  letter-spacing: -0.52px;
+  margin-bottom: 26px;
+}
+
+.feedback-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.feedback-item {
+  display: flex;
+  width: 327px;
+  height: 68px;
+  padding: 15px;
+  border-radius: 8px;
+  gap: 8px;
+  background: $color-feedback-bg;
+}
+
+.feedback-img-wrapper {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.feedback-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.feedback-stars {
+  display: flex;
+}
+
+.feedback-arrow-wrapper {
+  margin-left: auto;
+}
+
+.feedback-arrow {
+  width: 8px;
+  height: 8px;
+}

@@ -18,13 +18,18 @@ const mySwiper = new Swiper('.swiper', {
       spaceBetween: 7,
     },
 
+    520: {
+      slidesPerView: 2,
+      spaceBetween: 7,
+    },
+
     834: {
       slidesPerView: 3,
       spaceBetween: 18,
     },
     1280: {
-      slidesPerView: 4,
-      spaceBetween: 18,
+      slidesPerView: 3.5,
+      spaceBetween: 20,
     },
   },
 });
