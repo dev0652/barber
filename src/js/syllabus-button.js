@@ -15,32 +15,56 @@ const toggleSyllabusCard = event => {
 export const expandButtonClickHandler = event => {
   if (!event.target.classList.contains('details-toggle-button')) return;
 
-  const id = event.target.dataset.id;
+  // Get the current button's parent card
+  const cardsNodeList = document.querySelectorAll('.syllabus-card');
+  const cards = Array.from(cardsNodeList);
 
-  // Test
+  const buttonsNodeList = document.querySelectorAll('.details-toggle-button');
+  const buttons = Array.from(buttonsNodeList);
 
-  const cards = document.querySelectorAll('.syllabus-card');
+  const currentCard = cards.find(
+    card => card.dataset.id === event.target.dataset.id
+  );
 
-  for (const card of cards) {
-    if (card.dataset.id === id) {
-      card.classList.toggle('details-expanded');
+  // Check if current card if expanded
+  if (currentCard.classList.contains('details-expanded')) {
+    // If it is, collapse it...
+    currentCard.classList.remove('details-expanded');
+
+    // ...revert it's button's text to default...
+    event.target.innerHTML = 'більше';
+
+    return;
+  } else {
+    // Check if any other card if expanded...
+    const expandedCard = cards.find(card =>
+      card.classList.contains('details-expanded')
+    );
+
+    if (expandedCard) {
+      // ...collapse it...
+      expandedCard.classList.remove('details-expanded');
+
+      // ...and revert it's button's text to default...
+      const expandedCardButton = buttons.find(
+        button => button.dataset.id === expandedCard.dataset.id
+      );
+
+      expandedCardButton.innerHTML = 'більше';
     }
   }
 
-  // // Check if any other card if expanded
-  // const activeCategoryBtn = document.querySelector('.active-category');
-  // const expandedCard = document.querySelector('.details-expanded');
+  // Expand current card
+  currentCard.classList.add('details-expanded');
 
-  // // Collapse any other section if expanded
-  // const allMoreButtons = document.querySelectorAll('.details-toggle-button');
+  // ...set it's button's text to 'Less'...
+  event.target.innerHTML = 'менше';
 
-  // // Expand current card
-  // for (const button of allMoreButtons) {
-  //   if (btn.dataset.id === id) {
-  //     btn.classList.add('active-category');
-  //   }
-  // }
-  // activeCategoryBtn.classList.remove('active-category');
+  // ...and scroll it into view
+  currentCard.scrollIntoView({
+    behavior: 'smooth',
+    block: 'nearest',
+  });
 };
 
 syllabusRenderCnt.addEventListener('click', expandButtonClickHandler);

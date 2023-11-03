@@ -73,7 +73,7 @@ ${syllabus
 						</ul>
 					</div>
 
-					<button type="button" class="details-toggle-button" data-id="week-${number}">більше</button>
+					<button type="button" class="details-toggle-button" data-id="week-${number}" data-change-text>більше</button>
 
 					<svg class="syllabus-card-expand-icon">
 						<use href="${symbolDefs}#icon-arrow"></use>
