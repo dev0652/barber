@@ -6,6 +6,10 @@
   }
 }
 
+.syllabus-card {
+  position: relative;
+}
+
 .syllabus-card-description {
   @media screen and (max-width: calc($tablet - 1px)) {
     position: relative;
@@ -161,6 +165,8 @@
     right: 15px;
   }
 
+  transition: transform 300ms ease-in;
+
   .syllabus-card.details-expanded & {
     transform: rotate(180deg);
 
@@ -170,19 +176,31 @@
   }
 }
 
+.details-overlay {
+  overflow: hidden;
+  // position: relative;
+}
+
 .syllabus-card-details {
-  display: none;
+  @include media(padding, 19px 30px 16px, 35px 66px, 40px 83px);
+
+  transition: transform 700ms ease-in;
+
+  .syllabus-card:not(.details-expanded) & {
+    @extend %visually-hidden;
+    // top: 0;
+    transform: translateY(-100%);
+    pointer-events: none;
+  }
 
   .syllabus-card.details-expanded & {
-    display: block;
+    transform: translateY(0);
 
     @media screen and (min-width: $desktop) {
       display: flex;
       gap: 70px;
       width: 100%;
     }
-
-    @include media(padding, 19px 30px 16px, 35px 66px, 40px 83px);
   }
 }
 

@@ -1,7 +1,7 @@
-const setHeroTopPadding = () => {
-  const header = document.querySelector('.header');
-  const hero = document.querySelector('.hero');
+import getRefs from '/js/refs';
+const { header, hero } = getRefs();
 
+const setHeroTopPadding = () => {
   const { height } = header.getBoundingClientRect();
   const headerHeight = `${height}px`;
 
