@@ -1,14 +1,5 @@
 import getRefs from '/js/refs';
-const { detailsToggle, syllabusCard, syllabusRenderCnt } = getRefs();
-
-const toggleSyllabusCard = event => {
-  syllabusCard.classList.toggle('details-expanded');
-
-  const isShown = syllabusCard.classList.contains('details-expanded');
-  detailsToggle.innerHTML = isShown ? 'менше' : 'більше';
-};
-
-// detailsToggle && detailsToggle.addEventListener('click', toggleSyllabusCard);
+const { syllabusRenderCnt } = getRefs();
 
 // ***********************************************
 
