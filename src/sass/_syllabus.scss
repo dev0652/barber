@@ -1,24 +1,30 @@
 .syllabus-item {
-  &:not(:last-of-type) {
-    @media screen and (max-width: calc($tablet - 1px)) {
+  @media screen and (max-width: calc($tablet - 1px)) {
+    &:not(:last-of-type) {
       margin-bottom: 16px;
     }
   }
 }
 
+.syllabus-card {
+  position: relative;
+}
+
 .syllabus-card-description {
   @media screen and (max-width: calc($tablet - 1px)) {
     position: relative;
+    border: 0.5px solid rgba(243, 243, 243, 0.2);
+    border-radius: 8px;
   }
 
   @media screen and (min-width: $tablet) {
     display: flex;
-    gap: 30px;
+    gap: 25px; // 18px per layout but it feels wrong
+
+    border-top: 0.5px solid rgba(243, 243, 243, 0.2);
   }
 
   @include media(padding, 20px 15px 25px, 26px 6px 18px, 40px);
-
-  border-top: 0.5px solid rgba(243, 243, 243, 0.2);
 
   .syllabus-card.details-expanded & {
     border-radius: 8px;
@@ -43,10 +49,14 @@
     margin-bottom: 24px;
   }
 
-  span:last-child {
-    @media screen and (min-width: $tablet) {
+  @media screen and (min-width: $tablet) {
+    span:last-child {
       display: none;
     }
+  }
+
+  @media screen and (min-width: $desktop) {
+    line-height: 32px; // matches line-height in .syllabus-card-title-tablet
   }
 }
 
@@ -70,8 +80,8 @@
   font-weight: 600;
   line-height: 120%;
 
-  font-size: 24px;
-  letter-spacing: -0.72px;
+  @include media-px(font-size, _, 24, 26);
+  @include media-px(letter-spacing, _, -0.72, -0.78);
 
   @include media-px(margin-bottom, _, 30, 36);
 }
@@ -81,6 +91,10 @@
   justify-content: space-between;
   gap: 25px;
   width: 100%;
+
+  @media screen and (min-width: $desktop) {
+    gap: 155px;
+  }
 }
 
 .hours-distribution {
@@ -125,8 +139,10 @@
 
   @media screen and (max-width: calc($tablet - 1px)) {
     position: absolute;
-    right: -9px;
-    bottom: -14px;
+    right: -8px;
+    bottom: -12px;
+
+    background-color: rgb(44, 44, 44); // was forced to add it
   }
 
   @include media-px(--size, 75, 123, 121);
@@ -144,7 +160,7 @@
   border-radius: 50%;
 
   color: inherit;
-  background-color: rgba(243, 243, 243, 0.1);
+  background-color: rgba(243, 243, 243, 0.2);
   backdrop-filter: blur(9px);
 }
 
@@ -161,6 +177,8 @@
     right: 15px;
   }
 
+  transition: transform 300ms ease-in;
+
   .syllabus-card.details-expanded & {
     transform: rotate(180deg);
 
@@ -170,19 +188,31 @@
   }
 }
 
+.details-overlay {
+  overflow: hidden;
+  // position: relative;
+}
+
 .syllabus-card-details {
-  display: none;
+  @include media(padding, 19px 30px 16px, 35px 66px, 40px 83px);
+
+  transition: transform 700ms ease-in;
+
+  .syllabus-card:not(.details-expanded) & {
+    @extend %visually-hidden;
+    // top: 0;
+    transform: translateY(-100%);
+    pointer-events: none;
+  }
 
   .syllabus-card.details-expanded & {
-    display: block;
+    transform: translateY(0);
 
     @media screen and (min-width: $desktop) {
       display: flex;
       gap: 70px;
       width: 100%;
     }
-
-    @include media(padding, 19px 30px 16px, 35px 66px, 40px 83px);
   }
 }
 
@@ -196,14 +226,18 @@
   }
 
   @media screen and (min-width: $tablet) {
-    display: block;
-    columns: 2;
-
+    flex-direction: row;
     margin-bottom: 48px;
   }
 
   @media screen and (min-width: $desktop) {
     flex-grow: 1;
+  }
+}
+
+.training-block {
+  @media screen and (min-width: $tablet) {
+    width: 50%;
   }
 }
 

@@ -6,23 +6,6 @@
   -webkit-text-size-adjust: 100%;
 }
 
-body {
-  -webkit-font-smoothing: antialiased;
-
-  /* Hide scrollbar for IE, Edge and Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-
-  /* Hide scrollbar for Chrome, Safari and Opera */
-  &::-webkit-scrollbar {
-    display: none;
-  }
-
-  /* &.mobile-menu-open {
-    overflow-y: hidden;
-  } */
-}
-
 ul {
   list-style: none;
 }

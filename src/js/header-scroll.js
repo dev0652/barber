@@ -1,5 +1,7 @@
+import getRefs from '/js/refs';
+const { header } = getRefs();
+
 const changeHeaderBackground = () => {
-  const header = document.querySelector('.header');
   const { height } = header.getBoundingClientRect();
 
   if (window.scrollY > height) {
