@@ -10,6 +10,7 @@ $color-grey: #d9d9d9;
 $color-dark-grey: rgba(255, 255, 255, 0.08);
 $color-icon-grey: #262626;
 $color-border-result: #363636;
+$color-feedback-bg: #b2b2b229;
 
 // Breakpoints
 $mobile: 360px;
@@ -43,3 +44,5 @@ $font-weight-900: 900;
 
 $lower-bracket-offset: var(--lower-bracket-offset);
 $container-padding: var(--container-padding);
+
+$transition-duration: 250ms linear;

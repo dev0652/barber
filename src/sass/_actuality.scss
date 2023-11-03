@@ -1,5 +1,6 @@
 .actuality {
   @include media(padding-bottom, 44px, 88px, 100px);
+  @include media(padding-top, 44px, 64px, 117px);
 }
 
 // grid container
