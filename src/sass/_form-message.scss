@@ -1,0 +1,310 @@
+.contact-form_container {
+  display: flex;
+  flex-direction: column;
+  @include media(padding-bottom, 50px, 256px, 122px);
+  @include media(gap, 50px, 80px, 10px);
+
+  @media screen and (min-width: $desktop) {
+    flex-direction: row;
+  }
+}
+
+.contact-form_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  background-color: $text-color;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  @include media(gap, 24px, 46px, 57px);
+  @include media(border-radius, 28px, 55px, 28px);
+  @include media(padding, 40px 30px, 80px 80px, 40px);
+  @include media(width, 340px, 640px, 840px);
+
+  @media screen and (max-width: calc(($mobile - 1px))) {
+    padding: 40px 10px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media screen and (min-width: $desktop) {
+    flex-direction: row;
+    width: 840px;
+  }
+}
+
+.contact-form_info {
+  @media screen and (min-width: $desktop) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+.contact-form_title {
+  color: $bg-color;
+  text-align: center;
+  font-family: $arial;
+  font-weight: $font-weight-900;
+  line-height: 90%;
+  text-transform: uppercase;
+
+  @include media(margin-bottom, 20px, 48px, _);
+  @include media(font-size, 38px, 73px, 54px);
+  @include media(letter-spacing, -1.5px, -3px, -2.2px);
+
+  @media screen and (min-width: $desktop) {
+    text-align: start;
+  }
+}
+
+.contact-form_description {
+  color: $bg-color;
+  text-align: center;
+  font-family: $inter;
+  font-weight: $font-weight-600;
+  line-height: 110%;
+
+  @include media(font-size, 14px, 27px, 14px);
+
+  @media screen and (min-width: $desktop) {
+    text-align: start;
+  }
+}
+
+.contact_form {
+  display: flex;
+  flex-direction: column;
+  @include media(gap, 7px, 14px, 5px);
+}
+
+.contact-form_input {
+  width: 100%;
+  border: transparent;
+  color: $bg-color;
+  font-weight: bold;
+
+  background: rgba(21, 21, 21, 0.05);
+
+  @include media(padding, 22px 28px, 42px 55px, 22px 28px);
+  @include media(border-radius, 14px, 27, 14px);
+
+  &::placeholder {
+    color: rgba(21, 21, 21, 0.5);
+    font-family: $inter;
+    font-weight: $font-weight-400;
+    line-height: 120%;
+
+    @include media(font-size, 17px, 32px, 17px);
+    @include media(letter-spacing, -0.4px, -0.7px, -0.4px);
+  }
+
+  @media screen and (min-width: $desktop) {
+    height: 94px;
+    width: 360px;
+  }
+}
+
+.contact-form_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: $bg-color;
+  color: $text-color;
+  text-transform: uppercase;
+
+  @include media(padding, 22px 43px, 42px 82px, 22px 43px);
+  @include media(border-radius, 14px, 27px, 14px);
+  @include media(font-size, 14px, 27px, 14px);
+
+  @media screen and (min-width: $desktop) {
+    height: 94px;
+    width: 360px;
+  }
+
+  $border-width: 1.5px;
+
+  border: $border-width solid transparent;
+  border: none;
+  outline: none;
+  position: relative;
+  transform-style: preserve-3d;
+
+  &::before {
+    content: '';
+    position: absolute;
+
+    top: -$border-width;
+    right: -$border-width;
+    bottom: -$border-width * 1.5;
+    left: -$border-width;
+
+    background-color: rgb(109, 220, 255);
+    background: linear-gradient(rgba(109, 220, 255, 1), rgba(127, 96, 249, 1));
+
+    transform: translate3d(0, 0, -1px);
+    border-radius: inherit;
+
+    visibility: hidden;
+  }
+
+  &:focus-visible,
+  &:hover {
+    color: $text-color;
+    background-color: black;
+
+    &::before {
+      visibility: visible;
+    }
+  }
+}
+
+// contacts info
+.contact-info_wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: $text-color;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  @include media(gap, 88px, 170px, _);
+  @include media(border-radius, 28px, 55px, 28px);
+  @include media(padding, 40px 20px, 80px 70px, 40px);
+  @include media(width, 340px, 640px, 840px);
+
+  @media screen and (max-width: calc(($mobile - 1px))) {
+    padding: 40px 10px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media screen and (min-width: $desktop) {
+    justify-content: space-between;
+    width: 390px;
+  }
+}
+
+.contact-wrapper {
+  display: flex;
+  flex-direction: column;
+  @include media(gap, 21px, 41px, 21px);
+}
+
+.contact-info_title {
+  color: $bg-color;
+  font-family: $arial;
+  font-weight: $font-weight-900;
+  line-height: 120%;
+
+  @include media(font-size, 17px, 33px, 17px);
+  @include media(letter-spacing, -0.4px, -0.7px, -0.4px);
+}
+
+.contact-info_number {
+  color: $bg-color;
+  font-family: $arial;
+  font-weight: $font-weight-900;
+  line-height: 110%;
+
+  @media screen and (max-width: calc(($mobile - 1px))) {
+    font-size: 26px;
+  }
+
+  @include media(font-size, 25px, 45px, 29px);
+  @include media(letter-spacing, -0.6px, -1.5px, -0.6px);
+}
+
+.contact-info_mail {
+  color: $bg-color;
+  font-family: $arial;
+  font-weight: $font-weight-400;
+  line-height: 120%;
+
+  @include media(font-size, 17px, 33px, 17px);
+  @include media(letter-spacing, -0.4px, -0.7px, -0.4px);
+}
+
+.contact-info_adress-wrapper {
+  display: flex;
+  align-items: center;
+  @include media(gap, 12px, 10px, 30px);
+}
+
+.contact-info_adress {
+  color: $bg-color;
+  font-weight: $font-weight-600;
+  line-height: 120%;
+
+  @include media(font-size, 17px, 33px, 17px);
+  @include media(letter-spacing, -0.4px, -0.7px, -0.4px);
+}
+
+.contact-social-list {
+  display: flex;
+  gap: 10px;
+}
+
+.icon-contact {
+  width: 25px;
+  height: 25px;
+
+  transition-duration: scale $transition-duration;
+
+  @media screen and (min-width: $tablet) {
+    width: 49px;
+    height: 49px;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 25px;
+    height: 25px;
+  }
+
+  .contact-social-item:hover & {
+    transform: scale(1.1);
+  }
+}
+
+.contact-social-item {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 25px;
+  height: 25px;
+
+  @media screen and (min-width: $tablet) {
+    width: 49px;
+    height: 49px;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+.icon-arrow-bottom {
+  width: 12px;
+  height: 12px;
+
+  @media screen and (min-width: $tablet) {
+    width: 22px;
+    height: 22px;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+.contact-info_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
