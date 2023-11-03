@@ -1,3 +1,8 @@
+export const makeWeekNumber = number => {
+  if (number < 10) return number.toString().padStart(2, '0');
+  return number.toString();
+};
+
 export const getHourWordInProperCase = number => {
   const count = number.toString();
   let word = 'годин';

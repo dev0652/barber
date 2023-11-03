@@ -1,9 +1,10 @@
 import syllabus from '/data/syllabus-data';
-import getRefs from '/js/refs';
-import getFilePaths from '/js/icon-path-refs';
+import getRefs from './refs';
+import getFilePaths from './icon-path-refs';
 import {
   getHourWordInProperCase,
   makeTrainingPlanMarkup,
+  makeWeekNumber,
 } from './syllabus-aux';
 
 const { symbolDefs } = getFilePaths();
@@ -23,11 +24,12 @@ ${syllabus
     } = week;
 
     const isLastItem = index === week.length - 1;
-    const weekNumber = index + 1;
+    const number = index + 1;
+    const weekNumber = makeWeekNumber(number);
 
     return `
 		<li class="syllabus-item">
-			<article class="syllabus-card">
+			<article class="syllabus-card" data-id="week-${number}">
 
 			<!-- Week description (always visible block) -->
 			<div class="syllabus-card-description">
@@ -55,7 +57,7 @@ ${syllabus
 								<p class="hours-distribution-text">
 									<span class="theory-hour-count">${theoryHours}</span>
 									<span>${getHourWordInProperCase(theoryHours)} теорії</span>
-								</p>
+								</p> 
 							</li>
 
 							<li class="hours-distribution-item">
@@ -71,7 +73,7 @@ ${syllabus
 						</ul>
 					</div>
 
-					<button type="button" class="details-toggle-button" data-id="expand-week-${weekNumber}">більше</button>
+					<button type="button" class="details-toggle-button" data-id="week-${number}">більше</button>
 
 					<svg class="syllabus-card-expand-icon">
 						<use href="${symbolDefs}#icon-arrow"></use>
@@ -85,14 +87,14 @@ ${syllabus
 					<h3 class="syllabus-card-title-mobile">${mobileTitle}</h3>
 
 					<div class="training-blocks-wrapper">
-						<div class="theory-block">
+						<div class="training-block theory">
 							<h4 class="training-block-title">Теорія</h4>
 							<ul class="training-block-items">
 								${makeTrainingPlanMarkup(theoryPlan)}
 							</ul>
 						</div>
 
-						<div class="practice-block">
+						<div class="training-block practice">
 							<h4 class="training-block-title">Практика</h4>
 							<ul class="training-block-items">
 							${makeTrainingPlanMarkup(practicePlan)}
@@ -100,13 +102,16 @@ ${syllabus
 						</div>
 					</div>
 
-					// Results (white block)
+					<!-- Results (white block) -->
 					<div class="expected-results">
 						<h4 class="expected-results-title">Ваш результат:</h4>
 
 						<ul class="expected-results-list">
 						${results
-              .map(result => `<li class="expected-results-item">${result}</li>`)
+              .map(
+                ({ result }) =>
+                  `<li class="expected-results-item">${result}</li>`
+              )
               .join('')}
 						</ul>
 					</div>

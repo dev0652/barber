@@ -8,31 +8,39 @@ const toggleSyllabusCard = event => {
   detailsToggle.innerHTML = isShown ? 'менше' : 'більше';
 };
 
-detailsToggle && detailsToggle.addEventListener('click', toggleSyllabusCard);
+// detailsToggle && detailsToggle.addEventListener('click', toggleSyllabusCard);
 
 // ***********************************************
 
-export const moreBtnClickHandler = e => {
-  if (!e.target.classList.contains('details-toggle-button')) return;
+export const expandButtonClickHandler = event => {
+  if (!event.target.classList.contains('details-toggle-button')) return;
 
-  const id = e.target.dataset.id;
+  const id = event.target.dataset.id;
 
-  // See if any other card if expanded
-  const activeCategoryBtn = document.querySelector('.active-category');
+  // Test
 
-  // Collapse any other section if expanded
-  const allMoreButtons = document.querySelectorAll('.details-toggle-button');
+  const cards = document.querySelectorAll('.syllabus-card');
 
-  // Expand current card
-  for (const button of allMoreButtons) {
-    if (btn.dataset.id === id) {
-      btn.classList.add('active-category');
+  for (const card of cards) {
+    if (card.dataset.id === id) {
+      card.classList.toggle('details-expanded');
     }
   }
-  activeCategoryBtn.classList.remove('active-category');
 
-  renderBooksByCategory(data);
-  scrollToTop();
+  // // Check if any other card if expanded
+  // const activeCategoryBtn = document.querySelector('.active-category');
+  // const expandedCard = document.querySelector('.details-expanded');
+
+  // // Collapse any other section if expanded
+  // const allMoreButtons = document.querySelectorAll('.details-toggle-button');
+
+  // // Expand current card
+  // for (const button of allMoreButtons) {
+  //   if (btn.dataset.id === id) {
+  //     btn.classList.add('active-category');
+  //   }
+  // }
+  // activeCategoryBtn.classList.remove('active-category');
 };
 
-syllabusRenderCnt.addEventListener('click', moreBtnClickHandler);
+syllabusRenderCnt.addEventListener('click', expandButtonClickHandler);
