@@ -51,12 +51,16 @@ export const expandButtonClickHandler = event => {
   // ...set it's button's text to 'Less'...
   event.target.innerHTML = 'менше';
 
-  // ...and scroll it into view if it's goes beyond the lower edge of the screen
+ // ...check if the expanded card will cross the lower edge of the screen
+ const currentCardPosition = currentCard.getBoundingClientRect();
   
-  // if () currentCard.scrollIntoView({
-  //   behavior: 'smooth',
-  //   block: 'end',
-  // });
+ const isLowerPartObscured = currentCardPosition.bottom > (window.innerHeight || document.documentElement.clientHeight);
+
+ // ...and if it will, scroll the whole of the card into view
+ isLowerPartObscured && currentCard.scrollIntoView({
+     behavior: 'smooth',
+     block: 'end',
+   });
 };
 
 syllabusRenderCnt.addEventListener('click', expandButtonClickHandler);
