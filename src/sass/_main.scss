@@ -4,9 +4,6 @@
   line-height: 24px;
   font-weight: 400;
 
-  color: #242424;
-  background-color: rgba(255, 255, 255, 0.87);
-
   /* Hide scrollbar  */
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
@@ -20,7 +17,8 @@ body {
   font-family: 'Inter', sans-serif;
 
   color: $text-color;
-  background-color: $bg-color;
 
-  background: url(../img/noise/noise.png), $bg-color;
+  background-color: $bg-color;
+  background: url('/img/noise/noise.png'), $bg-color;
+  background-size: contain;
 }

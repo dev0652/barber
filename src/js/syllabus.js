@@ -24,6 +24,7 @@ ${syllabus
     } = week;
 
     const isLastItem = index === week.length - 1;
+    const areTopicsEmpty = theoryPlan.length === 0 || practicePlan.length === 0;
     const number = index + 1;
     const weekNumber = makeWeekNumber(number);
 
@@ -62,7 +63,7 @@ ${syllabus
 
 							<li class="hours-distribution-item">
 								<svg class="hours-distribution-icon">
-									<use href="img/symbol-defs.svg#icon-practice"></use>
+									<use href="${symbolDefs}#icon-practice"></use>
 								</svg>
 
 								<p class="hours-distribution-text">
@@ -87,19 +88,24 @@ ${syllabus
 					<h3 class="syllabus-card-title-mobile">${mobileTitle}</h3>
 
 					<div class="training-blocks-wrapper">
-						<div class="training-block theory">
-							<h4 class="training-block-title">Теорія</h4>
-							<ul class="training-block-items">
-								${makeTrainingPlanMarkup(theoryPlan)}
-							</ul>
-						</div>
 
-						<div class="training-block practice">
-							<h4 class="training-block-title">Практика</h4>
-							<ul class="training-block-items">
-							${makeTrainingPlanMarkup(practicePlan)}
-							</ul>
-						</div>
+					${
+            !areTopicsEmpty &&
+            `<div class="training-block theory">
+				<h4 class="training-block-title">Теорія</h4>
+				<ul class="training-block-items">
+					${makeTrainingPlanMarkup(theoryPlan)}
+				</ul>
+			</div>
+
+			<div class="training-block practice">
+				<h4 class="training-block-title">Практика</h4>
+				<ul class="training-block-items">
+				${makeTrainingPlanMarkup(practicePlan)}
+				</ul>
+			</div>`
+          }
+						
 					</div>
 
 					<!-- Results (white block) -->
