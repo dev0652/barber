@@ -1,4 +1,4 @@
-import getRefs from '/js/refs';
+import getRefs from './refs';
 const { header, hero } = getRefs();
 
 const setHeroTopPadding = () => {
@@ -8,5 +8,10 @@ const setHeroTopPadding = () => {
   hero.style.paddingTop = headerHeight;
 };
 
-window.onload = () => setHeroTopPadding();
-window.onresize = () => setHeroTopPadding();
+document.addEventListener('DOMContentLoaded', () => {
+  setHeroTopPadding();
+});
+
+window.addEventListener('resize', () => {
+  setHeroTopPadding();
+});

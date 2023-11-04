@@ -1,18 +1,26 @@
 .hero {
-  height: 652px;
-
-  @media screen and (min-width: $tablet) {
-    height: 100vh;
-  }
+  // height: 652px;
+  height: 100vh;
 
   $grad-color: rgba(black, 0.6);
-  $bg-image: url('/img/bkp/hero.png');
+  --bg-image: url('/img/hero/hero_mob.webp');
+
+  @media screen and (min-width: $tablet) {
+    --bg-image: url('/img/hero/hero_desk.webp');
+  }
 
   /* for retina displays */
-  @media only screen and (min-resolution: 192dpi),
-    only screen and (min-resolution: 2dppx) {
-    $bg-image: url('/img/bkp/hero.png');
-  }
+  // @media only screen and (min-resolution: 192dpi),
+  //   only screen and (min-resolution: 2dppx) {
+  //   --bg-image: url('/img/bkp/hero_mob@2x.png');
+
+  //   @media screen and (min-width: $tablet) {
+  //     height: 100vh;
+  //     --bg-image: url('/img/hero/hero_desk@2x.webp');
+  //   }
+  // }
+
+  $bg-image: var(--bg-image);
 
   background-color: $bg-color;
   background-image: linear-gradient(0deg, $grad-color, $grad-color), $bg-image;
@@ -37,11 +45,17 @@
 
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
 
-  @media screen and (max-width: calc($desktop - 1px )) {
-    padding-bottom: $lower-bracket-offset;
+  @media screen and (max-width: calc($tablet - 1px )) {
+    justify-content: space-evenly;
   }
+
+  justify-content: center;
+  padding-bottom: $lower-bracket-offset;
+
+  // @media screen and (max-width: calc($desktop - 1px )) {
+  //   padding-bottom: $lower-bracket-offset;
+  // }
 }
 
 .brackets {

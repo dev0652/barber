@@ -16,7 +16,7 @@ export const getHourWordInProperCase = number => {
 const makeItem = children => `<li class="training-block-item">${children}</li>`;
 
 export const makeTrainingPlanMarkup = planItemsArray => {
-  if (planItemsArray.length === 0) return null;
+  if (planItemsArray.length === 0) return 'Тут поки нічого немає ;)';
 
   return `
 ${planItemsArray
