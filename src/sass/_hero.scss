@@ -49,7 +49,7 @@
   flex-direction: column;
   align-items: center;
 
-  @media screen and (max-width: calc($tablet - 1px )) {
+  @media screen and (max-width: calc($desktop - 1px )) {
     justify-content: space-evenly;
   }
 
