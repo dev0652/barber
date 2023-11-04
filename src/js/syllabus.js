@@ -27,6 +27,7 @@ ${syllabus
     const areTopicsEmpty = theoryPlan.length === 0 || practicePlan.length === 0;
     const number = index + 1;
     const weekNumber = makeWeekNumber(number);
+		const isCelebrationTime = practiceHours === 0;
 
     return `
 		<li class="syllabus-item">
@@ -36,13 +37,10 @@ ${syllabus
 			<div class="syllabus-card-description">
 				
 			<p class="week">
-				${
-          !isLastItem &&
-          `
-					<span>${weekNumber}</span>
-					<span>тиждень</span>
-				`
-        }
+				
+					<span>${isCelebrationTime ? '' : weekNumber}</span>
+					<span> ${isCelebrationTime ? 'екзамен' : 'тиждень'}</span>
+			
 			</p>
 
 				<div class="group-one">
@@ -57,7 +55,7 @@ ${syllabus
 
 								<p class="hours-distribution-text">
 									<span class="theory-hour-count">${theoryHours}</span>
-									<span>${getHourWordInProperCase(theoryHours)} теорії</span>
+									<span>${getHourWordInProperCase(theoryHours)} ${areTopicsEmpty ? 'тривалість' : "теорії"}</span>
 								</p> 
 							</li>
 
@@ -67,8 +65,8 @@ ${syllabus
 								</svg>
 
 								<p class="hours-distribution-text">
-									<span class="practice-hour-count">${practiceHours}</span>
-									<span>${getHourWordInProperCase(practiceHours)} практики</span>
+									<span class="practice-hour-count">${isCelebrationTime ? '' : practiceHours}</span>
+									<span>${isCelebrationTime ? '' : getHourWordInProperCase(practiceHours)} ${isCelebrationTime ? 'святкування' : "практики"}</span>
 								</p>
 							</li>
 						</ul>
@@ -87,26 +85,25 @@ ${syllabus
 				<div class="syllabus-card-details">
 					<h3 class="syllabus-card-title-mobile">${mobileTitle}</h3>
 
-					<div class="training-blocks-wrapper">
+					${areTopicsEmpty ? '' : `<div class="training-blocks-wrapper">
 
-					${
-            !areTopicsEmpty &&
-            `<div class="training-block theory">
-				<h4 class="training-block-title">Теорія</h4>
-				<ul class="training-block-items">
-					${makeTrainingPlanMarkup(theoryPlan)}
-				</ul>
-			</div>
+					
+            <div class="training-block theory">
+								<h4 class="training-block-title">Теорія</h4>
+								<ul class="training-block-items">
+									${makeTrainingPlanMarkup(theoryPlan)}
+								</ul>
+							</div>
 
-			<div class="training-block practice">
-				<h4 class="training-block-title">Практика</h4>
-				<ul class="training-block-items">
-				${makeTrainingPlanMarkup(practicePlan)}
-				</ul>
-			</div>`
-          }
+							<div class="training-block practice">
+								<h4 class="training-block-title">Практика</h4>
+								<ul class="training-block-items">
+									${makeTrainingPlanMarkup(practicePlan)}
+								</ul>
+							</div>
 						
-					</div>
+						
+					</div>	`}
 
 					<!-- Results (white block) -->
 					<div class="expected-results">

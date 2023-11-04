@@ -24,6 +24,10 @@
     border-top: 0.5px solid rgba(243, 243, 243, 0.2);
   }
 
+  @media screen and (min-width: $desktop) {
+    justify-content: end;
+  }
+
   @include media(padding, 20px 15px 25px, 26px 6px 18px, 40px);
 
   .syllabus-card.details-expanded & {
@@ -52,6 +56,11 @@
   }
 
   @media screen and (min-width: $tablet) {
+    min-width: 30px; // crutch.js
+
+  }
+
+  @media screen and (min-width: $tablet) {
     span:last-child {
       display: none;
     }
@@ -59,6 +68,7 @@
 
   @media screen and (min-width: $desktop) {
     line-height: 32px; // matches line-height in .syllabus-card-title-tablet
+    min-width: 22px; // crutch.js
   }
 }
 
@@ -91,12 +101,10 @@
 .group-one {
   display: flex;
   justify-content: space-between;
-  gap: 25px;
+  // gap: 25px;
   width: 100%;
 
-  @media screen and (min-width: $desktop) {
-    gap: 155px;
-  }
+  
 }
 
 .hours-distribution {
@@ -148,6 +156,8 @@
   border: none;
   border-radius: 50%;
 
+  align-self: center;
+
   color: inherit;
   background-color: rgba(243, 243, 243, 0.1);
   backdrop-filter: blur(9px);
@@ -162,6 +172,23 @@
 
   @media screen and (min-width: $tablet) {
     margin-left: auto;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-right: 155px;
+  }
+
+  transition: color 400ms, background-color 400ms;
+  
+  &:hover, &:focus-visible {
+    color: black;
+    background-color: white;
+
+  }
+
+  &:active {
+    color: silver;
+    background-color: dimgray;
   }
 }
 
@@ -197,7 +224,7 @@
 .syllabus-card-details {
   @include media(padding, 19px 30px 16px, 35px 66px, 40px 83px);
 
-  transition: transform 700ms ease-in;
+  transition: transform 600ms ease-in;
 
   .syllabus-card:not(.details-expanded) & {
     @extend %visually-hidden;
@@ -295,7 +322,17 @@
     padding-left: calc(20px + 18px);
 
     max-width: 330px;
+
+    .syllabus-item:last-of-type & {
+      // flex-grow: 1;
+      max-width: 50%; 
+      // justify-self: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
+
+  
 }
 
 .expected-results-title {

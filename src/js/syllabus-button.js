@@ -51,11 +51,12 @@ export const expandButtonClickHandler = event => {
   // ...set it's button's text to 'Less'...
   event.target.innerHTML = 'менше';
 
-  // ...and scroll it into view
-  currentCard.scrollIntoView({
-    behavior: 'smooth',
-    block: 'nearest',
-  });
+  // ...and scroll it into view if it's goes beyond the lower edge of the screen
+  
+  // if () currentCard.scrollIntoView({
+  //   behavior: 'smooth',
+  //   block: 'end',
+  // });
 };
 
 syllabusRenderCnt.addEventListener('click', expandButtonClickHandler);

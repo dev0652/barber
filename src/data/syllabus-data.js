@@ -170,7 +170,7 @@ export default [
     mobileTitle: 'Екзамен',
     regularTitle: 'Екзамен і вручення дипломів',
     theoryHours: 5,
-    practiceHours: 'святкування',
+    practiceHours: 0,
     theoryPlan: [],
     practicePlan: [],
     results: [
