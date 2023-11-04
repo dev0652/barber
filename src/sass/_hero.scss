@@ -1,5 +1,8 @@
 .hero {
-  // height: 652px;
+  @media screen and (max-width: calc($tablet - 1px )) and (orientation: landscape) {
+    // height: 652px;
+  }
+
   height: 100vh;
 
   $grad-color: rgba(black, 0.6);
@@ -50,12 +53,16 @@
     justify-content: space-evenly;
   }
 
+  @media screen and (max-width: calc($desktop - 1px )) and (orientation: landscape) {
+    justify-content: space-around;
+  }
+
   justify-content: center;
   padding-bottom: $lower-bracket-offset;
 
-  // @media screen and (max-width: calc($desktop - 1px )) {
-  //   padding-bottom: $lower-bracket-offset;
-  // }
+  @media screen and (max-width: calc($desktop - 1px )) and (orientation: landscape) {
+    padding-bottom: calc($lower-bracket-offset + 10px);
+  }
 }
 
 .brackets {
@@ -94,6 +101,10 @@
 
   @include media(gap, 9px, 34px, 40px);
 
+  @media screen and (max-width: calc($desktop - 1px )) and (orientation: landscape) {
+    gap: 15px;
+  }
+
   text-align: center;
 }
 
@@ -105,8 +116,16 @@
   text-transform: uppercase;
 
   @include media(font-size, 55px, 80px, 106px);
-
   @include media(letter-spacing, -1.1px, -1.6px, -2.12px);
+
+  @media screen and (max-width: calc($tablet - 1px)) and (orientation: landscape) {
+    font-size: 2rem;
+  }
+
+  @media screen and (min-width: $tablet) and (max-width: calc($desktop - 1px )) and (orientation: landscape) {
+    font-size: 3rem;
+    letter-spacing: normal;
+  }
 
   @media screen and (max-width: calc($tablet - 1px)) {
     max-width: 80%;
@@ -136,6 +155,12 @@
       }
     }
   }
+
+  @media screen and (max-width: calc($tablet - 1px)) and (orientation: landscape) {
+    line-height: 100%;
+    max-width: 90%;
+    align-self: center;
+  }
 }
 
 .hero-paragraph {
@@ -144,8 +169,17 @@
   line-height: 150%;
 
   @include media(font-size, 18px, 26px, 32px);
-
   @include media(letter-spacing, normal, -1.28px, -1.28px);
+
+  @media screen and (max-width: calc($tablet - 1px)) and (orientation: landscape) {
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  @media screen and (min-width: $tablet) and (max-width: calc($desktop - 1px )) and (orientation: landscape) {
+    font-size: 18px;
+    letter-spacing: normal;
+  }
 }
 
 .hero-bottom {
@@ -185,6 +219,11 @@
     transform: translateY(50%);
 
     flex-direction: column-reverse;
+  }
+
+  @media screen and (max-width: calc($tablet - 1px)) and (orientation: landscape) {
+    flex-direction: row;
+    gap: 20px;
   }
 
   @media screen and (min-width: $tablet) {
@@ -229,6 +268,11 @@
 
 .avatar-image {
   @include media-px(--size, 25, 57);
+
+  @media screen and (min-width: $tablet) and (max-width: calc($desktop - 1px)) and (orientation: landscape) {
+    --size: 40px;
+  }
+
   height: var(--size);
   width: var(--size);
 }
@@ -239,23 +283,50 @@
 
   @include media-px(gap, 15, 10, 17);
   @include media(justify-content, space-between, _, center);
+
+  @media screen and (max-width: calc($tablet - 1px )) and (orientation: landscape) {
+    gap: 10px;
+  }
 }
 
 .tag {
   user-select: none;
+  transition: color 400ms, background-color 400ms, backdrop-filter 400ms;
 
   border-radius: 25px;
   background-color: rgba(black, 0.05);
   backdrop-filter: blur(37px);
 
-  @include media(padding, 5px 18px, 10px 25px, 5px 18px);
+  &:hover {
+    color: lightgrey;
+    backdrop-filter: blur(5px);
+    background-color: rgba(white, 0.1);
+  }
 
   font-family: 'Arial Black';
   font-weight: 900;
+  text-align: center;
 
   @include media-px(font-size, 14, 21, 16);
   @include media(line-height, 150%, 100%, 150%);
   @include media-px(letter-spacing, -0.56, -1.47, -0.64);
+  @include media(padding, 5px 18px, 10px 25px, 5px 18px);
+
+  @media screen and (max-width: calc($tablet - 1px)) and (orientation: landscape) {
+    font-size: 0.9rem;
+  }
+
+  @media screen and (min-width: $tablet) and (max-width: calc($desktop - 1px )) and (orientation: landscape) {
+    font-size: 16px;
+    line-height: 100%;
+    padding: 10px 14px;
+  }
+
+  @media screen and (min-width: $tablet) and (max-width: calc($desktop - 1px )) and (orientation: landscape) {
+    font-size: 16px;
+    line-height: 150%;
+    padding: 10px 32px;
+  }
 
   @media screen and (max-width: calc($desktop - 1px)) {
     &:first-child {
@@ -281,12 +352,20 @@
   white-space: nowrap;
 
   @include media-px(font-size, 14, 28, 18);
-
   @include media-px(letter-spacing, 1.82, 3.7, 2.34);
-
   @include media(padding, 18px 13px, 38px, 24px 30px);
-
   @include media-px(border-radius, 50, 102, 80);
+
+  @media screen and (max-width: calc($tablet - 1px)) and (orientation: landscape) {
+    font-size: 0.8rem;
+    padding: 12px 24px;
+  }
+
+  @media screen and (min-width: $tablet) and (max-width: calc($desktop - 1px )) and (orientation: landscape) {
+    font-size: 1rem;
+    letter-spacing: 1.82px;
+    padding: 18px 32px;
+  }
 
   @media screen and (min-width: $desktop) {
     position: absolute;
