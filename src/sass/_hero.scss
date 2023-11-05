@@ -1,8 +1,4 @@
 .hero {
-  @media screen and (max-width: calc($tablet - 1px )) and (orientation: landscape) {
-    // height: 652px;
-  }
-
   height: 100vh;
 
   $grad-color: rgba(black, 0.6);

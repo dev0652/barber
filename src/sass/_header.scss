@@ -86,58 +86,6 @@
 }
 
 .nav-item {
-  @media screen and (max-width: calc($desktop - 1px)) {
-    position: relative;
-
-    width: 150px;
-    padding: 15px 0;
-
-    border: 1px solid transparent;
-    border-radius: 10px;
-
-    text-align: center;
-
-    &::before,
-    &::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      right: 0;
-
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      border-radius: 10px;
-    }
-
-    $percentage: 55%;
-
-    &::before {
-      top: 0;
-      bottom: $percentage;
-
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
-      border-bottom: none;
-    }
-
-    &::after {
-      top: $percentage;
-      bottom: 0;
-
-      border-top-left-radius: 0;
-      border-top-right-radius: 0;
-      border-top: none;
-    }
-
-    a {
-      font-family: 'Arial Black', sans-serif;
-      font-size: 14px;
-      font-weight: 900;
-      line-height: 110%;
-      letter-spacing: -0.28px;
-      text-transform: uppercase;
-    }
-  }
-
   @media screen and (min-width: $desktop) {
     &:last-child {
       margin-left: auto;
@@ -259,5 +207,11 @@
   &:hover,
   &:focus-visible {
     color: silver;
+  }
+}
+
+.form-rendering-container {
+  @media screen and (min-width: $desktop) {
+    display: none;
   }
 }
