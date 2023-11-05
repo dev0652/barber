@@ -1,0 +1,12 @@
+.footer {
+  outline: 1px solid red;
+}
+
+.logo-footer-icon {
+  width: 240px;
+  height: 36pxn;
+  @media screen and (min-width: $desktop) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
