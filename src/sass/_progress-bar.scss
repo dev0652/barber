@@ -1,5 +1,5 @@
 .progress-container {
-  @include media(padding-bottom, 40px, 60px, 120px);
+  @include media(padding-bottom, 50px, 70px, 120px);
 
   display: flex;
   flex-direction: column;
@@ -17,7 +17,7 @@
   align-items: center;
   gap: 10px;
 
-  @include media(margin-bottom, 24px, 24px);
+  @include media(margin-bottom, 30px, 35px, _);
   @include media(width, 266px, 372px, 302px);
 
   @media screen and (min-width: $desktop) {
@@ -114,6 +114,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  @include media(margin-top, 15px, 20px, _);
 
   @media screen and (min-width: $desktop) {
     justify-content: space-between;
