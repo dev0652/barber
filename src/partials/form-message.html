@@ -1,66 +1,7 @@
 <section class="container contact-form_container">
-  <div class="contact-form_wrapper">
-    <div class="contact-form_info">
-      <h3 class="contact-form_title">
-        Заповніть <br />
-        форму
-      </h3>
-      <p class="contact-form_description">
-        Ми звʼяжемось з вами та проконсультуємо з усіх питань
-      </p>
-    </div>
-    <form id="contact-form" class="contact_form" autocomplete="off">
-      <label for="name">
-        <input class="contact-form_input" type="text" name="user_name" pattern="[a-zA-Z\u0400-\u04ff\s]{3,30}"
-          title="Please type only letters, e.g. Boris Johnson" required id="name" placeholder="Ваше Ім’я"
-          autocomplete="off" />
-      </label>
+  <!-- prettier-ignore -->
+  <load ="partials/contacts-form.html" />
 
-      <label for="telephone">
-        <input class="contact-form_input" type="tel" name="user_number" pattern="[+\0-9]{10,}"
-          title="Please use format +380XXXXXXXXX" required id="telephone" placeholder="Номер телефону"
-          autocomplete="off" />
-      </label>
-
-      <button class="contact-form_btn" type="submit" value="Send" aria-label="Надіслати">
-        Надіслати
-      </button>
-    </form>
-  </div>
-
-  <div class="contact-info_wrapper">
-    <div class="contact-info_container">
-      <h4 class="contact-info_title">Контакти</h4>
-      <svg class="icon-arrow-bottom">
-        <use href="img/symbol-defs.svg#icon-arrow-bottom"></use>
-      </svg>
-    </div>
-
-    <div class="contact-wrapper">
-      <a class="contact-info_number" href="tel:+380673244206">+380 (67) 324 42 06</a>
-      <a class="contact-info_mail" href="mailto:kursbarber@gmail.com">kursbarber@gmail.com</a>
-      <div class="contact-info_adress-wrapper">
-        <p class="contact-info_adress">
-          Київ, ЖК Кришталеві Джерела вул. Метрологічна 54б
-        </p>
-        <ul class="contact-social-list">
-          <li class="contact-social-item">
-            <a href="" class="contact-social-link" target="_blank" rel="noopener noreferrer nofollow">
-              <svg class="icon-contact">
-                <use href="img/symbol-defs.svg#icon-telegram"></use>
-              </svg>
-            </a>
-          </li>
-          <li class="contact-social-item">
-            <a href="https://instagram.com/barber.course1?igshid=YzAwZjE1ZTI0Zg==" class="contact-social-link"
-              target="_blank" rel="noopener noreferrer nofollow">
-              <svg class="icon-contact">
-                <use href="img/symbol-defs.svg#icon-instagram"></use>
-              </svg>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
+  <!-- prettier-ignore -->
+  <load ="partials/contacts-info.html" />
 </section>
