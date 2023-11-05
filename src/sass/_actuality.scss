@@ -1,6 +1,6 @@
 .actuality {
-  @include media(padding-bottom, 44px, 88px, 100px);
-  @include media(padding-top, 44px, 64px, 117px);
+  @include media(padding-bottom, 50px, 90px, 100px);
+  @include media(padding-top, 50px, 64px, 117px);
 }
 
 // grid container
@@ -9,13 +9,13 @@
   grid-template-columns: 1fr;
   grid-template-rows: 36px 222px 252px;
   grid-column-gap: 0px;
-  grid-row-gap: 13px;
+  grid-row-gap: 30px;
 
   @media screen and (min-width: $tablet) {
     grid-template-columns: 1fr;
     grid-template-rows: 60px 500px 300px;
     grid-column-gap: 0px;
-    grid-row-gap: 20px;
+    grid-row-gap: 30px;
   }
 
   @media screen and (min-width: $desktop) {
