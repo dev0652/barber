@@ -1,3 +1,25 @@
+.feedback-section {
+  background: url('../img/gradient.svg');
+  background-size: 1000px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  @include media(padding-bottom, 25px, 70px, 120px);
+
+  @media screen and (min-width: $tablet) {
+    background: url('../img/gradient.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+  }
+
+  @media screen and (min-width: $desktop) {
+    background: url('../img/gradient.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+  }
+}
+
 .feedback-title {
   text-align: center;
   color: $text-color;
@@ -17,14 +39,22 @@
   gap: 4px;
 }
 
-.feedback-item {
+.feedback-button {
   display: flex;
-  width: 327px;
-  height: 68px;
+  flex-direction: column;
   padding: 15px;
+  width: 327px;
+  min-height: 68px;
   border-radius: 8px;
-  gap: 8px;
+  border: none;
   background: $color-feedback-bg;
+}
+
+.feedback-header {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  gap: 7.5px;
 }
 
 .feedback-img-wrapper {
@@ -41,6 +71,14 @@
   object-position: top;
 }
 
+.feedback-user {
+  color: $text-color;
+  font-family: $montserrat;
+  font-size: 12px;
+  font-weight: $font-weight-600;
+  line-height: 120%;
+}
+
 .feedback-stars {
   display: flex;
 }
@@ -52,4 +90,30 @@
 .feedback-arrow {
   width: 8px;
   height: 8px;
+  transition: transform 0.3s ease;
+}
+
+.rotate-arrow {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+.feedback-text {
+  text-align: start;
+  padding: 0 15px 0 45px;
+  color: $text-color-faded;
+  font-family: $montserrat;
+  font-size: 10px;
+  font-weight: $font-weight-400;
+  line-height: 150%;
+  letter-spacing: -0.032px;
+
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.hidden-feedback {
+  @extend %visually-hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }

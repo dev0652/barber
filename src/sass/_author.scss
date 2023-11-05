@@ -127,8 +127,8 @@
 
 .author-credits-description {
   color: $text-color;
-  font-family: $inter;
-  @include media-px(font-size, 9, 19, 15);
+  font-family: $montserrat;
+  @include media-px(font-size, 8, 19, 15);
   font-weight: $font-weight-600;
   line-height: 120%;
   @include media-px(letter-spacing, -0.18, -0.4, _);

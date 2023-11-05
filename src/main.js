@@ -5,3 +5,4 @@ import './js/send-message';
 import './js/swiper';
 import './js/syllabus-button';
 import './js/syllabus';
+import './js/feedback-button';
