@@ -1,0 +1,126 @@
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  z-index: 10000;
+
+  background: $bg-color;
+
+  display: none;
+
+  @media screen and (max-width: calc($desktop - 1px)) {
+    &.is-open {
+      display: block;
+    }
+  }
+}
+
+.mobile-menu-container {
+  // position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // justify-content: center;
+  height: 100%;
+
+  gap: 21px;
+
+  // background-color: blueviolet;
+
+  $horizontal-padding: 15px;
+  padding-left: $horizontal-padding;
+  padding-right: $horizontal-padding;
+
+  @media screen and (min-width: $mobile) {
+    width: $mobile;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    $horizontal-padding: 21px;
+    padding-left: $horizontal-padding;
+    padding-right: $horizontal-padding;
+  }
+
+  @media screen and (min-width: $tablet) {
+    width: $tablet;
+    $horizontal-padding: 40px;
+    padding-left: $horizontal-padding;
+    padding-right: $horizontal-padding;
+  }
+}
+
+.mobile-nav-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  row-gap: 16px;
+  column-gap: 17px;
+}
+
+.mobile-nav-link {
+  font-family: 'Arial Black', sans-serif;
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 110%;
+  letter-spacing: -0.28px;
+  text-transform: uppercase;
+
+  color: white;
+
+  display: block;
+  padding: 15px 0;
+}
+
+.mobile-nav-item {
+  position: relative;
+
+  width: 150px;
+  text-align: center;
+
+  border: 1px solid transparent;
+  border-radius: 10px;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+  }
+
+  $percentage: 55%;
+
+  &::before {
+    top: 0;
+    bottom: $percentage;
+
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: none;
+  }
+
+  &::after {
+    top: $percentage;
+    bottom: 0;
+
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-top: none;
+  }
+}
+
+.mobile-menu-button {
+  align-self: end;
+  padding: 10px 0;
+  margin-top: 15px ;
+}
+
+// @media screen and (max-width: calc($desktop - 1px)) {}
