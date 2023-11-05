@@ -7,8 +7,6 @@ export default function () {
     hero: document.querySelector('.hero'),
 
     // Program
-    detailsToggle: document.querySelector('.details-toggle-button'),
-    syllabusCard: document.querySelector('.syllabus-card'),
     syllabusRenderCnt: document.querySelector('#syllabus-rendering-container'),
 
     // Scroll to top:

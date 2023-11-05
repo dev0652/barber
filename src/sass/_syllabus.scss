@@ -7,10 +7,12 @@
 }
 
 .syllabus-card {
-  position: relative;
+  @media screen and (max-width: calc($tablet - 1px)) {
+    position: relative;
+  }
 }
 
-.syllabus-card-description {
+.syllabus-card-visible {
   @media screen and (max-width: calc($tablet - 1px)) {
     position: relative;
     border: 0.5px solid rgba(243, 243, 243, 0.2);
@@ -30,7 +32,7 @@
 
   @include media(padding, 20px 15px 25px, 26px 6px 18px, 40px);
 
-  .syllabus-card.details-expanded & {
+  &.content-expanded {
     background: linear-gradient(
         0deg,
         rgba(0, 0, 0, 0.2) 0%,
@@ -57,7 +59,6 @@
 
   @media screen and (min-width: $tablet) {
     min-width: 30px; // crutch.js
-
   }
 
   @media screen and (min-width: $tablet) {
@@ -103,8 +104,6 @@
   justify-content: space-between;
   // gap: 25px;
   width: 100%;
-
-  
 }
 
 .hours-distribution {
@@ -141,7 +140,7 @@
   @include media-px(font-size, 8, 16);
 }
 
-.details-toggle-button {
+.collapsible-toggle {
   @include media-px(--size, 75, 123, 121);
   min-height: var(--size);
   min-width: var(--size);
@@ -167,7 +166,7 @@
     right: -8px;
     bottom: -12px;
 
-    z-index: 10; // so that it is over the details when they slide out
+    z-index: 10; // to keep it on top of the collapsible block while it slides out
   }
 
   @media screen and (min-width: $tablet) {
@@ -179,11 +178,11 @@
   }
 
   transition: color 400ms, background-color 400ms;
-  
-  &:hover, &:focus-visible {
+
+  &:hover,
+  &:focus-visible {
     color: black;
     background-color: white;
-
   }
 
   &:active {
@@ -192,7 +191,7 @@
   }
 }
 
-.syllabus-card-expand-icon {
+.syllabus-expand-icon {
   @include media-px(--size, 8, 15, 10);
   height: var(--size);
   width: var(--size);
@@ -207,7 +206,7 @@
 
   transition: transform 300ms ease-in;
 
-  .syllabus-card.details-expanded & {
+  .syllabus-card.expanded & {
     transform: rotate(180deg);
 
     @media screen and (min-width: $tablet) {
@@ -216,31 +215,23 @@
   }
 }
 
-.details-overlay {
+.syllabus-card-collapsible-wrapper {
+  max-height: 0px;
   overflow: hidden;
-  // position: relative;
+  transition: max-height 600ms ease-out;
+
+  // &.expanded {
+  //   max-height: 600px;
+  // }
 }
 
-.syllabus-card-details {
+.syllabus-card-collapsible {
   @include media(padding, 19px 30px 16px, 35px 66px, 40px 83px);
 
-  transition: transform 600ms ease-in;
-
-  .syllabus-card:not(.details-expanded) & {
-    @extend %visually-hidden;
-    // top: 0;
-    transform: translateY(-100%);
-    pointer-events: none;
-  }
-
-  .syllabus-card.details-expanded & {
-    transform: translateY(0);
-
-    @media screen and (min-width: $desktop) {
-      display: flex;
-      gap: 70px;
-      width: 100%;
-    }
+  @media screen and (min-width: $desktop) {
+    display: flex;
+    gap: 70px;
+    width: 100%;
   }
 }
 
@@ -325,14 +316,12 @@
 
     .syllabus-item:last-of-type & {
       // flex-grow: 1;
-      max-width: 50%; 
+      max-width: 50%;
       // justify-self: center;
       margin-left: auto;
       margin-right: auto;
     }
   }
-
-  
 }
 
 .expected-results-title {

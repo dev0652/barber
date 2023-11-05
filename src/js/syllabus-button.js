@@ -1,66 +1,78 @@
-import getRefs from '/js/refs';
+import getRefs from './refs';
 const { syllabusRenderCnt } = getRefs();
 
 // ***********************************************
 
 export const expandButtonClickHandler = event => {
-  if (!event.target.classList.contains('details-toggle-button')) return;
+  if (!event.target.classList.contains('collapsible-toggle')) return;
 
-  // Get the current button's parent card
+  // 1.
+  // Get all cards
   const cardsNodeList = document.querySelectorAll('.syllabus-card');
   const cards = Array.from(cardsNodeList);
 
-  const buttonsNodeList = document.querySelectorAll('.details-toggle-button');
-  const buttons = Array.from(buttonsNodeList);
+  // 2.
+  // Get the current button's parent card...
+  const currentCard = cards.find(card => {
+    const button = card.querySelector('.collapsible-toggle');
+    return button.dataset.id === event.target.dataset.id;
+  });
 
-  const currentCard = cards.find(
-    card => card.dataset.id === event.target.dataset.id
-  );
+  // ...and it's blocks:
+  const visible = currentCard.querySelector('.syllabus-card-visible');
+  const coll = currentCard.querySelector('.syllabus-card-collapsible-wrapper');
 
-  // Check if current card if expanded
-  if (currentCard.classList.contains('details-expanded')) {
-    // If it is, collapse it...
-    currentCard.classList.remove('details-expanded');
+  // 2.
+  // Check if another card if expanded...
+  const expandedCard = cards.find(card => {
+    if (card === currentCard) return false;
 
-    // ...revert it's button's text to default...
-    event.target.innerHTML = 'більше';
+    const cardVis = card.querySelector('.syllabus-card-visible');
+    return cardVis.classList.contains('content-expanded');
+  });
 
-    return;
-  } else {
-    // Check if any other card if expanded...
-    const expandedCard = cards.find(card =>
-      card.classList.contains('details-expanded')
-    );
+  // ...and if it is, collapse it
+  if (expandedCard) {
+    const expandedCardRefs = {
+      coll: expandedCard.querySelector('.syllabus-card-collapsible-wrapper'),
+      visible: expandedCard.querySelector('.syllabus-card-visible'),
+      button: expandedCard.querySelector('.collapsible-toggle'),
+    };
 
-    if (expandedCard) {
-      // ...collapse it...
-      expandedCard.classList.remove('details-expanded');
-
-      // ...and revert it's button's text to default...
-      const expandedCardButton = buttons.find(
-        button => button.dataset.id === expandedCard.dataset.id
-      );
-
-      expandedCardButton.innerHTML = 'більше';
-    }
+    expandedCardRefs.visible.classList.remove('content-expanded');
+    expandedCardRefs.button.innerHTML = 'більше';
+    expandedCardRefs.coll.style.maxHeight = null;
   }
 
-  // Expand current card
-  currentCard.classList.add('details-expanded');
+  // 4.
+  // Expand or collapse the current card
+  visible.classList.toggle('content-expanded');
 
-  // ...set it's button's text to 'Less'...
-  event.target.innerHTML = 'менше';
+  if (coll.style.maxHeight) {
+    coll.style.maxHeight = null;
+    event.target.innerHTML = 'більше';
+    //
+  } else {
+    coll.style.maxHeight = coll.scrollHeight + 'px';
+    event.target.innerHTML = 'менше';
 
- // ...check if the expanded card will cross the lower edge of the screen
- const currentCardPosition = currentCard.getBoundingClientRect();
-  
- const isLowerPartObscured = currentCardPosition.bottom > (window.innerHeight || document.documentElement.clientHeight);
+    // Check if the expanded card will cross the lower edge of the screen
+    // const currentCardRect = currentCard.getBoundingClientRect();
+    // console.log('currentCard height: ', currentCardRect.height);
 
- // ...and if it will, scroll the whole of the card into view
- isLowerPartObscured && currentCard.scrollIntoView({
-     behavior: 'smooth',
-     block: 'end',
-   });
+    // const isLowerPartObscured =
+    //   currentCardRect.bottom >
+    //   (window.innerHeight || document.documentElement.clientHeight);
+
+    // // const isLowerPartObscured = currentCard.scrollHeight;
+
+    // // ...and if it will, scroll the whole of the card into view
+    // isLowerPartObscured &&
+    //   currentCard.scrollIntoView({
+    //     behavior: 'smooth',
+    //     block: 'end',
+    //   });
+  }
 };
 
 syllabusRenderCnt.addEventListener('click', expandButtonClickHandler);
