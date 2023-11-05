@@ -8,6 +8,11 @@
   z-index: 10000;
 
   background: $bg-color;
+  padding: 25px 0;
+
+  @media screen and (max-width: calc($desktop - 1px)) and (orientation: landscape) {
+    padding: 10px 0;
+  }
 
   display: none;
 
@@ -19,17 +24,17 @@
 }
 
 .mobile-menu-container {
-  // position: relative;
-
   display: flex;
+  height: 100%;
   flex-direction: column;
   align-items: center;
-  // justify-content: center;
-  height: 100%;
-
   gap: 21px;
 
-  // background-color: blueviolet;
+  @media screen and (max-width: calc($desktop - 1px)) and (orientation: landscape) {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    min-width: 100%;
+  }
 
   $horizontal-padding: 15px;
   padding-left: $horizontal-padding;
@@ -46,6 +51,10 @@
     padding-right: $horizontal-padding;
   }
 
+  @media screen and (min-width: $tablet) and (max-width: calc($tablet - 1px)) and (orientation: landscape) {
+    column-gap: 10%;
+  }
+
   @media screen and (min-width: $tablet) {
     width: $tablet;
     $horizontal-padding: 40px;
@@ -54,12 +63,34 @@
   }
 }
 
+.mobile-menu-nav {
+  @media screen and (min-width: $tablet) and (max-width: calc($desktop - 1px)) and (min-height: 500px) and (orientation: landscape) {
+    flex-grow: 1;
+    height: 90%;
+  }
+}
+
 .mobile-nav-list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 
   row-gap: 16px;
   column-gap: 17px;
+
+  @media screen and (max-width: calc($desktop - 1px)) and (orientation: landscape) {
+    column-gap: 5%;
+  }
+
+  @media screen and (min-width: $tablet) and (max-width: calc($desktop - 1px)) and (orientation: landscape) {
+    height: 100%;
+  }
+
+  @media screen and (min-width: $tablet) and (max-width: calc($desktop - 1px)) and (min-height: 500px) and (orientation: landscape) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
 }
 
 .mobile-nav-link {
@@ -81,6 +112,10 @@
 
   width: 150px;
   text-align: center;
+
+  @media screen and (max-width: calc($tablet - 1px)) and (orientation: landscape) {
+    width: 45%;
+  }
 
   border: 1px solid transparent;
   border-radius: 10px;
@@ -120,7 +155,20 @@
 .mobile-menu-button {
   align-self: end;
   padding: 10px 0;
-  margin-top: 15px ;
+
+  @media screen and (max-width: calc($desktop - 1px)) and (orientation: landscape) {
+    align-self: start;
+    width: 100px;
+  }
+
+  @media screen and (max-width: calc($desktop - 1px)) and (orientation: landscape) {
+    align-self: start;
+    width: 100px;
+  }
+
+  @media screen and (max-width: calc($desktop - 1px)) and (min-height: 500px) and (orientation: landscape) {
+    width: 50px;
+  }
 }
 
 // @media screen and (max-width: calc($desktop - 1px)) {}

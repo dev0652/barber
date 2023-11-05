@@ -3,12 +3,15 @@
   <div class="mobile-menu-container">
 
     <!-- Mobile menu close button -->
-    <button type="button" class="burger-button mobile-menu-button" aria-label="Кнопка закриття мобільного меню"
-      data-menu-open-button>
+    <button type="button" class="burger-button mobile-menu-button" aria-label="Кнопка закриття мобільного меню" data-menu-close-button>
       <svg class="burger-button-icon" alt="Бургер-меню" width="53" height="32">
         <use href="img/symbol-defs.svg#icon-burger"></use>
       </svg>
     </button>
+
+    <!-- Form -->
+    <!-- prettier-ignore -->
+    <load ="partials/contacts-form.html" />
 
     <!-- Mobile menu navigation buttons -->
     <nav class="mobile-menu-nav">
@@ -46,13 +49,5 @@
         </li>
       </ul>
     </nav>
-    
-    <!-- Form -->
-    <div class="form-rendering-container">
-      <!-- prettier-ignore -->
-      <load ="partials/form-message.html" />
-
-    </div>
-
   </div>
 </div>

@@ -1,17 +1,16 @@
 const refs = {
-  menuOpenButton: document.querySelector('[data-menu-open-button]'),
-  // menuOpenIcon: document.querySelector('.mobile-menu-open-icon'),
-  // menuCloseIcon: document.querySelector('.mobile-menu-close-icon'),
   menu: document.querySelector('[data-menu]'),
+  menuOpenButton: document.querySelector('[data-menu-open-button]'),
+  menuCloseButton: document.querySelector('[data-menu-close-button]'),
+  contactsFormWrapper: document.querySelector('.contact-form_wrapper'),
 };
 
 const toggleModal = () => {
   //
   refs.menu.classList.toggle('is-open');
-  // refs.menuCloseIcon.classList.toggle('is-hidden');
-  // refs.menuOpenIcon.classList.toggle('is-hidden');
+  refs.contactsFormWrapper.classList.toggle('is-in-mobile-menu');
 
-  if (refs.menuOpenIcon.classList.contains('is-hidden')) {
+  if (refs.menu.classList.contains('is-open')) {
     document.body.style.overflow = 'hidden';
   } else {
     document.body.style.overflow = '';
@@ -19,3 +18,4 @@ const toggleModal = () => {
 };
 
 refs.menuOpenButton.addEventListener('click', toggleModal);
+refs.menuCloseButton.addEventListener('click', toggleModal);
