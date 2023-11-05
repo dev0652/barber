@@ -12,5 +12,9 @@ export default function () {
     // Scroll to top:
     // scrollToTopButton: document.querySelector('.back-to-top'),
     // toTopTarget: document.querySelector('.to-top-target'),
+
+    // Feedback
+    feedbackItems: document.querySelectorAll('.feedback-item'),
+    feedbackButtons: document.querySelectorAll('.feedback-button'),
   };
 }

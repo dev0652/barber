@@ -1,6 +1,6 @@
 .preference {
   background: url('../img/gradient.svg');
-  background-size: 1000px;
+  background-size: 800px;
   background-repeat: no-repeat;
   background-position: bottom;
   @include media(padding-bottom, 25px, 70px, 120px);
@@ -27,8 +27,7 @@
   line-height: 110%;
   text-align: center;
 
-  margin-bottom: 11px;
-
+  @include media(margin-bottom, 20px, 30px, 60px);
   @include media(font-size, 22px, 36px, 60px);
   @include media(letter-spacing, -1.5px, -1.074px, -1.5px);
 }
@@ -55,7 +54,7 @@
   font-weight: $font-weight-600;
   line-height: 150%;
   font-size: 18px;
-  margin-bottom: 22px;
+  margin-bottom: 30px;
 
   @media screen and (min-width: $tablet) {
     display: none;
