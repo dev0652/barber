@@ -20,15 +20,26 @@
   }
 }
 
+.feedback-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .feedback-title {
   text-align: center;
   color: $text-color;
   font-family: $arial;
-  font-size: 26px;
   font-weight: $font-weight-900;
-  line-height: 110%;
-  letter-spacing: -0.52px;
-  margin-bottom: 26px;
+  @include media-px(font-size, 26, 43, 60);
+  @include media(line-height, 110%, 110%, 90%);
+  @include media(letter-spacing, -0.52px, -0.86, -0.9);
+  @include media-px(margin-bottom, 26, 40, 0);
+
+  @media screen and (min-width: $tablet) {
+    width: 390px;
+  }
 }
 
 .feedback-list {
@@ -42,8 +53,8 @@
 .feedback-button {
   display: flex;
   flex-direction: column;
-  padding: 15px;
-  width: 327px;
+  @include media-px(padding, 15, 27, 27);
+  @include media-px(width, 320, 600, 640);
   min-height: 68px;
   border-radius: 8px;
   border: none;
@@ -55,18 +66,24 @@
   &:focus {
     background: $color-dark-grey;
   }
+
+  @media screen and (min-width: $desktop) {
+    padding-left: 40px;
+  }
 }
 
 .feedback-header {
   display: flex;
   width: 100%;
+  justify-content: center;
+  align-items: center;
   flex-direction: row;
-  gap: 7.5px;
+  @include media-px(gap, 7.5, 14, 14);
 }
 
 .feedback-img-wrapper {
-  width: 38px;
-  height: 38px;
+  @include media-px(width, 38, 68, 68);
+  @include media-px(height, 38, 68, 68);
   border-radius: 50%;
   overflow: hidden;
 }
@@ -81,22 +98,32 @@
 .feedback-user {
   color: $text-color;
   font-family: $montserrat;
-  font-size: 12px;
+  @include media-px(font-size, 12, 22, 18);
   font-weight: $font-weight-600;
   line-height: 120%;
+  @include media-px(margin-bottom, 3, 5, 5);
 }
 
-.feedback-stars {
+.feedback-stars-block {
   display: flex;
+}
+
+.feedback-star {
+  @include media-px(width, 10, 20, 20);
+  @include media-px(height, 10, 20, 20);
 }
 
 .feedback-arrow-wrapper {
   margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: flex-start;
 }
 
 .feedback-arrow {
-  width: 8px;
-  height: 8px;
+  @include media-px(width, 8, 14, 14);
+  @include media-px(height, 8, 14, 14);
   transition: transform 0.3s ease;
 }
 
@@ -107,13 +134,14 @@
 
 .feedback-text {
   text-align: start;
-  padding: 0 15px 0 45px;
+  @include media-px(padding-left, 45, 82, 82);
+  @include media-px(padding-right, 15, 27, 27);
   color: $text-color-faded;
   font-family: $montserrat;
-  font-size: 10px;
+  @include media-px(font-size, 10, 16, 18);
   font-weight: $font-weight-400;
   line-height: 150%;
-  letter-spacing: -0.032px;
+  @include media-px(letter-spacing, -0.032, -0.051, 0.058);
 
   opacity: 1;
   transition: opacity 0.3s ease;
