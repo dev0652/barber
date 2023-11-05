@@ -1,23 +1,18 @@
 <!DOCTYPE html>
 <html lang="uk">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Офлайн-курси барберів з нуля в Києві. Отримайте прибуткову професію всього за 4 тижні. Міжнародний сертифікат та працевлаштування"
-    />
-    <meta
-      name="theme-color"
-      media="(prefers-color-scheme: dark)"
-      content="#1b1b1b"
-    />
 
-    <title>Barber</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Офлайн-курси барберів з нуля в Києві. Отримайте прибуткову професію всього за 4 тижні. Міжнародний сертифікат та працевлаштування" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1b" />
 
-    <!-- Favicon -->
-    <link
+  <title>Barber</title>
+
+  <!-- Favicon -->
+  <link
   type="image/x-icon"
   rel="shortcut icon"
   href="/barber/assets/favicon-35ba6409.ico"
@@ -50,8 +45,8 @@
 <link rel="manifest" href="data:application/manifest+json;base64,ewogICJuYW1lIjogIkJhcmJlciIsCiAgInNob3J0X25hbWUiOiAiQmFyYmVyIiwKICAiaWNvbnMiOiBbCiAgICB7CiAgICAgICJzcmMiOiAiL2FuZHJvaWQtY2hyb21lLTE5MngxOTIucG5nIiwKICAgICAgInNpemVzIjogIjE5MngxOTIiLAogICAgICAidHlwZSI6ICJpbWFnZS9wbmciCiAgICB9LAogICAgewogICAgICAic3JjIjogIi9hbmRyb2lkLWNocm9tZS01MTJ4NTEyLnBuZyIsCiAgICAgICJzaXplcyI6ICI1MTJ4NTEyIiwKICAgICAgInR5cGUiOiAiaW1hZ2UvcG5nIgogICAgfQogIF0sCiAgInRoZW1lX2NvbG9yIjogIiNmZmZmZmYiLAogICJiYWNrZ3JvdW5kX2NvbG9yIjogIiNmZmZmZmYiLAogICJkaXNwbGF5IjogInN0YW5kYWxvbmUiCn0K" />
 
 
-    <!-- Fonts -->
-    <!-- Inter & Montserrat -->
+  <!-- Fonts -->
+  <!-- Inter & Montserrat -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
@@ -61,14 +56,14 @@
 <!-- Arial Black -->
 <link href="https://db.onlinewebfonts.com/c/8984ea7fcbebdcfe77fbbc1b86e7cfe6?family=Arial+Black" rel="stylesheet" />
 
-    <!-- Styles -->
-    
-    <script type="module" crossorigin src="/barber/assets/index-ff97e736.js"></script>
-    <link rel="stylesheet" href="/barber/assets/index-7fa5bcf9.css">
-  </head>
+  <!-- Styles -->
+  
+  <script type="module" crossorigin src="/barber/assets/index-aa3affc1.js"></script>
+  <link rel="stylesheet" href="/barber/assets/index-276583ca.css">
+</head>
 
-  <body>
-    <header class="header">
+<body>
+  <header class="header">
   <div class="header-container">
     <nav class="nav">
       <ul class="nav-list">
@@ -104,18 +99,98 @@
 
     <button type="button" class="header-button">Приєднатись</button>
 
-    <button type="button" class="burger-button">
+    <button type="button" class="burger-button" data-menu-open-button>
       <svg class="burger-button-icon" alt="Іконка мобільного меню" width="53" height="32">
         <use href="/barber/assets/symbol-defs-20e60591.svg#icon-burger"></use>
       </svg>
-
       Меню
     </button>
   </div>
 </header>
+  <!--Mobile-menu -->
+<div class="mobile-menu" data-menu>
+  <div class="mobile-menu-container">
 
-    <main>
-      <section class="hero">
+    <!-- Mobile menu close button -->
+    <button type="button" class="burger-button mobile-menu-button" aria-label="Кнопка закриття мобільного меню" data-menu-close-button>
+      <svg class="burger-button-icon" alt="Бургер-меню" width="53" height="32">
+        <use href="/barber/assets/symbol-defs-20e60591.svg#icon-burger"></use>
+      </svg>
+    </button>
+
+    <!-- Form -->
+    <!-- prettier-ignore -->
+    <!-- Contacts from -->
+
+<div class="contact-form_wrapper">
+  <div class="contact-form_info">
+    <h3 class="contact-form_title">
+      Заповніть форму
+    </h3>
+    <p class="contact-form_description">
+      Ми звʼяжемось з вами та проконсультуємо з усіх питань
+    </p>
+  </div>
+  <form id="contact-form" class="contact_form" autocomplete="off">
+    <label for="name">
+      <input class="contact-form_input" type="text" name="user_name" pattern="[a-zA-Z\u0400-\u04ff\s]{3,30}"
+        title="Please type only letters, e.g. Boris Johnson" required id="name" placeholder="Ваше Ім’я"
+        autocomplete="off" />
+    </label>
+
+    <label for="telephone">
+      <input class="contact-form_input" type="tel" name="user_number" pattern="[+\0-9]{10,}"
+        title="Please use format +380XXXXXXXXX" required id="telephone" placeholder="Номер телефону"
+        autocomplete="off" />
+    </label>
+
+    <button class="contact-form_btn" type="submit" value="Send" aria-label="Надіслати">
+      Відправити
+    </button>
+  </form>
+</div>
+
+    <!-- Mobile menu navigation buttons -->
+    <nav class="mobile-menu-nav">
+      <ul class="mobile-nav-list">
+        <li class="mobile-nav-item">
+          <a href="#" class="mobile-nav-link">Головна</a>
+        </li>
+
+        <li class="mobile-nav-item">
+          <a href="#" class="mobile-nav-link">Переваги</a>
+        </li>
+
+        <li class="mobile-nav-item">
+          <a href="#" class="mobile-nav-link">Результат</a>
+        </li>
+
+        <li class="mobile-nav-item">
+          <a href="#" class="mobile-nav-link">Програма</a>
+        </li>
+
+        <li class="mobile-nav-item">
+          <a href="#" class="mobile-nav-link">Автор Курсу</a>
+        </li>
+
+        <li class="mobile-nav-item">
+          <a href="#" class="mobile-nav-link">Відгуки</a>
+        </li>
+
+        <li class="mobile-nav-item">
+          <a href="#" class="mobile-nav-link">Бонуси</a>
+        </li>
+
+        <li class="mobile-nav-item">
+          <a href="#" class="mobile-nav-link">Тариф</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+  <main>
+    <section class="hero">
   <div class="hero-container brackets">
     <!--  -->
     <div class="hero-text-block">
@@ -170,7 +245,7 @@
     <!--  -->
   </div>
 </section>
-      <section class="container actuality">
+    <section class="container actuality">
   <div class="actuality_wrapper">
     <div class="actuality_picture_wrapper">
       <img class="actuality_picture" src="/barber/assets/actuallity1-88866bdc.webp"
@@ -218,7 +293,7 @@
     </li>
   </ul>
 </section>
-      <section class="preference">
+    <section class="preference">
   <div class="container">
     <h2 class="preference_title">
       Заробляйте від 40000 гривень<br />
@@ -343,7 +418,7 @@
   </div>
 </section>
 
-      <section class="result-section container">
+    <section class="result-section container">
   <div class="result-wrapper">
     <div class="result-info-wrapper">
       <h2 class="result-title">Ваш результат після завершення курсу</h2>
@@ -409,7 +484,7 @@
     </div>
   </div>
 </section>
-      <section class="program">
+    <section class="program">
   <div class="program-container">
 
     <!-- Title and duration -->
@@ -451,7 +526,7 @@
 
   </div>
 </section>
-      <section class="container progress-container">
+    <section class="container progress-container">
   <div class="progress-wrapper" role="progressbar" title="Number of vacant places" aria-valuenow="70">
     <p class="progress-description">
       Кількість місць обмежена:
@@ -485,7 +560,7 @@
     </div>
   </div>
 </section>
-      <section class="container success-story">
+    <section class="container success-story">
   <ul class="success-story_list">
     <li class="success-story_item">
       <div class="success-story_info_wrapper">
@@ -594,7 +669,7 @@
     </li>
   </ul>
 </section>
-      <section class="author-section container">
+    <section class="author-section container">
   <div class="author-title-wrapper">
     <h2 class="author-title">Автор курсу</h2>
     <p class="author-description">Віталій - барбер та власник барбершопу</p>
@@ -657,7 +732,7 @@
     </div>
   </div>
 </section>
-      <section class="feedback-section">
+    <section class="feedback-section">
   <div class="container">
     <h2 class="feedback-title">Історії і відгуки студентів</h2>
     <ul class="feedback-list">
@@ -895,75 +970,79 @@
   </div>
 </section>
 
-      <section class="container contact-form_container">
-  <div class="contact-form_wrapper">
-    <div class="contact-form_info">
-      <h3 class="contact-form_title">
-        Заповніть <br />
-        форму
-      </h3>
-      <p class="contact-form_description">
-        Ми звʼяжемось з вами та проконсультуємо з усіх питань
+    <section class="container contact-form_container">
+  <!-- prettier-ignore -->
+  <!-- Contacts from -->
+
+<div class="contact-form_wrapper">
+  <div class="contact-form_info">
+    <h3 class="contact-form_title">
+      Заповніть форму
+    </h3>
+    <p class="contact-form_description">
+      Ми звʼяжемось з вами та проконсультуємо з усіх питань
+    </p>
+  </div>
+  <form id="contact-form" class="contact_form" autocomplete="off">
+    <label for="name">
+      <input class="contact-form_input" type="text" name="user_name" pattern="[a-zA-Z\u0400-\u04ff\s]{3,30}"
+        title="Please type only letters, e.g. Boris Johnson" required id="name" placeholder="Ваше Ім’я"
+        autocomplete="off" />
+    </label>
+
+    <label for="telephone">
+      <input class="contact-form_input" type="tel" name="user_number" pattern="[+\0-9]{10,}"
+        title="Please use format +380XXXXXXXXX" required id="telephone" placeholder="Номер телефону"
+        autocomplete="off" />
+    </label>
+
+    <button class="contact-form_btn" type="submit" value="Send" aria-label="Надіслати">
+      Відправити
+    </button>
+  </form>
+</div>
+
+  <!-- prettier-ignore -->
+  <!-- Contacts info block -->
+<div class="contact-info_wrapper">
+  <div class="contact-info_container">
+    <h4 class="contact-info_title">Контакти</h4>
+    <svg class="icon-arrow-bottom">
+      <use href="/barber/assets/symbol-defs-20e60591.svg#icon-arrow-bottom"></use>
+    </svg>
+  </div>
+
+  <div class="contact-wrapper">
+    <a class="contact-info_number" href="tel:+380673244206">+380 (67) 324 42 06</a>
+    <a class="contact-info_mail" href="mailto:kursbarber@gmail.com">kursbarber@gmail.com</a>
+    <div class="contact-info_adress-wrapper">
+      <p class="contact-info_adress">
+        Київ, ЖК Кришталеві Джерела вул. Метрологічна, 54б
       </p>
-    </div>
-    <form id="contact-form" class="contact_form" autocomplete="off">
-      <label for="name">
-        <input class="contact-form_input" type="text" name="user_name" pattern="[a-zA-Z\u0400-\u04ff\s]{3,30}"
-          title="Please type only letters, e.g. Boris Johnson" required id="name" placeholder="Ваше Ім’я"
-          autocomplete="off" />
-      </label>
-
-      <label for="telephone">
-        <input class="contact-form_input" type="tel" name="user_number" pattern="[+\0-9]{10,}"
-          title="Please use format +380XXXXXXXXX" required id="telephone" placeholder="Номер телефону"
-          autocomplete="off" />
-      </label>
-
-      <button class="contact-form_btn" type="submit" value="Send" aria-label="Надіслати">
-        Надіслати
-      </button>
-    </form>
-  </div>
-
-  <div class="contact-info_wrapper">
-    <div class="contact-info_container">
-      <h4 class="contact-info_title">Контакти</h4>
-      <svg class="icon-arrow-bottom">
-        <use href="/barber/assets/symbol-defs-20e60591.svg#icon-arrow-bottom"></use>
-      </svg>
-    </div>
-
-    <div class="contact-wrapper">
-      <a class="contact-info_number" href="tel:+380673244206">+380 (67) 324 42 06</a>
-      <a class="contact-info_mail" href="mailto:kursbarber@gmail.com">kursbarber@gmail.com</a>
-      <div class="contact-info_adress-wrapper">
-        <p class="contact-info_adress">
-          Київ, ЖК Кришталеві Джерела вул. Метрологічна 54б
-        </p>
-        <ul class="contact-social-list">
-          <li class="contact-social-item">
-            <a href="" class="contact-social-link" target="_blank" rel="noopener noreferrer nofollow">
-              <svg class="icon-contact">
-                <use href="/barber/assets/symbol-defs-20e60591.svg#icon-telegram"></use>
-              </svg>
-            </a>
-          </li>
-          <li class="contact-social-item">
-            <a href="https://instagram.com/barber.course1?igshid=YzAwZjE1ZTI0Zg==" class="contact-social-link"
-              target="_blank" rel="noopener noreferrer nofollow">
-              <svg class="icon-contact">
-                <use href="/barber/assets/symbol-defs-20e60591.svg#icon-instagram"></use>
-              </svg>
-            </a>
-          </li>
-        </ul>
-      </div>
+      <ul class="contact-social-list">
+        <li class="contact-social-item">
+          <a href="" class="contact-social-link" target="_blank" rel="noopener noreferrer nofollow">
+            <svg class="icon-contact">
+              <use href="/barber/assets/symbol-defs-20e60591.svg#icon-telegram"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="contact-social-item">
+          <a href="https://instagram.com/barber.course1?igshid=YzAwZjE1ZTI0Zg==" class="contact-social-link"
+            target="_blank" rel="noopener noreferrer nofollow">
+            <svg class="icon-contact">
+              <use href="/barber/assets/symbol-defs-20e60591.svg#icon-instagram"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
+</div>
 </section>
-    </main>
+  </main>
 
-    <footer class="footer-desktop">
+  <footer class="footer-desktop">
   <div class="container footer">
     <div class="footer-container1">
       <div class="logo-footer-wrapper">
@@ -1072,6 +1151,7 @@
 </footer>
 
 
-    
-  </body>
+  
+</body>
+
 </html>
