@@ -1,4 +1,8 @@
 .tariffs-section {
+  background: url('../img/gradient.svg');
+  background-size: 1500px;
+  background-repeat: no-repeat;
+  background-position: bottom;
   padding-bottom: 50px;
 }
 
@@ -30,6 +34,7 @@
 }
 
 .benefits-item {
+  max-width: 330px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -135,4 +140,95 @@
 
 .all-equal-grey {
   color: $text-color-all-equal;
+}
+
+.tariff-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 40px 40px 40px;
+  border-radius: 14px;
+  background: $tariff-card-bg;
+}
+
+.barcode-wrapper {
+  display: flex;
+}
+
+.tariff-card-content {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.tariffs-old-price {
+  color: $text-color-benefits-faded;
+  text-decoration: line-through;
+  font-family: $arial;
+  font-size: 26px;
+  font-weight: $font-weight-900;
+  line-height: 100%;
+  letter-spacing: -0.523px;
+}
+
+.tariffs-new-price {
+  margin-bottom: 10px;
+  color: $text-color;
+  font-family: $arial;
+  font-size: 43px;
+  font-weight: $font-weight-900;
+  line-height: 120%;
+}
+
+.register-text {
+  margin-bottom: 40px;
+  color: $text-color;
+  font-family: $inter;
+  font-size: 14px;
+  font-weight: $font-weight-400;
+  line-height: 155%;
+}
+
+.tariffs-duration-text {
+  margin-bottom: 10px;
+  color: $text-color;
+  font-family: $arial;
+  font-size: 46px;
+  font-weight: $font-weight-900;
+  line-height: 110%;
+}
+
+.tariffs-start {
+  margin-bottom: 45px;
+  color: $text-color;
+  font-family: $inter;
+  font-size: 14px;
+  font-weight: $font-weight-400;
+  line-height: 22px;
+}
+
+.tariffs-startdate {
+  font-weight: $font-weight-700;
+}
+
+.tariffs-payment {
+  margin-bottom: 45px;
+  display: flex;
+  gap: 27px;
+}
+
+.tariffs-payment-text {
+  color: $text-color;
+  font-family: $inter;
+  font-size: 12px;
+  font-weight: $font-weight-400;
+  line-height: 120%;
+}
+
+.tariff-btn {
+  align-self: center;
+  padding: 13px 26px;
+  border-radius: 65px;
 }
