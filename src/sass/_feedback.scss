@@ -25,21 +25,24 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media screen and (min-width: $desktop) {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
 }
 
 .feedback-title {
-  text-align: center;
+  @include media-px(width, _, 390, 548);
+  @include media(text-align, center, center, start);
   color: $text-color;
   font-family: $arial;
   font-weight: $font-weight-900;
   @include media-px(font-size, 26, 43, 60);
   @include media(line-height, 110%, 110%, 90%);
-  @include media(letter-spacing, -0.52px, -0.86, -0.9);
+  @include media-px(letter-spacing, -0.52, -0.86, -0.9);
   @include media-px(margin-bottom, 26, 40, 0);
-
-  @media screen and (min-width: $tablet) {
-    width: 390px;
-  }
 }
 
 .feedback-list {
@@ -54,7 +57,7 @@
   display: flex;
   flex-direction: column;
   @include media-px(padding, 15, 27, 27);
-  @include media-px(width, 320, 600, 640);
+  @include media-px(width, 320, 600, 639);
   min-height: 68px;
   border-radius: 8px;
   border: none;
@@ -151,4 +154,9 @@
   @extend %visually-hidden;
   opacity: 0;
   transition: opacity 0.3s ease;
+}
+
+.feedback-desktop-stroke {
+  @include media(display, none, none, block);
+  margin-top: 50px;
 }
