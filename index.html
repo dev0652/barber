@@ -63,8 +63,8 @@
 
     <!-- Styles -->
     
-    <script type="module" crossorigin src="/barber/assets/index-630b5e13.js"></script>
-    <link rel="stylesheet" href="/barber/assets/index-a0cb7470.css">
+    <script type="module" crossorigin src="/barber/assets/index-a5fea26e.js"></script>
+    <link rel="stylesheet" href="/barber/assets/index-2289f19b.css">
   </head>
 
   <body>
@@ -130,31 +130,51 @@
 
 <div class="contact-form_wrapper">
   <div class="contact-form_info">
-    <h3 class="contact-form_title">
-      Заповніть форму
-    </h3>
+    <h3 class="contact-form_title">Заповніть форму</h3>
     <p class="contact-form_description">
       Ми звʼяжемось з вами та проконсультуємо з усіх питань
     </p>
   </div>
   <form id="contact-form" class="contact_form" autocomplete="off">
     <label for="name">
-      <input class="contact-form_input" type="text" name="user_name" pattern="[a-zA-Z\u0400-\u04ff\s]{3,30}"
-        title="Please type only letters, e.g. Boris Johnson" required id="name" placeholder="Ваше Ім’я"
-        autocomplete="off" />
+      <input
+        class="contact-form_input"
+        type="text"
+        name="user_name"
+        pattern="[a-zA-Z\u0400-\u04ff\s]{3,30}"
+        title="Please type only letters, e.g. Boris Johnson"
+        required
+        id="name"
+        placeholder="Ваше Ім’я"
+        autocomplete="off"
+      />
     </label>
 
     <label for="telephone">
-      <input class="contact-form_input" type="tel" name="user_number" pattern="[+\0-9]{10,}"
-        title="Please use format +380XXXXXXXXX" required id="telephone" placeholder="Номер телефону"
-        autocomplete="off" />
+      <input
+        class="contact-form_input"
+        type="tel"
+        name="user_number"
+        pattern="[+\0-9]{10,}"
+        title="Please use format +380XXXXXXXXX"
+        required
+        id="telephone"
+        placeholder="Номер телефону"
+        autocomplete="off"
+      />
     </label>
 
-    <button class="contact-form_btn" type="submit" value="Send" aria-label="Надіслати">
+    <button
+      class="contact-form_btn"
+      type="submit"
+      value="Send"
+      aria-label="Надіслати"
+    >
       Відправити
     </button>
   </form>
 </div>
+
 
     <!-- Mobile menu navigation buttons -->
     <nav class="mobile-menu-nav">
@@ -489,7 +509,12 @@
   </div>
 </section>
       <section class="container progress-container">
-  <div class="progress-wrapper" role="progressbar" title="Number of vacant places" aria-valuenow="70">
+  <div
+    class="progress-wrapper"
+    role="progressbar"
+    title="Number of vacant places"
+    aria-valuenow="70"
+  >
     <p class="progress-description">
       Кількість місць обмежена:
       <span class="progress-description_span">10 шт</span>
@@ -504,16 +529,20 @@
     </div>
   </div>
 
-  <button type="button" class="progress-button">
-    <svg class="icon-lock" width="19" height="27">
+  <a href="#contacts" class="progress-button progress-button-link">
+    <svg class="icon-lock">
       <use href="/barber/assets/symbol-defs-20e60591.svg#icon-lock"></use>
     </svg>
     Забронювати своє місце
-  </button>
+  </a>
 
   <div class="progress-razors_wrapper">
     <div class="progress-img_wrapper">
-      <img class="progress-img" src="/barber/assets/razors-0d4f0198.png" alt="razors" />
+      <img
+        class="progress-img"
+        src="/barber/assets/razors-0d4f0198.png"
+        alt="razors"
+      />
     </div>
     <div class="progress-razors_text-wrapper">
       <p class="progress-razors_text">
@@ -522,13 +551,17 @@
     </div>
   </div>
 </section>
-      <section class="container success-story">
+
+      <section class="container success-story" id="story">
   <ul class="success-story_list">
     <li class="success-story_item">
       <div class="success-story_info_wrapper">
         <div class="success-story_img_wrapper">
-          <img class="success-story_img" src="/barber/assets/success-story-1-3f4fbd89.webp"
-            alt="Молодий барбер в коричневому худі за роботою перед дзеркалом" />
+          <img
+            class="success-story_img"
+            src="/barber/assets/success-story-1-3f4fbd89.webp"
+            alt="Молодий барбер в коричневому худі за роботою перед дзеркалом"
+          />
         </div>
         <div class="success-story_description_wrapper">
           <p class="success-story_description">Знайомтесь: Це Вадим.</p>
@@ -548,8 +581,11 @@
     <li class="success-story_item">
       <div class="success-story_info_wrapper">
         <div class="success-story_img_wrapper">
-          <img class="success-story_img" src="/barber/assets/success-story-2-92b1ff80.webp"
-            alt="Усміхнений красивий чоловік, якому роблять зачіску" />
+          <img
+            class="success-story_img"
+            src="/barber/assets/success-story-2-92b1ff80.webp"
+            alt="Усміхнений красивий чоловік, якому роблять зачіску"
+          />
         </div>
 
         <div class="success-story_description_wrapper">
@@ -569,8 +605,11 @@
     <li class="success-story_item">
       <div class="success-story_info_wrapper">
         <div class="success-story_img_wrapper">
-          <img class="success-story_img" src="/barber/assets/success-story-3-edf2715b.webp"
-            alt="Інструменти барбера, охайно розкладені на дерев'яному столі" />
+          <img
+            class="success-story_img"
+            src="/barber/assets/success-story-3-edf2715b.webp"
+            alt="Інструменти барбера, охайно розкладені на дерев'яному столі"
+          />
         </div>
         <div class="success-story_description_wrapper">
           <p class="success-story_description">
@@ -589,8 +628,11 @@
     <li class="success-story_item">
       <div class="success-story_info_wrapper">
         <div class="success-story_img_wrapper">
-          <img class="success-story_img" src="data:image/webp;base64,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"
-            alt="Охайна стійка адміністратора в барбершопі" />
+          <img
+            class="success-story_img"
+            src="data:image/webp;base64,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"
+            alt="Охайна стійка адміністратора в барбершопі"
+          />
         </div>
 
         <div class="success-story_description_wrapper">
@@ -610,8 +652,11 @@
     <li class="success-story_item">
       <div class="success-story_info_wrapper">
         <div class="success-story_img_wrapper">
-          <img class="success-story_img" src="/barber/assets/success-story-5-abb61986.webp"
-            alt="Товстенна пачка хрустких і запашних купюр" />
+          <img
+            class="success-story_img"
+            src="/barber/assets/success-story-5-abb61986.webp"
+            alt="Товстенна пачка хрустких і запашних купюр"
+          />
         </div>
         <div class="success-story_result_wrapper">
           <p class="success-story_result-text">Вадим заробляє</p>
@@ -631,6 +676,7 @@
     </li>
   </ul>
 </section>
+
       <section class="author-section container" id="author">
   <div class="author-title-wrapper">
     <h2 class="author-title">Автор курсу</h2>
@@ -862,7 +908,7 @@
     </div>
   </div>
 </section>
-      <section class="tariffs-section container">
+      <section class="tariffs-section container" id="tariff">
   <div class="tariffs-summary-wrapper_mobile">
     <p class="summary-text">
       Давайте <br />
@@ -1062,37 +1108,55 @@
   </div>
 </section>
 
-      <section class="container contact-form_container">
+      <section class="container contact-form_container" id="contacts">
   <!-- prettier-ignore -->
-  <!-- Contacts from -->
-
-<div class="contact-form_wrapper">
+  <div class="contact-form_wrapper">
   <div class="contact-form_info">
-    <h3 class="contact-form_title">
-      Заповніть форму
-    </h3>
+    <h3 class="contact-form_title">Заповніть форму</h3>
     <p class="contact-form_description">
       Ми звʼяжемось з вами та проконсультуємо з усіх питань
     </p>
   </div>
-  <form id="contact-form" class="contact_form" autocomplete="off">
+  <form id="contacts-form-section" class="contact_form" autocomplete="off">
     <label for="name">
-      <input class="contact-form_input" type="text" name="user_name" pattern="[a-zA-Z\u0400-\u04ff\s]{3,30}"
-        title="Please type only letters, e.g. Boris Johnson" required id="name" placeholder="Ваше Ім’я"
-        autocomplete="off" />
+      <input
+        class="contact-form_input"
+        type="text"
+        name="user_name"
+        pattern="[a-zA-Z\u0400-\u04ff\s]{3,30}"
+        title="Please type only letters, e.g. Boris Johnson"
+        required
+        id="name"
+        placeholder="Ваше Ім’я"
+        autocomplete="off"
+      />
     </label>
 
     <label for="telephone">
-      <input class="contact-form_input" type="tel" name="user_number" pattern="[+\0-9]{10,}"
-        title="Please use format +380XXXXXXXXX" required id="telephone" placeholder="Номер телефону"
-        autocomplete="off" />
+      <input
+        class="contact-form_input"
+        type="tel"
+        name="user_number"
+        pattern="[+\0-9]{10,}"
+        title="Please use format +380XXXXXXXXX"
+        required
+        id="telephone"
+        placeholder="Номер телефону"
+        autocomplete="off"
+      />
     </label>
 
-    <button class="contact-form_btn" type="submit" value="Send" aria-label="Надіслати">
+    <button
+      class="contact-form_btn"
+      type="submit"
+      value="Send"
+      aria-label="Надіслати"
+    >
       Відправити
     </button>
   </form>
 </div>
+
 
   <!-- prettier-ignore -->
   <!-- Contacts info block -->
@@ -1118,7 +1182,7 @@
       <ul class="contact-social-list">
         <li class="contact-social-item">
           <a
-            href=""
+            href="https://t.me/+lc3emBpT86NmZDIy"
             class="contact-social-link"
             target="_blank"
             rel="noopener noreferrer nofollow"
@@ -1146,6 +1210,7 @@
 </div>
 
 </section>
+
     </main>
 
     <footer class="footer-desktop">
@@ -1165,7 +1230,7 @@
         <ul class="footer-social-list">
           <li class="footer-social-item">
             <a
-              href=""
+              href="https://t.me/+lc3emBpT86NmZDIy"
               class="footer-social-link"
               target="_blank"
               rel="noopener noreferrer nofollow"
@@ -1220,31 +1285,31 @@
     <div class="footer-container2">
       <ul class="footer-nav">
         <li class="footer-nav-item">
-          <a class="footer-nav-link" href="">Головна </a>
+          <a class="footer-nav-link" href="/">Головна </a>
         </li>
         <li class="footer-nav-item">
-          <a class="footer-nav-link" href="">Історія учня</a>
+          <a class="footer-nav-link" href="#story">Історія учня</a>
         </li>
         <li class="footer-nav-item">
-          <a class="footer-nav-link" href="">Професія</a>
+          <a class="footer-nav-link" href="#actuality">Професія</a>
         </li>
         <li class="footer-nav-item">
-          <a class="footer-nav-link" href="">Про автора</a>
+          <a class="footer-nav-link" href="#author">Про автора</a>
         </li>
         <li class="footer-nav-item">
-          <a class="footer-nav-link" href="">Результат</a>
+          <a class="footer-nav-link" href="#result">Результат</a>
         </li>
         <li class="footer-nav-item">
-          <a class="footer-nav-link" href="">Тариф</a>
+          <a class="footer-nav-link" href="#tariff">Тариф</a>
         </li>
         <li class="footer-nav-item">
-          <a class="footer-nav-link" href="">Програма</a>
+          <a class="footer-nav-link" href="#program">Програма</a>
         </li>
         <li class="footer-nav-item">
-          <a class="footer-nav-link" href="">Контакти</a>
+          <a class="footer-nav-link" href="#contacts">Контакти</a>
         </li>
         <li class="footer-nav-item">
-          <a class="footer-nav-link" href="">Відгуки</a>
+          <a class="footer-nav-link" href="#feedback">Відгуки</a>
         </li>
       </ul>
     </div>
@@ -1257,7 +1322,7 @@
       <div class="copyright-conditions-wrapper">
         <a
           class="copyright-condition"
-          href="../site-development.html"
+          href="/site-development.html"
           rel="noopener noreferrer nofollow"
           >Політика конфіденційності</a
         >
