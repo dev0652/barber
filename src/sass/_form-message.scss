@@ -227,24 +227,40 @@
 }
 
 .contact-form_btn {
+  position: relative;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  background: $bg-color;
-  color: $text-color;
-  text-transform: uppercase;
 
   font-family: 'Arial Black';
   font-weight: 900;
+  text-transform: uppercase;
 
   @include media(padding, 22px 43px, 42px 82px, 22px 43px);
   @include media(border-radius, 14px, 27px, 14px);
   @include media(font-size, 14px, 27px, 14px);
 
+  width: 100%;
+
   @media screen and (min-width: $desktop) {
     height: 94px;
     width: 360px;
+  }
+
+  color: white;
+  background-color: black;
+  border: 3px solid transparent;
+
+  &:hover,
+  &:focus-visible {
+    background-color: white;
+    color: black;
+    border-color: black;
+  }
+
+  &:active {
+    background-color: silver;
   }
 
   .contact-form_wrapper.is-in-mobile-menu & {
@@ -263,42 +279,6 @@
     @media screen and (min-width: $tablet) and (min-height: 500px) and (orientation: landscape) {
       padding: 36px 0;
       border-radius: 14px;
-    }
-  }
-
-  $border-width: 1.5px;
-
-  border: $border-width solid transparent;
-  border: none;
-  outline: none;
-  position: relative;
-  transform-style: preserve-3d;
-
-  &::before {
-    content: '';
-    position: absolute;
-
-    top: -$border-width;
-    right: -$border-width;
-    bottom: -$border-width * 1.5;
-    left: -$border-width;
-
-    background-color: rgb(109, 220, 255);
-    background: linear-gradient(rgba(109, 220, 255, 1), rgba(127, 96, 249, 1));
-
-    transform: translate3d(0, 0, -1px);
-    border-radius: inherit;
-
-    visibility: hidden;
-  }
-
-  &:focus-visible,
-  &:hover {
-    color: $text-color;
-    background-color: black;
-
-    &::before {
-      visibility: visible;
     }
   }
 }
