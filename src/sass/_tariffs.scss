@@ -1,13 +1,41 @@
 .tariffs-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   background: url('../img/gradient.svg');
   background-size: 1500px;
   background-repeat: no-repeat;
   background-position: bottom;
   padding-bottom: 50px;
+
+  @media screen and (min-width: $tablet) {
+    background: url('../img/gradient.svg');
+    background-size: 800px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+  }
+
+  @media screen and (min-width: $desktop) {
+    background: url('../img/gradient.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+  }
+}
+
+.decoration-lines_mobile {
+  @include media(display, block, none, none);
+}
+
+.decoration-lines_tablet {
+  @include media(display, none, block, none);
 }
 
 .tariffs-summary-wrapper_mobile {
   display: flex;
+  width: 100%;
   justify-content: space-between;
   margin-bottom: 30px;
 }
@@ -15,7 +43,7 @@
 .summary-text {
   color: $text-color;
   font-family: $inter;
-  font-size: 16px;
+  @include media-px(font-size, 16, 32, _);
   font-weight: $font-weight-600;
   line-height: 120%;
 }
@@ -25,6 +53,18 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media (min-width: $tablet) {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.benefits-item.benefits-white {
+  @media (min-width: $tablet) {
+    order: 2;
+  }
 }
 
 .benefits-list li:last-child {
@@ -41,6 +81,29 @@
   flex-direction: column;
   gap: 15px;
   padding: 30px 15px;
+
+  @media (min-width: $tablet) {
+    max-width: 440px;
+    min-height: 395px;
+    gap: 60px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 40px 30px;
+  }
+}
+
+.benefits-header-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  @media screen and (min-width: $tablet) {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 .benefits-icon-wrapper {
@@ -73,6 +136,11 @@
   align-items: center;
   gap: 20px;
   text-align: center;
+
+  @media screen and (min-width: $tablet) {
+    align-items: start;
+    text-align: start;
+  }
 }
 
 .benefits-white {
@@ -85,11 +153,28 @@
   border-left: 0.6px solid $color-border-result;
 }
 
+.benefits-left {
+  @media screen and (min-width: $tablet) {
+    border-left: none;
+  }
+}
+
+.benefits-right {
+  @media screen and (min-width: $tablet) {
+    border-right: none;
+  }
+}
+
+.benefits-left.benefits-white {
+  @media screen and (min-width: $tablet) {
+    border-right: 0.6px solid #fff;
+  }
+}
+
 .benefits-title {
   color: $text-color-benefits;
-
   font-family: $arial;
-  font-size: 24px;
+  @include media-px(font-size, 24, 25, 24);
   font-weight: $font-weight-900;
   line-height: 100%;
 }
@@ -98,7 +183,7 @@
   color: $text-color-benefits-faded;
 
   font-family: $inter;
-  font-size: 16px;
+  @include media-px(font-size, 16, 19, 18);
   font-weight: $font-weight-400;
   line-height: 120%;
   letter-spacing: -0.32px;
@@ -143,6 +228,7 @@
 }
 
 .tariff-card {
+  max-width: 558px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -150,10 +236,18 @@
   padding: 20px 40px 40px 40px;
   border-radius: 14px;
   background: $tariff-card-bg;
+
+  @media screen and (min-width: $tablet) {
+    padding: 60px;
+  }
 }
 
 .barcode-wrapper {
   display: flex;
+}
+
+.barcode-third {
+  @include media(display, none, block, block);
 }
 
 .tariff-card-content {
@@ -167,17 +261,18 @@
   color: $text-color-benefits-faded;
   text-decoration: line-through;
   font-family: $arial;
-  font-size: 26px;
+  @include media-px(font-size, 26, 39, 30);
   font-weight: $font-weight-900;
   line-height: 100%;
-  letter-spacing: -0.523px;
+  @include media-px(letter-spacing, -0.523, -0.77, -0.6);
 }
 
 .tariffs-new-price {
   margin-bottom: 10px;
   color: $text-color;
   font-family: $arial;
-  font-size: 43px;
+  @include media-px(font-size, 43, 72, 50);
+
   font-weight: $font-weight-900;
   line-height: 120%;
 }
@@ -185,8 +280,8 @@
 .register-text {
   margin-bottom: 40px;
   color: $text-color;
-  font-family: $inter;
-  font-size: 14px;
+  font-family: $montserrat;
+  @include media-px(font-size, 14, 24, 16);
   font-weight: $font-weight-400;
   line-height: 155%;
 }
@@ -195,7 +290,8 @@
   margin-bottom: 10px;
   color: $text-color;
   font-family: $arial;
-  font-size: 46px;
+  @include media-px(font-size, 46, 79, 54);
+
   font-weight: $font-weight-900;
   line-height: 110%;
 }
@@ -203,10 +299,10 @@
 .tariffs-start {
   margin-bottom: 45px;
   color: $text-color;
-  font-family: $inter;
-  font-size: 14px;
+  font-family: $montserrat;
+  @include media-px(font-size, 14, 24, 16);
   font-weight: $font-weight-400;
-  line-height: 22px;
+  @include media-px(line-height, 22, 37, 25);
 }
 
 .tariffs-startdate {
@@ -214,28 +310,36 @@
 }
 
 .tariffs-payment {
-  margin-bottom: 45px;
+  @include media-px(margin-bottom, 45, 82, 30);
   display: flex;
-  gap: 27px;
+  justify-content: center;
+  align-items: center;
+  @include media-px(gap, 27, 46, 31);
 }
 
 .tariffs-payment-text {
   color: $text-color;
   font-family: $inter;
-  font-size: 12px;
+  @include media-px(font-size, 12, 21, 14);
   font-weight: $font-weight-400;
   line-height: 120%;
 }
 
+.payment-box {
+  @include media-px(width, 84, 143, 99);
+  @include media-px(height, 87, 148, 102);
+}
+
 .tariff-btn {
   align-self: center;
-  padding: 13px 26px;
+  @include media(padding, 13px 26px, 15px 30px, _);
   border-radius: 65px;
-  min-width: 244px;
-  min-height: 65px;
+  @include media-px(min-width, 244, 411, 310);
+  @include media-px(min-height, 65, 110, 76);
 
   font-family: $arial;
-  font-size: 17px;
+  @include media-px(font-size, 17, 30, 21);
+
   font-weight: $font-weight-900;
   line-height: 120%;
   text-transform: uppercase;
