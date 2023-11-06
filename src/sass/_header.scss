@@ -10,8 +10,9 @@
   transition: padding 200ms ease-out;
 
   &.sticky-header {
-    background-color: rgb(1, 1, 24, 0.5);
-    backdrop-filter: blur(10px);
+    // background-color: rgb(1, 1, 24, 0.5);
+    // backdrop-filter: blur(10px);
+    background-color: $bg-color;
 
     @media screen and (max-width: calc($tablet - 1px)) {
       padding-top: 10px;
@@ -76,12 +77,6 @@
 
   .sticky-header & {
     padding: 25px 0;
-
-    $offset: 1px;
-    $blur-radius: 15px;
-    $color: black;
-
-    text-shadow: $offset $offset $blur-radius $color;
   }
 }
 
@@ -170,7 +165,7 @@
   background-color: transparent;
   border: none;
 
-  font-family: 'Arial Black';
+  font-family: $arial;
   font-weight: 900;
   line-height: 110%;
   text-transform: uppercase;

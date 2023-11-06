@@ -72,7 +72,7 @@
 }
 
 .number {
-  font-family: 'Arial Black';
+  font-family: $arial;
   font-weight: 900;
   line-height: 120%;
 
@@ -81,7 +81,7 @@
 }
 
 .time-span {
-  font-family: Montserrat;
+  font-family: $montserrat;
   font-weight: 600;
   line-height: 120%;
 

@@ -60,7 +60,7 @@
 
 .footer-nav-link {
   color: $text-color;
-  font-family: Montserrat;
+  font-family: $montserrat;
   font-size: 24px;
   font-weight: $font-weight-400;
   line-height: 120%;
@@ -148,7 +148,7 @@
 
 .footer-socials-text {
   color: $text-color;
-  font-family: Montserrat;
+  font-family: $montserrat;
   font-weight: $font-weight-600;
   line-height: 120%;
 
@@ -180,7 +180,7 @@
 
 .footer-subscribe-text {
   color: $text-color;
-  font-family: Montserrat;
+  font-family: $montserrat;
   font-weight: $font-weight-600;
   line-height: 120%;
   @include media(font-size, 10px, 17px, 12px);

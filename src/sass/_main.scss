@@ -19,6 +19,5 @@ body {
   color: $text-color;
 
   background-color: $bg-color;
-  background: url('/img/noise/noise.png'), $bg-color;
-  background-size: contain;
+  background: url('/img/noise/noise.webp'), $bg-color;
 }
