@@ -114,11 +114,21 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  @include media(margin-top, 15px, 20px, _);
+  @include media(margin-top, 15px, 20px, 0px);
 
   @media screen and (min-width: $desktop) {
     justify-content: space-between;
     flex-direction: row;
+  }
+}
+
+.icon-lock {
+  width: 20px;
+  height: 20px;
+
+  @media screen and (min-width: $tablet) {
+    width: 30px;
+    height: 30px;
   }
 }
 
@@ -153,15 +163,17 @@
   @extend .generic-button;
 
   display: flex;
-  gap: 10px;
   align-items: center;
   white-space: nowrap;
+  cursor: pointer;
+
+  @include media(gap, 5px, 15px, 15px);
 
   @include media(font-size, 14px, 28px, 32px);
 
   @include media(letter-spacing, 1.82px, 3.7px, -1.28px);
 
-  @include media(padding, 18px 13px, 38px, 26px 60px);
+  @include media(padding, 18px 13px, 34px, 26px 50px);
 
   @include media(border-radius, 50px, 102px, 80px);
 
