@@ -3,7 +3,7 @@
   background-size: 800px;
   background-repeat: no-repeat;
   background-position: bottom;
-  @include media(padding-bottom, 25px, 70px, 120px);
+  @include media(padding-bottom, 50px, 70px, 120px);
 
   @media screen and (min-width: $tablet) {
     background: url('../img/gradient.svg');
@@ -42,7 +42,7 @@
   @include media-px(font-size, 26, 43, 60);
   @include media(line-height, 110%, 110%, 90%);
   @include media-px(letter-spacing, -0.52, -0.86, -0.9);
-  @include media-px(margin-bottom, 26, 40, 0);
+  @include media-px(margin-bottom, 30, 40, 50);
 }
 
 .feedback-list {
@@ -158,5 +158,4 @@
 
 .feedback-desktop-stroke {
   @include media(display, none, none, block);
-  margin-top: 50px;
 }

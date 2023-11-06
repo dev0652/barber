@@ -1,5 +1,5 @@
 .result-section {
-  @include media(padding-bottom, 16px, 100px, 110px);
+  @include media(padding-bottom, 50px, 100px, 110px);
   @extend %flex-centered;
 }
 
@@ -19,7 +19,7 @@
 }
 
 .result-title {
-  margin-bottom: 29px;
+  @include media-px(margin-bottom, 30, 70, _);
   @include media(padding, 0px 20px, 0px 100px, 0px 0px);
   text-align: center;
   font-family: $arial;

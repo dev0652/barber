@@ -3,7 +3,7 @@
   background-size: 800px;
   background-repeat: no-repeat;
   background-position: bottom;
-  @include media(padding-bottom, 25px, 70px, 120px);
+  @include media(padding-bottom, 50px, 70px, 120px);
 
   @media screen and (min-width: $tablet) {
     background: url('../img/gradient.svg');

@@ -1,5 +1,5 @@
 .author-section {
-  @include media(padding-bottom, 41px, 70px, 120px);
+  @include media(padding-bottom, 50px, 70px, 120px);
 
   @media screen and (min-width: $desktop) {
     background: url('../img/author/author_gradient.svg');
@@ -10,7 +10,7 @@
 }
 
 .author-title-wrapper {
-  @include media(margin-bottom, 25px, 30px, _);
+  @include media(margin-bottom, 30px, 30px, _);
 
   @media screen and (min-width: 300px) and (max-width: calc(($desktop) - 1px)) {
     display: flex;
@@ -200,7 +200,7 @@
   @include media(display, none, none, block);
   margin-bottom: 37px;
   color: $text-color;
-  font-family: $inter;
+  font-family: $montserrat;
   font-size: 18px;
   font-weight: $font-weight-600;
   line-height: 150%;
