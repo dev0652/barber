@@ -182,12 +182,3 @@
     letter-spacing: 2.34px;
   }
 }
-
-.progress-button-link {
-  color: black;
-  transition: color $transition-duration;
-}
-
-.progress-button:hover .progress-button-link {
-  color: white;
-}
