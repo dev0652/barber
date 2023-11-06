@@ -1,0 +1,128 @@
+// Media queries
+
+// For values in pixels
+@mixin media-px(
+  $property,
+  $mobile-value,
+  $tablet-value,
+  $desktop-value: false
+) {
+  @if $mobile-value != '_' {
+    #{$property}: #{$mobile-value}px;
+  }
+
+  @if $tablet-value != '_' {
+    @media screen and (min-width: $tablet) {
+      #{$property}: #{$tablet-value}px;
+    }
+  }
+
+  @if $desktop-value {
+    @media screen and (min-width: $desktop) {
+      #{$property}: #{$desktop-value}px;
+    }
+  }
+}
+
+// For all values
+@mixin media($property, $mobile-value, $tablet-value, $desktop-value: false) {
+  @if $mobile-value != '_' {
+    #{$property}: $mobile-value;
+  }
+
+  @if $tablet-value != '_' {
+    @media screen and (min-width: $tablet) {
+      #{$property}: $tablet-value;
+    }
+  }
+
+  @if $desktop-value {
+    @media screen and (min-width: $desktop) {
+      #{$property}: $desktop-value;
+    }
+  }
+}
+
+// Font-size in rem + line height
+
+@mixin fz-lh($fz, $lh: false) {
+  font-size: $fz + px;
+
+  @if ($lh) {
+    line-height: calc($lh / $fz);
+  }
+}
+
+@mixin fz-lh-rem($fz, $lh: false) {
+  font-size: rem($fz);
+
+  @if ($lh) {
+    line-height: calc($lh / $fz);
+  }
+}
+
+// Transition effect for one property with customizable site-global defaults
+
+@mixin transition(
+  $property: all,
+  $duration: $transition-duration,
+  $function: $transition-timing-function,
+  $delay: 0s
+) {
+  transition-property: $property;
+  transition-duration: $duration;
+  transition-timing-function: $function;
+  transition-delay: $delay;
+}
+
+// Transition effect for multiple properties with non-customizable site-global values
+
+@mixin transition-multiple($property...) {
+  transition-property: $property;
+  transition-duration: $transition-duration;
+  transition-timing-function: $transition-timing-function;
+}
+
+// Centering of a positioned element
+
+@mixin positioning-centered(
+  $top: 0,
+  $left: 0,
+  $shift-x: -50%,
+  $shift-y: $shift-x
+) {
+  top: $top;
+  left: $left;
+  transform: translateX($shift-x) translateY($shift-y);
+}
+
+// Flex element's flex-basis calculation
+
+@mixin flex-basis($items-per-row, $spacing: $regular-gap) {
+  // Number of gaps = items per row - 1;
+  flex-basis: calc((100% - $spacing * ($items-per-row - 1)) / $items-per-row);
+}
+
+// Flex element's flex-basis formula for all 3 screen widths, you only need to provide the number of items per row for each
+
+@mixin flex-basis-mob-tab-desk(
+  $items-per-row-mobile,
+  $items-per-row-tablet,
+  $items-per-row-desktop
+) {
+  //
+  @media screen and (max-width: ($tablet - 1px)) {
+    // flex-basis: 450px;
+    @include flex-basis($items-per-row-mobile);
+  }
+
+  @media screen and (min-width: $tablet) {
+    // flex-basis: 354px;
+    @include flex-basis($items-per-row-tablet);
+  }
+
+  @media screen and (min-width: $desktop) {
+    // flex-basis: 270px;
+    @include flex-basis($items-per-row-desktop);
+  }
+}

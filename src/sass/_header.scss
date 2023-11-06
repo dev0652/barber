@@ -2,24 +2,36 @@
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  z-index: 100;
+  z-index: 1000;
 
-  padding: 50px 0;
+  width: 100vw;
+  // padding: 10px 0; // initial layout
 
   transition: padding 200ms ease-out;
 
   &.sticky-header {
-    background-color: rgb(1, 1, 24, 0.5);
-    backdrop-filter: blur(10px);
+    // background-color: rgb(1, 1, 24, 0.5);
+    // backdrop-filter: blur(10px);
+    background-color: $bg-color;
 
-    padding: 10px 0;
+    @media screen and (max-width: calc($tablet - 1px)) {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    @media screen and (max-width: calc($desktop - 1px)) {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
   }
-}
 
-body {
-  padding-top: 200px;
-  height: 200vh;
+  &:not(.sticky-header) {
+    @media screen and (max-width: calc($desktop - 1px)) {
+      display: flex;
+      align-items: center;
+      height: $lower-bracket-offset;
+    }
+  }
 }
 
 .header-container {
@@ -29,8 +41,6 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 50px;
-
-  padding-top: 10px;
 }
 
 .nav {
@@ -49,66 +59,6 @@ body {
   gap: 50px;
 }
 
-.nav-item {
-  @media screen and (max-width: calc($desktop - 1px)) {
-    position: relative;
-
-    width: 150px;
-    padding: 15px 0;
-
-    border: 1px solid transparent;
-    border-radius: 10px;
-
-    text-align: center;
-
-    &::before,
-    &::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      right: 0;
-
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      border-radius: 10px;
-    }
-
-    $percentage: 55%;
-
-    &::before {
-      top: 0;
-      bottom: $percentage;
-
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
-      border-bottom: none;
-    }
-
-    &::after {
-      top: $percentage;
-      bottom: 0;
-
-      border-top-left-radius: 0;
-      border-top-right-radius: 0;
-      border-top: none;
-    }
-
-    a {
-      font-family: 'Arial Black', sans-serif;
-      font-size: 14px;
-      font-weight: 900;
-      line-height: 110%;
-      letter-spacing: -0.28px;
-      text-transform: uppercase;
-    }
-  }
-
-  @media screen and (min-width: $desktop) {
-    &:last-child {
-      margin-left: auto;
-    }
-  }
-}
-
 .nav-link {
   font-family: Inter;
   font-size: 16px;
@@ -118,10 +68,23 @@ body {
   text-transform: capitalize;
 
   color: inherit;
+  display: block;
+  height: 100%;
 
-  &:hover,
-  &:focus-visible {
-    color: gray;
+  @media screen and (min-width: $desktop) {
+    padding: 35px 0;
+  }
+
+  .sticky-header & {
+    padding: 25px 0;
+  }
+}
+
+.nav-item {
+  @media screen and (min-width: $desktop) {
+    &:last-child {
+      margin-left: auto;
+    }
   }
 }
 
@@ -130,7 +93,7 @@ body {
 
   padding: 11px 20px;
   border-radius: 100px;
-  border: 1px solid #e1e1e1;
+  border: 1px transparent inherit;
   font-size: 18px;
 
   display: none;
@@ -140,27 +103,69 @@ body {
   }
 }
 
-.header-logo {
+.header-logo-link {
+  color: white;
+
   @media screen and (min-width: $desktop) {
     position: absolute;
     top: 50%;
     left: 50%;
 
     transform: translate(-50%, -50%);
+    transform: scaleX(1.2) translate(-50%, -50%);
+  }
+}
+
+.header-logo-icon {
+  fill: currentColor;
+
+  width: 82px;
+  height: 18px;
+
+  .logo-tablet,
+  .logo-desktop {
+    opacity: 0;
+  }
+  .logo-mobile {
+    opacity: 1;
+  }
+
+  @media screen and (min-width: $tablet) {
+    width: 146px;
+    height: 27px;
+
+    .logo-mobile,
+    .logo-desktop {
+      opacity: 0;
+    }
+    .logo-tablet {
+      opacity: 1;
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 150px;
+    height: 25px;
+
+    .logo-mobile,
+    .logo-tablet {
+      opacity: 0;
+    }
+    .logo-desktop {
+      opacity: 1;
+    }
   }
 }
 
 .burger-button {
   display: flex;
-
-  display: flex;
   align-items: center;
 
-  color: white;
+  color: inherit;
   background-color: transparent;
   border: none;
 
-  font-family: 'Arial Black';
+  font-family: $arial;
   font-weight: 900;
   line-height: 110%;
   text-transform: uppercase;
@@ -181,6 +186,8 @@ body {
 }
 
 .burger-button-icon {
+  stroke: currentColor;
+
   width: auto;
   height: 15px;
 
@@ -189,17 +196,17 @@ body {
   }
 }
 
-.logo-image {
-  width: auto;
-  height: 18px;
-  transform: scaleX(0.8);
-
-  @media screen and (min-width: $tablet) {
-    height: 27 px;
+.header-logo-link,
+.nav-link,
+.burger-button {
+  &:hover,
+  &:focus-visible {
+    color: silver;
   }
+}
 
+.form-rendering-container {
   @media screen and (min-width: $desktop) {
-    height: 25px;
-    transform: scaleX(1);
+    display: none;
   }
 }

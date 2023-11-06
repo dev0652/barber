@@ -1,0 +1,24 @@
+:root {
+  font-family: Inter, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  /* Hide scrollbar  */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+  }
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+
+  color: $text-color;
+
+  background-color: $bg-color;
+  background: url('/img/noise/noise.webp'), $bg-color;
+  background-size: contain;
+}

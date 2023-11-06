@@ -1,0 +1,106 @@
+.result-section {
+  @include media(padding-bottom, 50px, 100px, 110px);
+  @extend %flex-centered;
+}
+
+.result-wrapper {
+  @media screen and (min-width: $desktop) {
+    display: flex;
+    gap: 60px;
+  }
+}
+
+.result-info-wrapper {
+  @media screen and (min-width: $desktop) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+.result-title {
+  @include media-px(margin-bottom, 30, 70, _);
+  @include media(padding, 0px 20px, 0px 100px, 0px 0px);
+  text-align: center;
+  font-family: $arial;
+  @include media-px(font-size, 26, 36, 40);
+  @include media(line-height, 90%, 110%, 90%);
+  @include media-px(letter-spacing, -0.39, -1.8, -2);
+  font-weight: $font-weight-900;
+  color: $text-color;
+  @media screen and (min-width: $desktop) {
+    width: 330px;
+    text-align: start;
+  }
+}
+
+.result-extra-info {
+  @include media(display, none, none, block);
+  font-family: $inter;
+  color: $text-color;
+  font-size: 18px;
+  font-weight: $font-weight-600;
+  line-height: 120%;
+  letter-spacing: -0.27px;
+  width: 227px;
+}
+
+.result-list-wrapper {
+  @media screen and (min-width: $tablet) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media screen and (min-width: $desktop) {
+    gap: 32px;
+  }
+}
+
+.result-item {
+  display: flex;
+  @include media(text-align, center, start, start);
+  align-items: center;
+  justify-content: center;
+  @include media(padding, 30px 30px, 44px 0px, _);
+  @include media(flex-direction, column, row, row);
+  gap: 24px;
+  border-top: 0.75px solid $color-border-result;
+  border-right: 0.75px solid $color-border-result;
+  border-left: 0.75px solid $color-border-result;
+}
+
+.group-list-1 > .result-item {
+  @media screen and (min-width: $tablet) {
+    border-left: none;
+  }
+}
+
+.group-list-2 > .result-item {
+  @include media-px(padding-left, _, 20, 24);
+  @media screen and (min-width: $tablet) {
+    border-right: none;
+  }
+}
+
+.result-description {
+  padding: 0;
+  margin: 0;
+  max-width: 280px;
+  display: flex;
+  @extend %flex-centered;
+  font-family: $inter;
+  @include media-px(font-size, 18, 19, 21);
+  line-height: 120%;
+  @include media-px(letter-spacing, -0.36, -0.41, -0.42);
+  font-weight: $font-weight-600;
+  color: $text-color;
+}
+
+.result-icon-bg {
+  display: flex;
+  @extend %flex-centered;
+
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: $color-icon-grey;
+}

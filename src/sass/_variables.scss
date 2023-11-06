@@ -1,11 +1,62 @@
-/* Colors */
+// Colors
 $bg-color: #151515;
 $text-color: white;
 $text-color-faded: #fbfbfb;
+$text-color-benefits: #f3f3f3;
+$text-color-benefits-faded: rgba(243, 243, 243, 0.8);
+$text-color-old-faded: rgba(243, 243, 243, 0.8);
+$text-color-brown: #404040;
+$text-color-navy: #004267;
+$text-color-all-equal: rgb(100, 100, 100);
+$color-blue: #3e93d9;
+$color-yellow: #ffd258;
+$color-grey: #d9d9d9;
+$color-dark-grey: rgba(255, 255, 255, 0.08);
+$color-icon-grey: #262626;
+$color-border-result: #363636;
+$color-feedback-bg: #b2b2b229;
 
-/* Breakpoints */
+// Breakpoints
 $mobile: 360px;
 $tablet: 834px;
-$desktop: 1440px;
+$desktop: 1280px;
 
-$header-height: 100px;
+// Font-family
+$arial: 'Arial Black';
+$inter: Inter;
+$montserrat: Montserrat;
+
+// Font-weight
+$font-weight-400: 400;
+$font-weight-500: 500;
+$font-weight-600: 600;
+$font-weight-700: 700;
+$font-weight-900: 900;
+
+// Vertical offset (Hero / header)
+:root {
+  --lower-bracket-offset: 70px;
+  --container-padding: 10px;
+
+  @media screen and (min-width: $tablet) {
+    --lower-bracket-offset: 130px;
+    --container-padding: 15px;
+  }
+
+  @media screen and (max-width: calc($tablet - 1px)) and (orientation: landscape) {
+    --lower-bracket-offset: 40px;
+  }
+
+  @media screen and (min-width: $tablet) and (max-width: calc($desktop - 1px )) and (orientation: landscape) {
+    --lower-bracket-offset: 60px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    --lower-bracket-offset: 140px;
+  }
+}
+
+$lower-bracket-offset: var(--lower-bracket-offset);
+$container-padding: var(--container-padding);
+
+$transition-duration: 250ms linear;

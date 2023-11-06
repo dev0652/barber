@@ -1,0 +1,208 @@
+.author-section {
+  @include media(padding-bottom, 50px, 70px, 120px);
+
+  @media screen and (min-width: $desktop) {
+    background: url('../img/author/author_gradient.svg');
+    background-size: 760px;
+    background-repeat: no-repeat;
+    background-position: left;
+  }
+}
+
+.author-title-wrapper {
+  @include media(margin-bottom, 30px, 30px, _);
+
+  @media screen and (min-width: 300px) and (max-width: calc(($desktop) - 1px)) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 13px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+  }
+}
+
+.author-title {
+  display: block;
+  color: $text-color;
+  font-family: $arial;
+  @include media-px(font-size, 26, 43, 60);
+  font-weight: $font-weight-900;
+  line-height: 110%;
+  @include media-px(letter-spacing, -0.52, -0.86, -1.2);
+}
+
+.author-description {
+  text-align: center;
+  @include media(display, block, block, none);
+  font-family: $inter;
+  color: $text-color;
+  @include media-px(font-size, 21, 26, _);
+  font-weight: $font-weight-700;
+  line-height: 120%;
+  @include media-px(letter-spacing, -0.42, -0.52, _);
+}
+
+.author-name-wrapper {
+  @include media(display, none, none, flex);
+  justify-content: space-between;
+  align-items: center;
+  width: 567px;
+}
+
+.author-name {
+  color: $text-color;
+  font-family: $inter;
+  font-size: 60px;
+  font-weight: $font-weight-600;
+  line-height: 90%;
+  letter-spacing: -1.2px;
+}
+
+.author-icon-bg {
+  display: flex;
+  @extend %flex-centered;
+
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: $color-icon-grey;
+}
+
+.author-credits-list_tablet {
+  @include media(display, grid, grid, none);
+  grid-template-columns: repeat(3, 1fr);
+  @include media(gap, 5px, 10px, _);
+}
+
+.author-credits-list_desktop {
+  @include media(display, none, none, grid);
+  grid-template-columns: repeat(3, 1fr);
+  @include media(gap, 5px, 10px, 8px);
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 14px;
+  }
+}
+
+.author-credits-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  @include media(gap, 7px, 15px, 12px);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+
+  @media screen and (min-width: 300px) {
+    padding: 10px;
+  }
+  @media screen and (min-width: $mobile) {
+    padding: 14px;
+  }
+  @media screen and (min-width: $tablet) {
+    padding: 30px;
+  }
+  @media screen and (min-width: $desktop) {
+    padding: 23px;
+  }
+}
+
+.author-credits-item:nth-child(2) {
+  grid-row: span 2;
+}
+
+.author-credits-title {
+  color: $text-color;
+  font-family: $arial;
+  @include media-px(font-size, 32, 70, 54);
+  font-weight: $font-weight-900;
+  line-height: 90%;
+  @include media-px(letter-spacing, -0.64, -1.4, _);
+}
+
+.author-credits-description {
+  color: $text-color;
+  font-family: $montserrat;
+  @include media-px(font-size, 8, 19, 15);
+  font-weight: $font-weight-600;
+  line-height: 120%;
+  @include media-px(letter-spacing, -0.18, -0.4, _);
+}
+
+.author-img-wrapper {
+  min-width: 320px;
+  max-width: 330px;
+  height: 368px;
+  overflow: hidden;
+  @include media-px(border-radius, 8, 8, 13);
+  margin-top: -15px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 17px;
+
+  @media screen and (min-width: $tablet) {
+    margin: 0;
+  }
+  @media screen and (min-width: $desktop) {
+    min-width: 640px;
+    width: 640px;
+    max-width: 640px;
+    height: 653px;
+  }
+}
+
+.author-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.author-about-title {
+  margin-bottom: 15px;
+  color: $text-color;
+  font-family: $arial;
+  @include media-px(font-size, 18, 18, 20);
+  font-weight: $font-weight-900;
+  line-height: 150%;
+  letter-spacing: -0.36px;
+}
+
+.author-about-description {
+  @include media-px(max-width, _, 430, 600);
+  display: block;
+  text-align: start;
+  color: $text-color;
+  font-family: $inter;
+  @include media-px(font-size, 16, 16, 20);
+  font-weight: $font-weight-400;
+  @include media(line-height, 150%, 150%, 140%);
+  letter-spacing: -0.051px;
+}
+
+.author-block-wrapper {
+  @media screen and (min-width: $tablet) {
+    margin-top: 27px;
+    display: flex;
+    gap: 20px;
+  }
+  @media screen and (min-width: $desktop) {
+    gap: 33px;
+  }
+}
+
+.author-description_desktop {
+  @include media(display, none, none, block);
+  margin-bottom: 37px;
+  color: $text-color;
+  font-family: $montserrat;
+  font-size: 18px;
+  font-weight: $font-weight-600;
+  line-height: 150%;
+  letter-spacing: -0.36px;
+}

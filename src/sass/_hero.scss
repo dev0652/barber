@@ -1,0 +1,375 @@
+.hero {
+  height: 100vh;
+
+  $grad-color: rgba(black, 0.6);
+  --bg-image: url('/img/hero/hero_mob.webp');
+
+  @media screen and (min-width: $tablet) {
+    --bg-image: url('/img/hero/hero.webp');
+  }
+
+  //  for retina displays
+  @media only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
+    --bg-image: url('/img/bkp/hero_mob@2x.png');
+
+    @media screen and (min-width: $tablet) {
+      height: 100vh;
+      --bg-image: url('/img/hero/hero@2x.webp');
+    }
+  }
+
+  $bg-image: var(--bg-image);
+
+  background-color: $bg-color;
+  background-image: $bg-image;
+  background-repeat: no-repeat;
+  background-size: cover;
+  // background-position: center;
+
+  --bracket-height: 22px;
+
+  @media screen and (min-width: $desktop) {
+    --bracket-height: 30px;
+  }
+}
+
+.hero-container {
+  @extend .container;
+
+  position: relative;
+
+  display: flex;
+  height: 100%;
+
+  flex-direction: column;
+  align-items: center;
+
+  @media screen and (max-width: calc($desktop - 1px )) {
+    justify-content: space-evenly;
+  }
+
+  @media screen and (max-width: calc($desktop - 1px )) and (orientation: landscape) {
+    justify-content: space-around;
+  }
+
+  justify-content: center;
+  padding-bottom: $lower-bracket-offset;
+
+  @media screen and (max-width: calc($desktop - 1px )) and (orientation: landscape) {
+    padding-bottom: calc($lower-bracket-offset + 10px);
+  }
+}
+
+.brackets {
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: $container-padding;
+    right: $container-padding;
+
+    border: 1px solid rgba(white, 0.3);
+    border-radius: 10px;
+    height: var(--bracket-height);
+  }
+
+  &::before {
+    top: 0;
+
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: none;
+  }
+
+  &::after {
+    bottom: $lower-bracket-offset;
+
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-top: none;
+  }
+}
+
+.hero-text-block {
+  display: flex;
+  flex-direction: column;
+
+  @include media(gap, 9px, 34px, 40px);
+
+  @media screen and (max-width: calc($desktop - 1px )) and (orientation: landscape) {
+    gap: 15px;
+  }
+
+  text-align: center;
+}
+
+.hero-title {
+  font-family: $arial;
+  font-weight: 900;
+  line-height: 100%;
+
+  text-transform: uppercase;
+
+  @include media(font-size, 55px, 80px, 106px);
+  @include media(letter-spacing, -1.1px, -1.6px, -2.12px);
+
+  @media screen and (max-width: calc($tablet - 1px)) and (orientation: landscape) {
+    font-size: 2rem;
+  }
+
+  @media screen and (min-width: $tablet) and (max-width: calc($desktop - 1px )) and (orientation: landscape) {
+    font-size: 3rem;
+    letter-spacing: normal;
+  }
+
+  @media screen and (max-width: calc($tablet - 1px)) {
+    max-width: 80%;
+    align-self: center;
+  }
+
+  $offset: 1px;
+  $blur-radius: 22px;
+  $color: rgba(black, 0.5);
+
+  text-shadow: $offset $offset $blur-radius $color;
+}
+
+.paragraph-group {
+  text-align: center;
+
+  @media screen and (max-width: calc($tablet - 1px)) {
+    .hero-paragraph {
+      display: inline;
+
+      &:first-child::after {
+        content: ',';
+      }
+
+      &:last-child {
+        text-transform: lowercase;
+      }
+    }
+  }
+
+  @media screen and (max-width: calc($tablet - 1px)) and (orientation: landscape) {
+    line-height: 100%;
+    max-width: 90%;
+    align-self: center;
+  }
+}
+
+.hero-paragraph {
+  font-family: Inter;
+  font-weight: 600;
+  line-height: 150%;
+
+  @include media(font-size, 18px, 26px, 32px);
+  @include media(letter-spacing, normal, -1.28px, -1.28px);
+
+  @media screen and (max-width: calc($tablet - 1px)) and (orientation: landscape) {
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  @media screen and (min-width: $tablet) and (max-width: calc($desktop - 1px )) and (orientation: landscape) {
+    font-size: 18px;
+    letter-spacing: normal;
+  }
+}
+
+.hero-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media screen and (min-width: $tablet) {
+    position: absolute;
+    bottom: calc($lower-bracket-offset / 2);
+    transform: translateY(50%);
+
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+
+    @media screen and (min-width: $tablet) {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+}
+
+.small-groups-block {
+  @extend %flex-centered;
+  gap: 4px;
+
+  @media screen and (max-width: calc($tablet - 1px)) {
+    position: absolute;
+
+    bottom: calc($lower-bracket-offset / 2);
+    transform: translateY(50%);
+
+    flex-direction: column-reverse;
+  }
+
+  @media screen and (max-width: calc($tablet - 1px)) and (orientation: landscape) {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  @media screen and (min-width: $tablet) {
+    gap: 10px;
+  }
+}
+
+.small-groups-text {
+  font-family: Inter;
+  font-weight: 700;
+  line-height: 1;
+
+  @include media-px(font-size, 10, 12, 14);
+  @include media-px(letter-spacing, 0.3, 0.36, 0.42);
+
+  span {
+    display: block;
+  }
+}
+
+.avatar-group {
+  display: flex;
+}
+
+.avatar-thumb {
+  &:not(:first-child) {
+    @include media-px(margin-left, -7, -16);
+  }
+
+  &:first-child {
+    z-index: 3;
+  }
+
+  &:nth-child(2) {
+    z-index: 2;
+  }
+
+  &:last-child {
+    z-index: 1;
+  }
+}
+
+.avatar-image {
+  @include media-px(--size, 25, 57);
+
+  @media screen and (min-width: $tablet) and (max-width: calc($desktop - 1px)) and (orientation: landscape) {
+    --size: 40px;
+  }
+
+  height: var(--size);
+  width: var(--size);
+}
+
+.tag-group {
+  display: flex;
+  align-items: center;
+
+  @include media-px(gap, 15, 10, 17);
+  @include media(justify-content, space-between, _, center);
+
+  @media screen and (max-width: calc($tablet - 1px )) and (orientation: landscape) {
+    gap: 10px;
+  }
+}
+
+.tag {
+  user-select: none;
+  transition: color 400ms, background-color 400ms, backdrop-filter 400ms;
+
+  border-radius: 25px;
+  background-color: rgba(black, 0.05);
+  backdrop-filter: blur(37px);
+
+  &:hover {
+    color: lightgrey;
+    backdrop-filter: blur(5px);
+    background-color: rgba(white, 0.1);
+  }
+
+  font-family: $arial;
+  font-weight: 900;
+  text-align: center;
+
+  @include media-px(font-size, 14, 21, 16);
+  @include media(line-height, 150%, 100%, 150%);
+  @include media-px(letter-spacing, -0.56, -1.47, -0.64);
+  @include media(padding, 5px 18px, 10px 25px, 5px 18px);
+
+  @media screen and (max-width: calc($tablet - 1px)) and (orientation: landscape) {
+    font-size: 0.9rem;
+  }
+
+  @media screen and (min-width: $tablet) and (max-width: calc($desktop - 1px )) and (orientation: landscape) {
+    font-size: 16px;
+    line-height: 100%;
+    padding: 10px 14px;
+  }
+
+  @media screen and (min-width: $tablet) and (max-width: calc($desktop - 1px )) and (orientation: landscape) {
+    font-size: 16px;
+    line-height: 150%;
+    padding: 10px 32px;
+  }
+
+  @media screen and (max-width: calc($desktop - 1px)) {
+    &:first-child {
+      order: 2;
+    }
+    &:nth-child(2) {
+      order: 1;
+    }
+    &:nth-child(3) {
+      order: 3;
+    }
+  }
+
+  &:last-child {
+    @media screen and (min-width: $desktop) {
+      display: none;
+    }
+  }
+}
+
+.hero-button {
+  @extend .generic-button;
+  white-space: nowrap;
+
+  @include media-px(font-size, 14, 28, 18);
+  @include media-px(letter-spacing, 1.82, 3.7, 2.34);
+  @include media(padding, 18px 13px, 38px, 24px 30px);
+  @include media-px(border-radius, 50, 102, 80);
+
+  @media screen and (max-width: calc($tablet - 1px)) and (orientation: landscape) {
+    font-size: 0.8rem;
+    padding: 12px 24px;
+  }
+
+  @media screen and (min-width: $tablet) and (max-width: calc($desktop - 1px )) and (orientation: landscape) {
+    font-size: 1rem;
+    letter-spacing: 1.82px;
+    padding: 18px 32px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    position: absolute;
+    bottom: 40px; // hero footer height / 2 + pb
+    left: 50%;
+
+    transform: translateX(-50%);
+  }
+
+  z-index: 10;
+}

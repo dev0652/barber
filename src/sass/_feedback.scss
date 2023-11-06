@@ -1,0 +1,161 @@
+.feedback-section {
+  background: url('../img/gradient.svg');
+  background-size: 800px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  @include media(padding-bottom, 50px, 70px, 120px);
+
+  @media screen and (min-width: $tablet) {
+    background: url('../img/gradient.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+  }
+
+  @media screen and (min-width: $desktop) {
+    background: url('../img/gradient.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+  }
+}
+
+.feedback-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (min-width: $desktop) {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}
+
+.feedback-title {
+  @include media-px(width, _, 390, 548);
+  @include media(text-align, center, center, start);
+  color: $text-color;
+  font-family: $arial;
+  font-weight: $font-weight-900;
+  @include media-px(font-size, 26, 43, 60);
+  @include media(line-height, 110%, 110%, 90%);
+  @include media-px(letter-spacing, -0.52, -0.86, -0.9);
+  @include media-px(margin-bottom, 30, 40, 50);
+}
+
+.feedback-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.feedback-button {
+  display: flex;
+  flex-direction: column;
+  @include media-px(padding, 15, 27, 27);
+  @include media-px(width, 320, 600, 639);
+  min-height: 68px;
+  border-radius: 8px;
+  border: none;
+  background: $color-feedback-bg;
+
+  transition: background 0.3s ease;
+
+  &:hover,
+  &:focus {
+    background: $color-dark-grey;
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding-left: 40px;
+  }
+}
+
+.feedback-header {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  @include media-px(gap, 7.5, 14, 14);
+}
+
+.feedback-img-wrapper {
+  @include media-px(width, 38, 68, 68);
+  @include media-px(height, 38, 68, 68);
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.feedback-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.feedback-user {
+  color: $text-color;
+  font-family: $montserrat;
+  @include media-px(font-size, 12, 22, 18);
+  font-weight: $font-weight-600;
+  line-height: 120%;
+  @include media-px(margin-bottom, 3, 5, 5);
+}
+
+.feedback-stars-block {
+  display: flex;
+}
+
+.feedback-star {
+  @include media-px(width, 10, 20, 20);
+  @include media-px(height, 10, 20, 20);
+}
+
+.feedback-arrow-wrapper {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: flex-start;
+}
+
+.feedback-arrow {
+  @include media-px(width, 8, 14, 14);
+  @include media-px(height, 8, 14, 14);
+  transition: transform 0.3s ease;
+}
+
+.rotate-arrow {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+.feedback-text {
+  text-align: start;
+  @include media-px(padding-left, 45, 82, 82);
+  @include media-px(padding-right, 15, 27, 27);
+  color: $text-color-faded;
+  font-family: $montserrat;
+  @include media-px(font-size, 10, 16, 18);
+  font-weight: $font-weight-400;
+  line-height: 150%;
+  @include media-px(letter-spacing, -0.032, -0.051, 0.058);
+
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.hidden-feedback {
+  @extend %visually-hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.feedback-desktop-stroke {
+  @include media(display, none, none, block);
+}

@@ -1,0 +1,172 @@
+.progress-container {
+  @include media(padding-bottom, 50px, 70px, 120px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media screen and (min-width: $desktop) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.progress-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  @include media(margin-bottom, 30px, 35px, _);
+  @include media(width, 266px, 372px, 302px);
+
+  @media screen and (min-width: $desktop) {
+    justify-content: space-between;
+  }
+}
+
+.progress-bar {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 30px;
+  border-radius: 50px;
+  background: #dedede;
+}
+
+.progress-value_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  height: 100%;
+  padding: 5px 0px 7px 0px;
+
+  @include media(width, 201px, 307px, 237px);
+
+  background: linear-gradient(
+      64deg,
+      #6ddcff 16.77%,
+      #70c8fe 27.17%,
+      #72b8fd 35.83%,
+      #74a9fd 43.74%,
+      #7989fb 60.06%,
+      #7b7efa 66.13%,
+      #7d6ffa 74.22%,
+      #7f60f9 81.83%
+    ),
+    #638fff;
+}
+
+.progress-value {
+  color: $text-color;
+  font-family: $inter;
+  font-size: 14px;
+  font-weight: $font-weight-600;
+  line-height: calc(19 / 14);
+  letter-spacing: -0.32px;
+}
+
+.progress-max_wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.progress-max {
+  color: $text-color-brown;
+  font-family: $inter;
+  font-size: 14px;
+  font-weight: $font-weight-600;
+  line-height: calc(19 / 14);
+  letter-spacing: -0.32px;
+
+  margin-left: 20px;
+}
+
+.progress-description {
+  color: $text-color;
+  font-family: $inter;
+  font-size: 14px;
+  font-weight: $font-weight-400;
+  line-height: calc(19 / 14);
+  letter-spacing: -0.32px;
+
+  @media screen and (min-width: $tablet) and (max-width: calc($desktop - 1px)) {
+    font-size: 16px;
+    line-height: calc(22 / 16);
+    letter-spacing: -0.36px;
+  }
+
+  & .progress-description_span {
+    color: #fcfcfc;
+    font-weight: $font-weight-700;
+
+    @media screen and (min-width: $tablet) and (max-width: calc($desktop - 1px)) {
+      font-size: 16px;
+      line-height: calc(22 / 16);
+      letter-spacing: -0.36px;
+    }
+  }
+}
+
+// div razors
+.progress-razors_wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  @include media(margin-top, 15px, 20px, _);
+
+  @media screen and (min-width: $desktop) {
+    justify-content: space-between;
+    flex-direction: row;
+  }
+}
+
+.progress-img_wrapper {
+  width: 97px;
+  height: 85px;
+}
+
+.progress-img {
+  width: 100%;
+  height: 100%;
+}
+
+.progress-razors_text-wrapper {
+  align-items: center;
+  @include media(width, 243px, 253px, 174px);
+}
+
+.progress-razors_text {
+  color: $text-color;
+  text-align: center;
+  font-family: $inter;
+  font-size: 14px;
+  font-weight: $font-weight-500;
+  line-height: calc(20 / 14);
+  letter-spacing: -0.32px;
+}
+
+// button
+
+.progress-button {
+  @extend .generic-button;
+
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  white-space: nowrap;
+
+  @include media(font-size, 14px, 28px, 32px);
+
+  @include media(letter-spacing, 1.82px, 3.7px, -1.28px);
+
+  @include media(padding, 18px 13px, 38px, 26px 60px);
+
+  @include media(border-radius, 50px, 102px, 80px);
+
+  @media screen and (min-width: $desktop) {
+    font-size: 18px;
+    letter-spacing: 2.34px;
+  }
+}

@@ -1,9 +1,33 @@
-@import './reset.scss';
-@import './variables.scss';
+@import 'reset';
+@import 'variables';
 
-@import './defaults.scss';
-@import './container.scss';
+@import 'utils/animations';
+@import 'utils/functions';
+@import 'utils/mixins';
+@import 'utils/placeholders';
 
-@import './buttons.scss';
+@import 'defaults';
+@import 'container';
+@import 'main';
 
-@import './header.scss';
+@import 'components/buttons';
+@import 'components/typography';
+
+@import 'header';
+@import 'hero';
+@import 'actuality';
+@import 'preference';
+@import 'swiper/scss';
+@import 'swiper';
+@import 'result';
+@import 'form-message';
+@import 'program';
+@import 'syllabus';
+@import 'success-story';
+@import 'progress-bar';
+@import 'author';
+@import 'feedback';
+@import 'tariffs';
+
+@import 'mobile-menu';
+@import 'footer';

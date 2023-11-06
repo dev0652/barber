@@ -1,0 +1,138 @@
+.tariffs-section {
+  padding-bottom: 50px;
+}
+
+.tariffs-summary-wrapper_mobile {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.summary-text {
+  color: $text-color;
+  font-family: $inter;
+  font-size: 16px;
+  font-weight: $font-weight-600;
+  line-height: 120%;
+}
+
+.benefits-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.benefits-list li:last-child {
+  @media screen and (min-width: 300px) and (max-width: calc(($tablet) - 1px)) {
+    border-bottom: 0.6px solid #fff;
+  }
+}
+
+.benefits-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+  padding: 30px 15px;
+}
+
+.benefits-icon-wrapper {
+  @extend %flex-centered;
+  width: 70px;
+  height: 70px;
+  background-color: $color-icon-grey;
+  border-radius: 50%;
+}
+
+.white-bg {
+  background-color: white;
+}
+
+.new-wrapper {
+  @extend %flex-centered;
+  padding: 4.5px 8px;
+  border-radius: 18px;
+  background-color: #fff;
+}
+
+.new-text {
+  color: $bg-color;
+}
+
+.benefits-info-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.benefits-white {
+  border-top: 0.6px solid #fff;
+}
+
+.benefits-black {
+  border-top: 0.6px solid $color-border-result;
+  border-right: 0.6px solid $color-border-result;
+  border-left: 0.6px solid $color-border-result;
+}
+
+.benefits-title {
+  color: $text-color-benefits;
+
+  font-family: $arial;
+  font-size: 24px;
+  font-weight: $font-weight-900;
+  line-height: 100%;
+}
+
+.benefits-description {
+  color: $text-color-benefits-faded;
+
+  font-family: $inter;
+  font-size: 16px;
+  font-weight: $font-weight-400;
+  line-height: 120%;
+  letter-spacing: -0.32px;
+}
+
+.benefits-extra-wrapper {
+  text-align: center;
+}
+
+.benefits-old-price {
+  color: $text-color-old-faded;
+  text-decoration: line-through;
+  font-family: $montserrat;
+  font-size: 13px;
+  font-weight: $font-weight-400;
+  line-height: 120%;
+}
+
+.benefits-extra-info {
+  color: $text-color-benefits;
+  font-family: $inter;
+  font-size: 13px;
+  font-weight: $font-weight-500;
+  line-height: 120%;
+}
+
+.all-equal-text {
+  @include media(display, block, block, none);
+  text-align: center;
+  color: $text-color;
+  font-family: $arial;
+  font-weight: $font-weight-900;
+  @include media-px(font-size, 26, 43, _);
+  @include media(line-height, 110%, 110%, _);
+  @include media-px(letter-spacing, -0.52, -0.86, _);
+  @include media-px(margin-top, 45, 90, _);
+  @include media-px(margin-bottom, 30, 40, _);
+}
+
+.all-equal-grey {
+  color: $text-color-all-equal;
+}

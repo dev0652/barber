@@ -1,0 +1,90 @@
+.program {
+  @include media-px(padding-bottom, 35, 70, 30);
+}
+
+.program-container {
+  @extend .container;
+}
+
+.program-header {
+  @include media-px(margin-bottom, 24, 60);
+
+  @media screen and (min-width: $desktop) {
+    position: relative;
+  }
+}
+
+.program-title {
+  @extend .heading-level-2;
+
+  line-height: 90%;
+  @include media-px(margin-bottom, 15, 45, 40);
+
+  @media screen and (min-width: $desktop) {
+    text-align: left;
+  }
+}
+
+.program-description {
+  max-width: 50%;
+
+  color: #f3f3f3;
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 150%;
+}
+
+.program-description,
+.program-duration-total {
+  display: none;
+
+  @media screen and (min-width: $desktop) {
+    display: block;
+  }
+}
+
+.program-duration-block {
+  @media screen and (min-width: $desktop) {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+.program-duration-total {
+  color: rgba(white, 0.6);
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 120%;
+
+  margin-bottom: 30px;
+}
+
+.program-duration {
+  @extend %flex-centered;
+  gap: 20px;
+}
+
+.program-duration-item {
+  text-align: center;
+}
+
+.number {
+  font-family: $arial;
+  font-weight: 900;
+  line-height: 120%;
+
+  @include media-px(font-size, 31, 45, 31);
+  //   @include media-px(line-height, 120, _);
+}
+
+.time-span {
+  font-family: $montserrat;
+  font-weight: 600;
+  line-height: 120%;
+
+  @include media-px(font-size, 12, 23, 15);
+  //   @include media-px(line-height, 120, _);
+}

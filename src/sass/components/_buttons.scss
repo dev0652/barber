@@ -1,0 +1,50 @@
+.generic-button {
+  position: relative;
+
+  font-family: 'Arial-Black', sans-serif;
+  font-weight: 900;
+  line-height: 100%;
+  letter-spacing: 2.34px;
+  text-transform: uppercase;
+
+  color: black;
+  background-color: $text-color;
+
+  $border-width: 1.5px;
+
+  border: $border-width solid transparent;
+  border: none;
+  outline: none;
+  position: relative;
+  transform-style: preserve-3d;
+
+    &::before {
+      content: '';
+      position: absolute;
+
+      top: -$border-width;
+      right: -$border-width;
+      bottom: -$border-width * 1.5;
+      left: -$border-width;
+
+      background-color: rgb(109, 220, 255);
+      background: linear-gradient(rgba(109, 220, 255, 1), rgba(127, 96, 249, 1));
+
+      transform: translate3d(0, 0, -1px);
+      border-radius: inherit;
+
+      visibility: hidden;
+    }
+
+    
+    &:hover, &:focus-visible {
+      color: $text-color;
+      background-color: black;
+
+      transform: inherit scale(1.005);
+
+      &::before {
+        visibility: visible;
+      }
+    }
+}

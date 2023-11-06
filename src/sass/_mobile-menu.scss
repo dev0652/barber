@@ -1,0 +1,278 @@
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  z-index: 10000;
+
+  background: $bg-color;
+  padding: 25px 0;
+
+  @media screen and (max-width: calc($desktop - 1px)) and (orientation: landscape) {
+    padding: 10px 0;
+  }
+
+  display: none;
+
+  @media screen and (max-width: calc($desktop - 1px)) {
+    &.is-open {
+      display: block;
+    }
+  }
+
+  background: url('/img/glow/glow-mobile-menu.webp'), $bg-color;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center -200px;
+
+  @media screen and (max-width: calc($desktop - 1px)) and (orientation: landscape) {
+    background-size: 120%;
+    background-position: left;
+    background-repeat: no-repeat;
+  }
+
+  @media screen and (min-width: 500px) and (orientation: portrait) {
+    background-size: 180%;
+
+    background-repeat: no-repeat;
+    background-position: center -400px;
+  }
+
+  @media screen and (min-width: $tablet) and (orientation: portrait) {
+    background-position: cover;
+    background-size: 250%;
+
+    // background-repeat: no-repeat;
+    // background-position: center 5vh;
+  }
+}
+
+.mobile-menu-container {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 21px;
+
+  @media screen and (max-width: calc($desktop - 1px)) and (orientation: landscape) {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    min-width: 100%;
+  }
+
+  @media screen and (min-width: $tablet) and (orientation: portrait) {
+    & > :nth-child(1) {
+      order: 1;
+    }
+    & > :nth-child(2) {
+      order: 3;
+    }
+    & > :nth-child(3) {
+      order: 2;
+    }
+
+    gap: 40px;
+  }
+
+  @media screen and (min-width: $tablet) and (min-height: 500px) and (orientation: landscape) {
+    align-items: center;
+  }
+
+  @media screen and (min-width: $tablet) and (orientation: portrait) {
+    justify-content: space-evenly;
+    padding-bottom: 10vh;
+  }
+
+  
+
+  // Offsets and width
+
+  $horizontal-padding: 15px;
+  padding-left: $horizontal-padding;
+  padding-right: $horizontal-padding;
+
+  @media screen and (min-width: $mobile) {
+    width: $mobile;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    $horizontal-padding: 21px;
+    padding-left: $horizontal-padding;
+    padding-right: $horizontal-padding;
+  }
+
+  @media screen and (min-width: $tablet) {
+    width: $tablet;
+    $horizontal-padding: 40px;
+    padding-left: $horizontal-padding;
+    padding-right: $horizontal-padding;
+  }
+
+
+}
+
+.mobile-menu-nav {
+  @media screen and (min-width: $tablet) and (min-height: 500px) and (orientation: landscape) {
+    flex-grow: 1;
+    // height: 90%;
+  }
+}
+
+.mobile-nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  row-gap: 16px;
+  column-gap: 17px;
+
+  @media screen and (orientation: landscape) {
+    column-gap: 5%;
+    align-items: center;
+  }
+
+  @media screen and (min-width: $tablet) and (orientation: portrait) {
+    width: 500px;
+    column-gap: 30px;
+    row-gap: 25px;
+  }
+
+  @media screen and (min-width: $tablet) and (orientation: landscape) {
+    height: 100%;
+  }
+
+  @media screen and (min-width: $tablet) and (min-height: 500px) and (orientation: landscape) {
+    height: auto;
+  }
+}
+
+.mobile-nav-link {
+  font-family: $arial, sans-serif;
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 110%;
+  letter-spacing: -0.28px;
+  text-transform: uppercase;
+
+  color: white;
+
+  display: block;
+  width: 100%;
+
+  padding: 15px 0;
+
+  @media screen and (min-width: $tablet) {
+    padding: 25px 0;
+  }
+
+  border-radius: 10px;
+  overflow: hidden;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+  }
+
+  $percentage: 55%;
+
+  &::before {
+    top: 0;
+    bottom: $percentage;
+
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: none;
+  }
+
+  &::after {
+    top: $percentage;
+    bottom: 0;
+
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-top: none;
+  }
+
+  &:hover,
+  &:focus-visible {
+    background-color: rgba($text-color, 0.1);
+    backdrop-filter: blur(3px);
+  }
+
+  &:active {
+    background-color: rgba($bg-color, 0.3);
+  }
+}
+
+.mobile-nav-item {
+  position: relative;
+
+  width: 150px;
+  text-align: center;
+
+  @media screen and (min-width: $tablet) and (orientation: portrait) {
+    flex-basis: calc((500px - 30px) / 2);
+  }
+
+  @media screen and (max-width: calc($tablet - 1px)) and (orientation: landscape) {
+    width: 45%;
+  }
+
+  border: 1px solid transparent;
+  border-radius: 10px;
+
+  // &::before,
+  // &::after {
+  //   content: '';
+  //   position: absolute;
+  //   left: 0;
+  //   right: 0;
+
+  //   border: 1px solid rgba(255, 255, 255, 0.3);
+  //   border-radius: 10px;
+  // }
+
+  // $percentage: 55%;
+
+  // &::before {
+  //   top: 0;
+  //   bottom: $percentage;
+
+  //   border-bottom-left-radius: 0;
+  //   border-bottom-right-radius: 0;
+  //   border-bottom: none;
+  // }
+
+  // &::after {
+  //   top: $percentage;
+  //   bottom: 0;
+
+  //   border-top-left-radius: 0;
+  //   border-top-right-radius: 0;
+  //   border-top: none;
+  // }
+}
+
+.mobile-menu-button {
+  align-self: end;
+  padding: 10px 0;
+
+  @media screen and (max-width: calc($desktop - 1px)) and (orientation: landscape) {
+    align-self: start;
+    width: 100px;
+  }
+
+  @media screen and (max-width: calc($desktop - 1px)) and (min-height: 500px) and (orientation: landscape) {
+    width: 50px;
+  }
+}
