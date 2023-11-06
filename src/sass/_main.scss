@@ -13,6 +13,10 @@
   }
 }
 
+html {
+  scroll-padding-top: 90px; /* height of sticky header + 20px */
+}
+
 body {
   font-family: 'Inter', sans-serif;
 
