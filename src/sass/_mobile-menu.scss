@@ -21,6 +21,34 @@
       display: block;
     }
   }
+
+  // background: url('/img/glow/glow-mobile-menu.svg'), $bg-color;
+  background: url('/img/glow/glow-mobile-menu.png'), $bg-color;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center -200px;
+
+  @media screen and (max-width: calc($desktop - 1px)) and (orientation: landscape) {
+    background-size: 120%;
+    background-position: left;
+    background-repeat: no-repeat;
+  }
+
+  @media screen and (min-width: 500px) and (orientation: portrait) {
+    background-size: 180%;
+
+    background-repeat: no-repeat;
+    background-position: center -400px;
+  }
+
+  @media screen and (min-width: $tablet) and (orientation: portrait) {
+    background-position: cover;
+    background-size: 250%;
+
+    // background-repeat: no-repeat;
+    // background-position: center 5vh;
+  }
 }
 
 .mobile-menu-container {
@@ -34,6 +62,15 @@
     flex-direction: row-reverse;
     justify-content: space-between;
     min-width: 100%;
+  }
+
+  @media screen and (min-width: $tablet) and (min-height: 500px) and (orientation: landscape) {
+    align-items: center;
+  }
+
+  @media screen and (min-width: $tablet) and (orientation: portrait) {
+    justify-content: space-evenly;
+    padding-bottom: 10vh;
   }
 
   $horizontal-padding: 15px;
@@ -51,22 +88,32 @@
     padding-right: $horizontal-padding;
   }
 
-  @media screen and (min-width: $tablet) and (max-width: calc($tablet - 1px)) and (orientation: landscape) {
-    column-gap: 10%;
-  }
-
   @media screen and (min-width: $tablet) {
     width: $tablet;
     $horizontal-padding: 40px;
     padding-left: $horizontal-padding;
     padding-right: $horizontal-padding;
   }
+
+  @media screen and (min-width: $tablet) and (orientation: portrait) {
+    & > :nth-child(1) {
+      order: 1;
+    }
+    & > :nth-child(2) {
+      order: 3;
+    }
+    & > :nth-child(3) {
+      order: 2;
+    }
+
+    gap: 40px;
+  }
 }
 
 .mobile-menu-nav {
-  @media screen and (min-width: $tablet) and (max-width: calc($desktop - 1px)) and (min-height: 500px) and (orientation: landscape) {
+  @media screen and (min-width: $tablet) and (min-height: 500px) and (orientation: landscape) {
     flex-grow: 1;
-    height: 90%;
+    // height: 90%;
   }
 }
 
@@ -78,18 +125,23 @@
   row-gap: 16px;
   column-gap: 17px;
 
-  @media screen and (max-width: calc($desktop - 1px)) and (orientation: landscape) {
+  @media screen and (orientation: landscape) {
     column-gap: 5%;
+    align-items: center;
   }
 
-  @media screen and (min-width: $tablet) and (max-width: calc($desktop - 1px)) and (orientation: landscape) {
+  @media screen and (min-width: $tablet) and (orientation: portrait) {
+    width: 500px;
+    column-gap: 30px;
+    row-gap: 25px;
+  }
+
+  @media screen and (min-width: $tablet) and (orientation: landscape) {
     height: 100%;
   }
 
-  @media screen and (min-width: $tablet) and (max-width: calc($desktop - 1px)) and (min-height: 500px) and (orientation: landscape) {
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
+  @media screen and (min-width: $tablet) and (min-height: 500px) and (orientation: landscape) {
+    height: auto;
   }
 }
 
@@ -105,6 +157,10 @@
 
   display: block;
   padding: 15px 0;
+
+  @media screen and (min-width: $tablet) {
+    padding: 25px 0;
+  }
 }
 
 .mobile-nav-item {
@@ -112,6 +168,10 @@
 
   width: 150px;
   text-align: center;
+
+  @media screen and (min-width: $tablet) and (orientation: portrait) {
+    flex-basis: calc((500px - 30px) / 2);
+  }
 
   @media screen and (max-width: calc($tablet - 1px)) and (orientation: landscape) {
     width: 45%;
@@ -161,14 +221,7 @@
     width: 100px;
   }
 
-  @media screen and (max-width: calc($desktop - 1px)) and (orientation: landscape) {
-    align-self: start;
-    width: 100px;
-  }
-
   @media screen and (max-width: calc($desktop - 1px)) and (min-height: 500px) and (orientation: landscape) {
     width: 50px;
   }
 }
-
-// @media screen and (max-width: calc($desktop - 1px)) {}
