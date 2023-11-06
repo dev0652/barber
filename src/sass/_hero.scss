@@ -11,7 +11,7 @@
   //  for retina displays
   @media only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
-    --bg-image: url('/img/bkp/hero_mob@2x.webp');
+    --bg-image: url('/img/hero/hero_mob@2x.webp');
 
     @media screen and (min-width: $tablet) {
       height: 100vh;
