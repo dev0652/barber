@@ -5,31 +5,70 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
   emailjs.init('2np3E1HG1gcX8Tapf');
 })();
 
-const callback = function (event) {
-  event.preventDefault();
+// const contactForm = document
+//   .getElementById('contact-form')
+//   .addEventListener('submit', function (event) {
+//     event.preventDefault();
 
-  emailjs
-    .sendForm(
-      'service_02rwk5r',
-      'template_csnhoym',
-      '#email-form',
-      '2np3E1HG1gcX8Tapf'
-    )
-    .then(
-      function (response) {
-        Notify.success('Успішно надіслано');
-      },
-      function (error) {
-        Notify.failure('Щось пішло не так!');
-      }
-    );
-}
+//     emailjs
+//       .sendForm(
+//         'service_02rwk5r',
+//         'template_p886z4c',
+//         '#contact-form',
+//         '2np3E1HG1gcX8Tapf'
+//       )
+//       .then(
+//         function (response) {
+//           alert('SUCCESS!');
+//         },
+//         function (error) {
+//           alert('FAILED...');
+//         }
+//       );
+//   });
 
-const regularForm = document.getElementById('contact-form');
-regularForm.addEventListener('submit', callback);
+const allForm = document.querySelectorAll('.contact_form');
 
-const mobileMenu = document.querySelector('[data-menu]');
-const mobileForm = mobileMenu.querySelector('.contact_form');
-mobileForm.id = "contact-form-mobile";
+// allForm.forEach(element => {
+//   element.addEventListener('submit', function (event) {
+//     event.preventDefault();
 
-mobileForm.addEventListener('submit', callback);
+//     emailjs
+//       .sendForm(
+//         'service_02rwk5r',
+//         'template_p886z4c',
+//         '.contact_form',
+//         '2np3E1HG1gcX8Tapf'
+//       )
+//       .then(
+//         function (response) {
+//           alert('SUCCESS!');
+//         },
+//         function (error) {
+//           alert('FAILED...');
+//         }
+//       );
+//   });
+// });
+
+const mailForm = document
+  .getElementById('email-form')
+  .addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    emailjs
+      .sendForm(
+        'service_02rwk5r',
+        'template_csnhoym',
+        '#email-form',
+        '2np3E1HG1gcX8Tapf'
+      )
+      .then(
+        function (response) {
+          Notify.success('Успішно надіслано');
+        },
+        function (error) {
+          Notify.failure('Щось пішло не так!');
+        }
+      );
+  });
