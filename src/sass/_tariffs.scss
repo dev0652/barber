@@ -231,4 +231,12 @@
   align-self: center;
   padding: 13px 26px;
   border-radius: 65px;
+  min-width: 244px;
+  min-height: 65px;
+
+  font-family: $arial;
+  font-size: 17px;
+  font-weight: $font-weight-900;
+  line-height: 120%;
+  text-transform: uppercase;
 }
