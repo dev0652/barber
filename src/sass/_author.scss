@@ -9,8 +9,14 @@
   }
 }
 
+.author-content-wrapper {
+  @media screen and (min-width: 300px) and (max-width: calc(($tablet) - 1px)) {
+    position: relative;
+  }
+}
+
 .author-title-wrapper {
-  @include media(margin-bottom, 30px, 30px, _);
+  @include media(margin-bottom, 100px, 30px, _);
 
   @media screen and (min-width: 300px) and (max-width: calc(($desktop) - 1px)) {
     display: flex;
@@ -75,6 +81,11 @@
 }
 
 .author-credits-list_tablet {
+  @media screen and (min-width: 300px) and (max-width: calc(($tablet) - 1px)) {
+    position: absolute;
+    top: -70px;
+    z-index: 100;
+  }
   @include media(display, grid, grid, none);
   grid-template-columns: repeat(3, 1fr);
   @include media(gap, 5px, 10px, _);
@@ -140,7 +151,6 @@
   height: 368px;
   overflow: hidden;
   @include media-px(border-radius, 8, 8, 13);
-  margin-top: -15px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 17px;
