@@ -7,3 +7,4 @@ import './js/swiper';
 import './js/syllabus-button';
 import './js/syllabus';
 import './js/feedback-button';
+import './js/modal-condition';
