@@ -12,6 +12,9 @@
 }
 
 .modal {
+  font-family: $montserrat;
+  text-align: justify;
+
   @media screen and (max-width: calc(($mobile - 1px))) {
     width: 100%;
     padding: 5px;
@@ -19,6 +22,7 @@
 
   width: 350px;
   padding: 15px;
+
   background: $bg-color;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -42,7 +46,7 @@
 
   @media screen and (min-width: $tablet) {
     width: 790px;
-    padding: 25px;
+    padding: 25px 60px;
   }
 
   @media screen and (min-width: $desktop) {
@@ -62,32 +66,33 @@
 }
 
 .button-close {
-  width: 70px;
-  height: 30px;
-  color: $text-color;
+  width: 24px;
+  height: 24px;
+
+  box-sizing: content-box;
+  padding: 10px;
+
+  color: silver;
   background: transparent;
-  border: 1px solid $text-color;
-  border-radius: 10px;
-  font-size: 14px;
-  cursor: pointer;
+  border: none;
+  border-radius: 50%;
 
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: 24px;
+  right: 24px;
 
-  @media screen and (min-width: $tablet) {
-    font-size: 20px;
-    width: 100px;
-    height: 50px;
-  }
+  transition: transform 400ms;
 
-  @media screen and (min-width: $desktop) {
-    width: 100px;
-    height: 50px;
+  &:hover,
+  &:focus-visible {
+    color: $text-color;
+    transform: scale(1.2);
   }
 }
 
-// кнопка
+.button-close-icon {
+  fill: currentColor;
+}
 
 .modal__title {
   display: block;
@@ -96,7 +101,7 @@
   text-align: center;
   letter-spacing: 0.03em;
   color: $text-color;
-  margin-bottom: 12px;
+  margin-bottom: 30px;
   margin-top: 28px;
 
   @media screen and (min-width: $desktop) {
