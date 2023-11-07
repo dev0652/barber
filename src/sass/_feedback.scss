@@ -100,8 +100,8 @@
 
 .feedback-user {
   color: $text-color;
-  font-family: $montserrat;
-  @include media-px(font-size, 12, 22, 18);
+  font-family: $inter;
+  @include media-px(font-size, 18, 22, 18);
   font-weight: $font-weight-600;
   line-height: 120%;
   @include media-px(margin-bottom, 3, 5, 5);
@@ -112,8 +112,8 @@
 }
 
 .feedback-star {
-  @include media-px(width, 10, 20, 20);
-  @include media-px(height, 10, 20, 20);
+  @include media-px(width, 14, 20, 20);
+  @include media-px(height, 14, 20, 20);
 }
 
 .feedback-arrow-wrapper {
@@ -137,11 +137,12 @@
 
 .feedback-text {
   text-align: start;
+  @include media-px(padding-top, 5, 0, 0);
   @include media-px(padding-left, 45, 82, 82);
   @include media-px(padding-right, 15, 27, 27);
   color: $text-color-faded;
-  font-family: $montserrat;
-  @include media-px(font-size, 10, 16, 18);
+  font-family: $inter;
+  @include media-px(font-size, 16, 16, 18);
   font-weight: $font-weight-400;
   line-height: 150%;
   @include media-px(letter-spacing, -0.032, -0.051, 0.058);
