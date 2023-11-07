@@ -7,7 +7,7 @@
 
   z-index: 10000;
 
-  background: $bg-color;
+  background-color: $bg-color;
   padding: 25px 0;
 
   @media screen and (max-width: calc($desktop - 1px)) and (orientation: landscape) {
@@ -22,31 +22,38 @@
     }
   }
 
-  background: url('/img/glow/glow-mobile-menu.webp'), $bg-color;
+  @extend %glow;
 
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center -200px;
+  &::before {
+    top: 20%;
+    left: -110%;
 
-  @media screen and (max-width: calc($desktop - 1px)) and (orientation: landscape) {
-    background-size: 120%;
-    background-position: left;
-    background-repeat: no-repeat;
-  }
+    transform-origin: top center;
+    transform: rotate(-60deg) scale(1.2);
 
-  @media screen and (min-width: 500px) and (orientation: portrait) {
-    background-size: 180%;
+    @media screen and (orientation: landscape) {
+      transform: rotate(-40deg) scale(1.2);
+      transform-origin: bottom left;
 
-    background-repeat: no-repeat;
-    background-position: center -400px;
-  }
+      top: 60%;
+      left: 60%;
+    }
 
-  @media screen and (min-width: $tablet) and (orientation: portrait) {
-    background-position: cover;
-    background-size: 250%;
+    @media screen and (min-width: 500px) and (orientation: portrait) {
+      transform: rotate(-60deg) scale(1.5);
+      transform-origin: top center;
 
-    // background-repeat: no-repeat;
-    // background-position: center 5vh;
+      top: 10%;
+      left: -30%;
+    }
+
+    @media screen and (min-width: $tablet) and (orientation: portrait) {
+      transform: rotate(0deg) scale(2);
+      transform-origin: top center;
+
+      top: 20%;
+      left: 15%;
+    }
   }
 }
 
@@ -86,8 +93,6 @@
     padding-bottom: 10vh;
   }
 
-  
-
   // Offsets and width
 
   $horizontal-padding: 15px;
@@ -111,8 +116,6 @@
     padding-left: $horizontal-padding;
     padding-right: $horizontal-padding;
   }
-
-
 }
 
 .mobile-menu-nav {
@@ -265,7 +268,7 @@
 
 .mobile-menu-button {
   align-self: end;
-  padding: 10px 0;
+  // padding: 10px 0;
 
   @media screen and (max-width: calc($desktop - 1px)) and (orientation: landscape) {
     align-self: start;

@@ -12,7 +12,6 @@
 .contact-form_wrapper {
   display: flex;
   flex-direction: column;
-  gap: 24px;
   width: 100%;
   background-color: $text-color;
 
@@ -40,6 +39,7 @@
     border-radius: 23px;
     padding: 34px;
     max-width: 100%;
+    gap: 17px;
 
     @media screen and (min-width: $tablet) and (orientation: portrait) {
       width: 500px;
@@ -113,9 +113,8 @@
   }
 
   .contact-form_wrapper.is-in-mobile-menu & {
-    @media screen and (max-width: calc($tablet - 1px)) {
-      margin-bottom: 6px;
-    }
+    margin-bottom: 6px;
+    font-size: 29px;
 
     @media screen and (min-width: $tablet) {
       font-size: 48px;
@@ -151,6 +150,10 @@
   }
 
   .contact-form_wrapper.is-in-mobile-menu & {
+    font-family: $montserrat;
+    font-size: 11px;
+    max-width: 90%;
+
     @media screen and (min-width: $tablet) and (orientation: portrait) {
       font-size: 24px;
     }
@@ -192,6 +195,8 @@
     @include media(letter-spacing, -0.4px, -0.7px, -0.4px);
 
     .contact-form_wrapper.is-in-mobile-menu & {
+      font-size: 14px;
+
       @media screen and (min-width: $tablet) and (max-height: 500px) and (orientation: landscape) {
         font-size: 16px;
       }
@@ -264,6 +269,8 @@
   }
 
   .contact-form_wrapper.is-in-mobile-menu & {
+    font-size: 12px;
+
     @media screen and (min-width: $tablet) {
       font-size: 22px;
       padding: 32px 0;
