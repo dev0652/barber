@@ -68,6 +68,10 @@
 }
 
 .benefits-desktop-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   @media (min-width: $desktop) {
     position: relative;
     display: flex;
@@ -385,8 +389,9 @@
 }
 
 .tariff-btn {
+  text-align: center;
   align-self: center;
-  @include media(padding, 13px 26px, 15px 30px, _);
+  @include media(padding, 25px 26px, 35px 30px, 25px 30px);
   border-radius: 65px;
   @include media-px(min-width, 244, 411, 310);
   @include media-px(min-height, 65, 110, 76);
