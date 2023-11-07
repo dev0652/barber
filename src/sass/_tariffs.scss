@@ -69,6 +69,7 @@
 
 .benefits-desktop-wrapper {
   @media (min-width: $desktop) {
+    position: relative;
     display: flex;
     flex-direction: row-reverse;
     justify-content: flex-start;
@@ -288,6 +289,8 @@
     padding: 60px;
   }
   @media screen and (min-width: $desktop) {
+    position: sticky;
+    top: 0;
     max-width: 420px;
     padding: 30px 43px 30px 43px;
   }
