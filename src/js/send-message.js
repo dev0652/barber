@@ -24,7 +24,10 @@ const contactForm = document
         function (error) {
           Notify.failure('Щось пішло не так!');
         }
-      );
+      )
+      .finally(function () {
+        document.getElementById('contact-form').reset();
+      });
   });
 
 const contactFormSection = document
@@ -46,7 +49,10 @@ const contactFormSection = document
         function (error) {
           Notify.failure('Щось пішло не так!');
         }
-      );
+      )
+      .finally(function () {
+        document.getElementById('contacts-form-section').reset();
+      });
   });
 
 const mailForm = document
@@ -68,5 +74,8 @@ const mailForm = document
         function (error) {
           Notify.failure('Щось пішло не так!');
         }
-      );
+      )
+      .finally(function () {
+        document.getElementById('email-form').reset();
+      });
   });
