@@ -106,8 +106,7 @@
   justify-content: flex-start;
   @include media(gap, 7px, 15px, 12px);
   border-radius: 6px;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(12px);
+  background: rgba(35, 35, 35, 255);
 
   @media screen and (min-width: 300px) {
     padding: 10px;
@@ -117,6 +116,8 @@
   }
   @media screen and (min-width: $tablet) {
     padding: 30px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
   }
   @media screen and (min-width: $desktop) {
     padding: 23px;
