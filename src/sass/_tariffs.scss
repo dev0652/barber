@@ -19,10 +19,18 @@
 
   @media screen and (min-width: $desktop) {
     background: url('../img/gradient.svg');
-    background-size: contain;
+    background-size: 800px;
     background-repeat: no-repeat;
-    background-position: bottom;
+    background-position: left top;
+    padding-bottom: 100px;
   }
+}
+
+.tariff-header-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  @include media-px(margin-bottom, 30, 50, 50);
 }
 
 .decoration-lines_mobile {
@@ -33,19 +41,40 @@
   @include media(display, none, block, none);
 }
 
-.tariffs-summary-wrapper_mobile {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  margin-bottom: 30px;
+.decoration-lines_desktop {
+  @include media(display, none, none, block);
+}
+
+.tariffs-summary-wrapper {
+  @media screen and (max-width: calc(($desktop) - 1px)) {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+  @media screen and (min-width: $desktop) {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    gap: 60px;
+  }
 }
 
 .summary-text {
   color: $text-color;
   font-family: $inter;
-  @include media-px(font-size, 16, 32, _);
+  @include media-px(font-size, 16, 32, 16);
   font-weight: $font-weight-600;
   line-height: 120%;
+}
+
+.benefits-desktop-wrapper {
+  @media (min-width: $desktop) {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 40px;
+  }
 }
 
 .benefits-list {
@@ -89,6 +118,10 @@
     justify-content: flex-start;
     align-items: flex-start;
     padding: 40px 30px;
+  }
+
+  @media (min-width: $desktop) {
+    padding: 40px 40px;
   }
 }
 
@@ -163,6 +196,9 @@
   @media screen and (min-width: $tablet) {
     border-right: none;
   }
+  @media screen and (min-width: $desktop) {
+    padding-right: 0;
+  }
 }
 
 .benefits-left.benefits-white {
@@ -223,6 +259,17 @@
   @include media-px(margin-bottom, 30, 40, _);
 }
 
+.all-equal-text_desktop {
+  @include media(display, none, none, block);
+
+  color: $text-color;
+  font-family: $arial;
+  font-size: 60px;
+  font-weight: $font-weight-900;
+  line-height: 110%;
+  letter-spacing: -1.2px;
+}
+
 .all-equal-grey {
   color: $text-color-all-equal;
 }
@@ -240,6 +287,10 @@
   @media screen and (min-width: $tablet) {
     padding: 60px;
   }
+  @media screen and (min-width: $desktop) {
+    max-width: 420px;
+    padding: 30px 43px 30px 43px;
+  }
 }
 
 .barcode-wrapper {
@@ -247,7 +298,7 @@
 }
 
 .barcode-third {
-  @include media(display, none, block, block);
+  @include media(display, none, block, none);
 }
 
 .tariff-card-content {
@@ -297,7 +348,7 @@
 }
 
 .tariffs-start {
-  margin-bottom: 45px;
+  @include media-px(margin-bottom, 45, 80, 57);
   color: $text-color;
   font-family: $montserrat;
   @include media-px(font-size, 14, 24, 16);
