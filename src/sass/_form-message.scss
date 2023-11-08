@@ -369,8 +369,8 @@
   font-weight: $font-weight-600;
   line-height: 120%;
 
-  @include media(font-size, 17px, 33px, 17px);
-  @include media(letter-spacing, -0.4px, -0.7px, -0.4px);
+  @include media(font-size, 16px, 33px, 17px);
+  @include media(letter-spacing, -0.7px, -0.7px, -0.4px);
 }
 
 .contact-social-list {
