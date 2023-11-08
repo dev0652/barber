@@ -67,7 +67,7 @@
 
   &:hover,
   &:focus {
-    background: $color-dark-grey;
+    background: $color-feedback-bg-hover;
   }
 
   @media screen and (min-width: $desktop) {
