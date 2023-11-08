@@ -1,20 +1,5 @@
 .program {
   @include media-px(padding-bottom, 35, 70, 30);
-
-  position: relative;
-  @extend %glow;
-
-  &::before {
-    top: 30%;
-    right: -120%;
-    // outline: auto;
-
-    transform: rotate(90deg) scale(1.5) scaleX(-1);
-
-    @media screen and (min-width: $tablet) {
-      display: none;
-    }
-  }
 }
 
 .program-container {
