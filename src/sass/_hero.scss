@@ -349,7 +349,7 @@
 
   @include media-px(font-size, 14, 28, 18);
   @include media-px(letter-spacing, 1.82, 3.7, 2.34);
-  @include media(padding, 18px 13px, 38px, 24px 30px);
+  @include media(padding, 18px, 38px, 24px 30px);
   @include media-px(border-radius, 50, 102, 80);
 
   @media screen and (max-width: calc($tablet - 1px)) and (orientation: landscape) {
