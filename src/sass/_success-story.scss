@@ -137,7 +137,10 @@
   flex-direction: column;
   border-radius: 20px;
   border: 1px solid $color-grey;
-  background-color: #151515;
+  background: rgba(255, 255, 255, 0.08);
+  -webkit-backdrop-filter: blur(40px);
+  backdrop-filter: blur(40px);
+  border: none;
 
   @include media(width, 210px, 333px, 345px);
   @include media(margin-left, -20px, -50px, -40px);
