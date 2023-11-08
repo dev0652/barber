@@ -8,12 +8,6 @@
   refs.openModalBtn.addEventListener('click', toggleModal);
   refs.closeModalBtn.addEventListener('click', toggleModal);
 
-  document.addEventListener('keydown', event => {
-    if (event.key === 'Escape') {
-      toggleModal();
-    }
-  });
-
   refs.modal.addEventListener('click', event => {
     if (event.target === refs.modal) {
       toggleModal();
