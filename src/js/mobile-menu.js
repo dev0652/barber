@@ -26,11 +26,12 @@ refs.menuCloseButton.addEventListener('click', toggleModal);
 window.matchMedia('(min-width: 834px)').addEventListener('change', e => {
   if (!e.matches) return;
   refs.menu.classList.remove('is-open');
+  refs.contactsFormWrapper.classList.remove('is-in-mobile-menu');
   refs.menuCloseButton.setAttribute('aria-expanded', false);
   document.body.style.overflow = '';
 });
 
 // Close mobile menu whenever a link is clicked
 document.querySelectorAll('[js-close-on-click]').forEach(item => {
-  item.addEventListener('click', toggleModal, { once: true });
+  item.addEventListener('click', toggleModal);
 });
