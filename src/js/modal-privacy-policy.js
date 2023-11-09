@@ -6,8 +6,8 @@
     siteName: document.querySelector('[data-insert-site-name]'),
   };
 
-  const origin = window.location.origin;
-  refs.siteName.innerHTML = origin;
+  const { origin, pathname } = window.location;
+  refs.siteName.innerHTML = origin + pathname;
 
   refs.openModalBtn.addEventListener('click', toggleModal);
   refs.closeModalBtn.addEventListener('click', toggleModal);
