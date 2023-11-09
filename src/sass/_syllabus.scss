@@ -206,9 +206,9 @@
     right: 15px;
   }
 
-  transition: transform 300ms ease-in;
+  transition: transform 400ms;
 
-  .syllabus-card.expanded & {
+  .syllabus-card-visible.content-expanded & {
     transform: rotate(180deg);
 
     @media screen and (min-width: $tablet) {
@@ -220,11 +220,7 @@
 .syllabus-card-collapsible-wrapper {
   max-height: 0px;
   overflow: hidden;
-  transition: max-height 600ms ease-out;
-
-  // &.expanded {
-  //   max-height: 600px;
-  // }
+  transition: max-height 400ms ease-out;
 }
 
 .syllabus-card-collapsible {
