@@ -308,7 +308,7 @@
   @include media(letter-spacing, -0.4px, -0.8px, -0.4px);
 }
 
-.copyright-conditions-wrapper {
+.copyright-privacy-policys-wrapper {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -327,7 +327,7 @@
   }
 }
 
-.copyright-condition {
+.copyright-privacy-policy {
   color: rgba(255, 255, 255, 0.4);
   font-family: Inter;
   font-size: 9px;
@@ -339,7 +339,7 @@
   @include media(letter-spacing, -0.3px, -0.5px, -0.4px);
 }
 
-.copyright-condition-btn {
+.copyright-privacy-policy-btn {
   background-color: transparent;
   border: transparent;
   color: rgba(255, 255, 255, 0.4);

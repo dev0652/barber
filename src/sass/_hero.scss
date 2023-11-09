@@ -8,7 +8,7 @@
     --bg-image: url('/img/hero/hero.webp');
   }
 
-  //  for retina displays
+  //  for retina displays 2x
   @media only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
     --bg-image: url('/img/hero/hero_mob@2x.webp');
@@ -19,13 +19,24 @@
     }
   }
 
+  //  for retina displays 3x
+  @media only screen and (min-resolution: 288dpi),
+    only screen and (min-resolution: 3dppx) {
+    --bg-image: url('/img/hero/hero_mob@3x.webp');
+
+    @media screen and (min-width: $tablet) {
+      height: 100vh;
+      --bg-image: url('/img/hero/hero@3x.webp');
+    }
+  }
+
   $bg-image: var(--bg-image);
 
   background-color: $bg-color;
   background-image: $bg-image;
   background-repeat: no-repeat;
   background-size: cover;
-  // background-position: center;
+  background-position: center;
 
   --bracket-height: 22px;
 
@@ -349,7 +360,7 @@
 
   @include media-px(font-size, 14, 28, 18);
   @include media-px(letter-spacing, 1.82, 3.7, 2.34);
-  @include media(padding, 18px 13px, 38px, 24px 30px);
+  @include media(padding, 18px, 38px, 24px 30px);
   @include media-px(border-radius, 50, 102, 80);
 
   @media screen and (max-width: calc($tablet - 1px)) and (orientation: landscape) {
