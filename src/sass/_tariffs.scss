@@ -6,31 +6,31 @@
 
   padding-bottom: 50px;
 
-  position: relative;
+  // position: relative;
 
-  @media screen and (min-width: $tablet) {
-    &::before {
-      content: url('/img/glow/glow-tariff.webp');
-      z-index: -1;
-      position: absolute;
+  // @media screen and (min-width: $tablet) {
+  //   &::before {
+  //     content: url('/img/glow/glow-tariff.webp');
+  //     z-index: -1;
+  //     position: absolute;
 
-      top: 80%;
-      left: -55%;
+  //     top: 80%;
+  //     left: -55%;
 
-      @media screen and (min-width: $tablet) {
-        top: 70%;
-        left: 0;
+  //     @media screen and (min-width: $tablet) {
+  //       top: 70%;
+  //       left: 0;
 
-        transform: scale(1.5);
-      }
+  //       transform: scale(1.5);
+  //     }
 
-      @media screen and (min-width: $desktop) {
-        top: 0;
-        left: -15%;
-        transform: scale(1);
-      }
-    }
-  }
+  //     @media screen and (min-width: $desktop) {
+  //       top: 0;
+  //       left: -15%;
+  //       transform: scale(1);
+  //     }
+  //   }
+  // }
 
   @media screen and (min-width: $tablet) {
     // background: url('../img/gradient.svg');
@@ -301,6 +301,26 @@
   color: $text-color-all-equal;
 }
 
+.tariff-card-overlay {
+  position: relative;
+
+  &::before {
+    content: url('/img/glow/glow-tariff.webp');
+    z-index: -1;
+    position: absolute;
+
+    top: -30%;
+    left: -60%;
+    // transform: scale(1.1);
+
+    // @media screen and (min-width: $tablet) {
+    //   top: 70%;
+    //   left: 0;
+
+    //   transform: scale(1.5);
+  }
+}
+
 .tariff-card {
   max-width: 558px;
   display: flex;
@@ -309,8 +329,7 @@
   align-items: center;
   padding: 20px 40px 40px 40px;
   border-radius: 14px;
-  // background: $tariff-card-bg;
-  background-color: rgba(20, 20, 20, 0.7);
+  background-color: $tariff-card-bg;
 
   @media screen and (min-width: $tablet) {
     padding: 60px;

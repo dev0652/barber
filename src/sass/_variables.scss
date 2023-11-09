@@ -13,10 +13,13 @@ $color-yellow: #ffd258;
 $color-grey: #d9d9d9;
 $color-dark-grey: rgb(255, 255, 255, 0.08);
 $color-icon-grey: #262626;
-$color-border-result: #363636;
+// $color-border-result: #363636;
+$color-border-result: rgba(white, 0.08);
+
 $color-feedback-bg: #242424;
 $color-feedback-bg-hover: #202020;
-$tariff-card-bg: rgba(20, 20, 20, 0.5);
+// $tariff-card-bg: rgba(20, 20, 20, 0.5);
+$tariff-card-bg: rgba(20, 20, 20, 0.7);
 
 // Breakpoints
 $mobile: 360px;

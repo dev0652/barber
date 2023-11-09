@@ -20,3 +20,11 @@
     padding-right: 20px;
   }
 }
+
+@media screen and (min-width: $mobile) and (max-width: calc($tablet - 1px)) {
+  html,
+  body {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+}
