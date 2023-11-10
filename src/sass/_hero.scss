@@ -1,5 +1,8 @@
 .hero {
   height: 100vh;
+  padding-top: $upper-bracket-offset;
+
+  @include media-px(padding-top, _, _, 140px);
 
   $grad-color: rgba(black, 0.6);
   --bg-image: url('/img/hero/hero_mob.webp');

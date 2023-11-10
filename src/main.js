@@ -1,4 +1,4 @@
-import './js/hero-offset';
+// import './js/hero-offset'; // hardcoded to fix an iOS issue
 import './js/header-scroll';
 import './js/mobile-menu';
 

@@ -1,3 +1,5 @@
+// !!! This code chunk is currently NOT being imported due to an iOS issue (paddingTop is hardcoded)
+
 import getRefs from './refs';
 const { header, hero } = getRefs();
 

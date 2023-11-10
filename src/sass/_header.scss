@@ -5,13 +5,10 @@
   z-index: 1000;
 
   width: 100vw;
-  // padding: 10px 0; // initial layout
 
   transition: padding 200ms ease-out;
 
   &.sticky-header {
-    // background-color: rgb(1, 1, 24, 0.5);
-    // backdrop-filter: blur(10px);
     background-color: $bg-color;
 
     @media screen and (max-width: calc($tablet - 1px)) {
@@ -29,7 +26,7 @@
     @media screen and (max-width: calc($desktop - 1px)) {
       display: flex;
       align-items: center;
-      height: $lower-bracket-offset;
+      height: $upper-bracket-offset;
     }
   }
 }
