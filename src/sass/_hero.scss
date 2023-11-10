@@ -379,10 +379,10 @@
 
   @media screen and (min-width: $desktop) {
     position: absolute;
-    bottom: 40px; // hero footer height / 2 + pb
     left: 50%;
-
-    transform: translateX(-50%);
+    bottom: 40px; // hero footer height / 2 + pb
+    bottom: calc($lower-bracket-offset / 2);
+    transform: translate(-50%, 50%);
   }
 
   z-index: 10;
