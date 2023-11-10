@@ -28,6 +28,6 @@ Vasylyna Plish
   [GitHub](https://github.com/aslanukr) -->
 <!-- - Mykhailo Diuzhenko @dev0652[LinkedIn](https://www.linkedin.com/in/diuzhenko) [GitHub](https://github.com/dev0652) -->
 
-[![Yurii's cheerful Labrador Retriever](https://avatars.githubusercontent.com/u/115108617 =50x50)](https://github.com/YuraBuchak)
-[![The head of Aslan the Lion against the starry backdrop](https://avatars.githubusercontent.com/u/114025378 =50x50)](https://github.com/aslanukr)
-[![Sheriff-like star badge with the lettering that reads "To Commit & Push"](https://avatars.githubusercontent.com/u/113797010 =50x50)](https://github.com/dev0652)
+[![Yurii's cheerful Labrador Retriever](https://avatars.githubusercontent.com/u/115108617 | width=50)](https://github.com/YuraBuchak)
+[![The head of Aslan the Lion against the starry backdrop](https://avatars.githubusercontent.com/u/114025378 | width=50)](https://github.com/aslanukr)
+[![Sheriff-like star badge with the lettering that reads "To Commit & Push"](https://avatars.githubusercontent.com/u/113797010  | width=50)](https://github.com/dev0652)
