@@ -1,5 +1,7 @@
 # Barber - A Landing Page Made With Vanilla JS
 
+![Website's Hero Block](./assets/screenshot.jpg)
+
 ## Description
 
 This website is a landing page advertising an offline barber training course in
@@ -14,6 +16,10 @@ Ukraine.
 - Swiper
 
 All images were optimized with Squoosh and are served in WebP format.
+
+## Performance
+
+![Screenshot of Google Lighthouse website performance metrics - 98  out of 100 for performance, 100  out of 100 for accessibility, 95  out of 100 for best practices, and 100 out of 100 for SEO](./assets/performance.png)
 
 ## Designed by
 
