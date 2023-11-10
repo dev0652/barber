@@ -17,17 +17,12 @@ All images were optimized with Squoosh and are served in WebP format.
 
 ## Designed by
 
-Vasylyna Plish
-[Instagram](https://instagram.com/websites.ua?igshid=YzAwZjE1ZTI0Zg==)
+Vasylyna Plish [Instagram](https://instagram.com/websites.ua?igshid=YzAwZjE1ZTI0Zg==)
 
 ## Developer team
 
-<!-- - Yurii Buchak @YuraBuchak [LinkedIn](https://www.linkedin.com/in/yura-buchak) [GitHub](https://github.com/YuraBuchak) -->
-<!-- - Vitaliy Korostylov @aslanukr
-  [LinkedIn](https://www.linkedin.com/in/vitaliy-korostylov)
-  [GitHub](https://github.com/aslanukr) -->
-<!-- - Mykhailo Diuzhenko @dev0652[LinkedIn](https://www.linkedin.com/in/diuzhenko) [GitHub](https://github.com/dev0652) -->
+- Yurii Buchak [@YuraBuchak](https://github.com/YuraBuchak) [LinkedIn](https://www.linkedin.com/in/yura-buchak)
+- Vitaliy Korostylov [@aslanukr](https://github.com/aslanukr) [LinkedIn](https://www.linkedin.com/in/vitaliy-korostylov) 
+- Mykhailo Diuzhenko [@dev0652](https://github.com/dev0652) [LinkedIn](https://www.linkedin.com/in/diuzhenko)
 
-[![Yurii's cheerful Labrador Retriever](https://avatars.githubusercontent.com/u/115108617 =50x50)](https://github.com/YuraBuchak)
-[![The head of Aslan the Lion against the starry backdrop](https://avatars.githubusercontent.com/u/114025378 =50x50)](https://github.com/aslanukr)
-[![Sheriff-like star badge with the lettering that reads "To Commit & Push"](https://avatars.githubusercontent.com/u/113797010 =50x50)](https://github.com/dev0652)
+
