@@ -38,29 +38,35 @@ $font-weight-600: 600;
 $font-weight-700: 700;
 $font-weight-900: 900;
 
-// Vertical offset (Hero / header)
+// Header and hero - vertical offsets
 :root {
+  --upper-bracket-offset: 70px;
   --lower-bracket-offset: 70px;
   --container-padding: 10px;
 
-  @media screen and (min-width: $tablet) {
-    --lower-bracket-offset: 130px;
-    --container-padding: 15px;
-  }
-
   @media screen and (max-width: calc($tablet - 1px)) and (orientation: landscape) {
+    --upper-bracket-offset: 40px;
     --lower-bracket-offset: 40px;
   }
 
+  @media screen and (min-width: $tablet) {
+    --lower-bracket-offset: 160px;
+    --upper-bracket-offset: 130px;
+    --container-padding: 15px;
+  }
+
   @media screen and (min-width: $tablet) and (max-width: calc($desktop - 1px )) and (orientation: landscape) {
+    --upper-bracket-offset: 60px;
     --lower-bracket-offset: 60px;
   }
 
   @media screen and (min-width: $desktop) {
-    --lower-bracket-offset: 140px;
+    --upper-bracket-offset: 100px;
+    --lower-bracket-offset: 130px;
   }
 }
 
+$upper-bracket-offset: var(--upper-bracket-offset);
 $lower-bracket-offset: var(--lower-bracket-offset);
 $container-padding: var(--container-padding);
 
