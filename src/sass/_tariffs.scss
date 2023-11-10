@@ -267,6 +267,11 @@
 .tariff-card-overlay {
   position: relative;
 
+  @media screen and (min-width: $desktop) {
+    position: sticky;
+    top: $upper-bracket-offset;
+  }
+
   &::before {
     content: url('/img/glow/glow-tariff.webp');
     z-index: -1;
@@ -297,8 +302,8 @@
     padding: 60px;
   }
   @media screen and (min-width: $desktop) {
-    position: sticky;
-    top: 0;
+    // position: sticky;
+
     max-width: 420px;
     padding: 30px 43px 30px 43px;
   }
