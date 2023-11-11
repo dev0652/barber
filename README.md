@@ -25,7 +25,7 @@ All images were optimized with Squoosh and are served in WebP format.
 
 ## Designed by
 
-- Vasylyna Plish [Instagram](https://instagram.com/websites.ua?igshid=YzAwZjE1ZTI0Zg==)
+- Vasylyna Plish [![Instagram logo](https://cdn-icons-png.flaticon.com/128/3670/3670274.png)](https://instagram.com/websites.ua?igshid=YzAwZjE1ZTI0Zg==)
 
 ## Developer team
 
