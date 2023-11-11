@@ -29,11 +29,18 @@ All images were optimized with Squoosh and are served in WebP format.
 
 ## Developer team
 
-- Yurii Buchak [GitHub](https://github.com/YuraBuchak)
-  [LinkedIn](https://www.linkedin.com/in/yura-buchak)
+- Yurii Buchak  [GitHub](https://github.com/YuraBuchak)  [LinkedIn](https://www.linkedin.com/in/yura-buchak)
+- Yurii Buchak  [ ![GitHub logo](./assets/github.png) ] [ ![LinkedIn logo](./assets/linkedin.png) ]
 - Vitaliy Korostylov [GitHub](https://github.com/aslanukr)
   [LinkedIn](https://www.linkedin.com/in/vitaliy-korostylov)
 - Mykhailo Diuzhenko [GitHub](https://github.com/dev0652)
   [LinkedIn](https://www.linkedin.com/in/diuzhenko)
+
+  <!-- - Yurii Buchak [GitHub](https://github.com/YuraBuchak)
+  [LinkedIn](https://www.linkedin.com/in/yura-buchak)
+- Vitaliy Korostylov [GitHub](https://github.com/aslanukr)
+  [LinkedIn](https://www.linkedin.com/in/vitaliy-korostylov)
+- Mykhailo Diuzhenko [GitHub](https://github.com/dev0652)
+  [LinkedIn](https://www.linkedin.com/in/diuzhenko) -->
 
 
