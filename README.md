@@ -1,6 +1,8 @@
-# Barber - A Landing Page Made With Vanilla JS
+# Barber Training Course - A Landing Page
 
 ![Website's Hero Block](./assets/screenshot.png)
+
+Live page: [barber-course.netlify.app](https://barber-course.netlify.app/}
 
 ## Description
 
@@ -23,14 +25,13 @@ All images were optimized with Squoosh and are served in WebP format.
 
 ## Designed by
 
-Vasylyna Plish
-[Instagram](https://instagram.com/websites.ua?igshid=YzAwZjE1ZTI0Zg==)
+[Vasylyna Plish](https://instagram.com/websites.ua?igshid=YzAwZjE1ZTI0Zg==)
 
 ## Developer team
 
-- Yurii Buchak [@YuraBuchak](https://github.com/YuraBuchak)
+- Yurii Buchak [GitHub](https://github.com/YuraBuchak)
   [LinkedIn](https://www.linkedin.com/in/yura-buchak)
-- Vitaliy Korostylov [@aslanukr](https://github.com/aslanukr)
+- Vitaliy Korostylov [GitHub](https://github.com/aslanukr)
   [LinkedIn](https://www.linkedin.com/in/vitaliy-korostylov)
-- Mykhailo Diuzhenko [@dev0652](https://github.com/dev0652)
+- Mykhailo Diuzhenko [GitHub](https://github.com/dev0652)
   [LinkedIn](https://www.linkedin.com/in/diuzhenko)
