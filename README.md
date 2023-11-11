@@ -2,7 +2,7 @@
 
 ![Website's Hero Block](./assets/screenshot.png)
 
-Live page: [barber-course.netlify.app](https://barber-course.netlify.app/}
+Live page: [barber-course.netlify.app](https://barber-course.netlify.app/)
 
 ## Description
 
