@@ -15,11 +15,11 @@ Ukraine.
 - Notiflix
 - Swiper
 
-All images were optimized with Squoosh and are served in WebP format.
-
 ## Performance
 
 ![Screenshot of Google Lighthouse website performance metrics - 98  out of 100 for performance, 100  out of 100 for accessibility, 95  out of 100 for best practices, and 100 out of 100 for SEO](./assets/performance.png)
+
+All images were optimized with Squoosh and are served in WebP format.
 
 ## Designed by
 
