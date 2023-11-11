@@ -1,4 +1,4 @@
-# Barber Training Course - A Landing Page
+# Barber Training Course Landing Page
 
 ![Website's Hero Block](./assets/screenshot.png)
 
