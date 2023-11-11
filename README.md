@@ -31,7 +31,7 @@ All images were optimized with Squoosh and are served in WebP format.
 
 - Yurii Buchak  [GitHub](https://github.com/YuraBuchak)  [LinkedIn](https://www.linkedin.com/in/yura-buchak)
 - Yurii Buchak  [ ![GitHub logo](./assets/github.png) ] [ ![LinkedIn logo](./assets/linkedin.png) ]
-- <div style="display: flex; align-items: center;"><p>Yurii Buchak</p> <img src="./assets/github.png" alt="GitHub logo"></div>
+- <div style="display: flex; align-items: center;">Yurii Buchak <img src="./assets/github.png" alt="GitHub logo"></div>
 - Vitaliy Korostylov [GitHub](https://github.com/aslanukr)
   [LinkedIn](https://www.linkedin.com/in/vitaliy-korostylov)
 - Mykhailo Diuzhenko [GitHub](https://github.com/dev0652)
