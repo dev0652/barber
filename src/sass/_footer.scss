@@ -73,24 +73,28 @@
 
 .logo-footer-wrapper {
   display: flex;
-  justify-content: center;
   align-items: center;
+
+  @media screen and (max-width: calc( $desktop - 1px)) {
+    justify-content: center;
+  }
 
   @include media(margin-bottom, 54px, 90px, 63px);
 }
 
 .logo-footer-icon {
-  width: 242px;
-  height: 36px;
   fill: $text-color;
 
+  width: 242px;
+  height: 36px;
+
   @media screen and (min-width: $tablet) {
-    width: 466px;
+    width: 464px;
     height: 70px;
   }
 
   @media screen and (min-width: $desktop) {
-    width: 377px;
+    width: 376px;
     height: 56px;
   }
 }
