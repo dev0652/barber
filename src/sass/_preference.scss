@@ -27,11 +27,15 @@
   @media screen and (max-width: calc($tablet - 1px)) {
     display: none;
   }
+
   color: $text-color;
   text-align: center;
   font-family: $inter;
   font-weight: $font-weight-600;
   line-height: 150%;
+
+  padding-left: 10%;
+  padding-right: 10%;
 
   @include media(font-size, _, 26px, 28px);
   @include media(letter-spacing, _, -0.52px, -0.56px);

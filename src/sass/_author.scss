@@ -194,6 +194,7 @@
   font-weight: $font-weight-400;
   @include media(line-height, 150%, 150%, 140%);
   letter-spacing: -0.051px;
+  text-align: justify;
 }
 
 .author-block-wrapper {
