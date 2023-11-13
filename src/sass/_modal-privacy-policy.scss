@@ -6,16 +6,9 @@
   right: 0;
 
   background-color: rgba(silver, 0.2);
-  // background: linear-gradient(
-  //   90deg,
-  //   rgba(silver, 0.2) 0%,
-  //   rgba(silver, 0.2) 100%
-  // );
   backdrop-filter: blur(20px);
 
   z-index: 10000;
-
-  // padding-top: 75px;
 }
 
 .modal {
@@ -46,7 +39,7 @@
   background: $bg-color;
 
   width: 350px;
-  padding: 15px;
+  padding: 25px;
 
   @media screen and (max-width: calc(($mobile - 1px))) {
     width: 100%;
