@@ -24,4 +24,8 @@ body {
 
   background-color: $bg-color;
   background: url('/img/noise/noise.webp'), $bg-color;
+
+  &.is-modal-shown {
+    overflow: hidden;
+  }
 }

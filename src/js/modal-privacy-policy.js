@@ -6,9 +6,6 @@
     siteName: document.querySelector('[data-insert-site-name]'),
   };
 
-  const { origin, pathname } = window.location;
-  refs.siteName.innerHTML = origin + pathname;
-
   refs.openModalBtn.addEventListener('click', toggleModal);
   refs.closeModalBtn.addEventListener('click', toggleModal);
 
@@ -20,5 +17,6 @@
 
   function toggleModal() {
     refs.modal.classList.toggle('is-hidden');
+    document.body.classList.toggle('is-modal-shown');
   }
 })();
