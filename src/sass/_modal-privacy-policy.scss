@@ -1,76 +1,61 @@
 .backdrop {
   position: fixed;
   top: 0;
+  bottom: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  padding-top: 75px;
-  background-color: rgba(gray, 0.1);
-  background: linear-gradient(
-    90deg,
-    rgba(silver, 0.1) 0%,
-    rgba(dimgray, 0.5) 100%
-  );
+  right: 0;
+
+  background-color: rgba(silver, 0.2);
+  // background: linear-gradient(
+  //   90deg,
+  //   rgba(silver, 0.2) 0%,
+  //   rgba(silver, 0.2) 100%
+  // );
   backdrop-filter: blur(20px);
-  overflow-y: scroll;
+
   z-index: 10000;
+
+  // padding-top: 75px;
 }
 
 .modal {
+  position: fixed;
+  top: 5vh;
+  bottom: 5vh;
+  left: 50%;
+  transform: translateX(-50%);
+
+  overflow: hidden;
+
+  border-radius: 24px;
+
+  @media screen and (min-width: $tablet) {
+    width: 790px;
+    padding: 25px 100px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 100%;
+    max-width: 1000px;
+  }
+
   font-family: $montserrat;
   text-align: justify;
 
   color: silver;
+  background: $bg-color;
+
+  width: 350px;
+  padding: 15px;
 
   @media screen and (max-width: calc(($mobile - 1px))) {
     width: 100%;
     padding: 5px;
   }
 
-  width: 350px;
-  padding: 15px;
-
   @media screen and (max-width: calc($tablet - 1px)) {
     padding-top: 25px;
   }
-
-  background: $bg-color;
-
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-
-  position: relative;
-  top: 50%;
-  left: 50%;
-  display: block;
-  max-height: 100vh;
-  border-radius: 24px;
-  overflow-x: hidden;
-  overflow-y: auto;
-  scrollbar-width: none;
-
-  transform: translate(-50%, -50%);
-
-  &::-webkit-scrollbar {
-    width: 0.1em;
-  }
-
-  @media screen and (min-width: $tablet) {
-    width: 790px;
-    padding: 25px 60px;
-  }
-
-  @media screen and (min-width: $desktop) {
-    width: 1000px;
-  }
-
-  .backdrop.is-hidden & {
-    opacity: 0;
-    transform: translateX(-50%) translateY(-80%);
-  }
-
-  position: relative;
 
   &::before {
     content: url('/img/glow/glow-tariff.webp');
@@ -143,7 +128,6 @@
   letter-spacing: 0.03em;
   color: $text-color;
   margin-bottom: 30px;
-  margin-top: 28px;
 
   @media screen and (min-width: $desktop) {
     font-size: 20px;
@@ -151,6 +135,82 @@
   }
 }
 
-.privacy-policy-title {
-  @include media-px(font-size, 14, 16, 18);
+.privacy-policy-text-wrapper {
+  overflow: hidden;
+  overflow-y: scroll;
+  height: 90%;
+
+  p,
+  li {
+    @include media-px(font-size, 14, 16, 18);
+  }
+
+  ul {
+    list-style: inside;
+    list-style-type: disc;
+    padding-left: 3px;
+  }
+
+  /* Hide scrollbar  */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+  }
+
+  .backdrop.is-hidden & {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-80%);
+  }
+}
+
+.privacy-policy-text {
+  margin-bottom: 20px;
+}
+
+/* Auto-numbering of sections */
+.modal__title {
+  counter-reset: h3counter;
+}
+
+.privacy-policy-anchor:before {
+  content: counter(h3counter) '. ';
+  counter-increment: h3counter;
+  padding-right: 20px;
+}
+
+/* Auto-numbering of paragraphs */
+.subitems-level-one {
+  counter-reset: li-level-one-counter;
+  font-weight: normal;
+
+  > li {
+    padding-left: 5px;
+    counter-increment: li-level-one-counter;
+
+    margin: 10px 0 10px 40px;
+
+    &::marker {
+      content: counter(h3counter) '.' counter(li-level-one-counter) '. ';
+      font-weight: bold;
+    }
+  }
+}
+
+.subitems-level-two {
+  counter-reset: li-level-two-counter;
+
+  > li {
+    // padding-left: 15px;
+    counter-increment: li-level-two-counter;
+
+    margin: 10px 0 10px 0;
+
+    &::marker {
+      content: counter(h3counter) '.' counter(li-level-one-counter) '.'
+        counter(li-level-two-counter) '. ';
+      font-weight: bold;
+    }
+  }
 }
