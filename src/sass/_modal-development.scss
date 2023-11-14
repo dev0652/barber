@@ -1,5 +1,6 @@
 .modal-dev {
   @extend .modal;
+
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
@@ -11,11 +12,15 @@
 
   gap: 50px;
 
-  max-width: 90%;
-  padding: 20px;
+  @media screen and (max-width: calc($tablet - 1px)) {
+    top: 5vh;
+    bottom: 5vh;
+    transform: translateX(-50%);
+  }
 
   @media screen and (min-width: $mobile) {
     width: 90%;
+    max-width: 90%;
     padding: 30px 40px;
   }
 
@@ -69,22 +74,6 @@
 
 .button-close-icon {
   fill: currentColor;
-}
-
-.modal__title {
-  display: block;
-  font-size: 20px;
-  line-height: calc(30 / 20);
-  text-align: center;
-  letter-spacing: 0.03em;
-  color: $text-color;
-  margin-bottom: 30px;
-  margin-top: 28px;
-
-  @media screen and (min-width: $desktop) {
-    font-size: 20px;
-    line-height: calc(23 / 20);
-  }
 }
 
 .modal-dev-list {
