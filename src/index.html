@@ -1,53 +1,82 @@
 <!DOCTYPE html>
 <html lang="uk">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Офлайн-курси барберів з нуля в Києві. Отримайте прибуткову професію всього за 4 тижні. Міжнародний сертифікат та працевлаштування"
-    />
-    <meta
-      name="theme-color"
-      media="(prefers-color-scheme: dark)"
-      content="#1b1b1b"
-    />
 
-    <title>Barber</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Офлайн-курси барберів з нуля в Києві. Отримайте прибуткову професію всього за 4 тижні. Міжнародний сертифікат та працевлаштування" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1b" />
 
-    <!-- Favicon -->
-    <load ="partials/favicon.html" />
+  <title>Barber</title>
 
-    <!-- Fonts -->
-    <load ="partials/fonts.html" />
+  <!-- Favicon -->
+  <load="partials/favicon.html" />
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="./sass/index.scss" />
-  </head>
+  <!-- Fonts -->
+  <load="partials/fonts.html" />
 
-  <body>
-    <load ="partials/header.html" />
-    <load ="partials/mobile-menu.html" />
+  <!-- Styles -->
+  <link rel="stylesheet" href="./sass/index.scss" />
 
-    <main>
-      <load ="partials/hero.html" />
-      <load ="partials/actuality.html" />
-      <load ="partials/preference.html" />
-      <load ="partials/result.html" />
-      <load ="partials/program.html" />
-      <load ="partials/progress-bar.html" />
-      <load ="partials/success-story.html" />
-      <load ="partials/author.html" />
-      <load ="partials/feedback.html" />
-      <load ="partials/tariffs.html" />
-      <load ="partials/form-message.html" />
-    </main>
+  <!-- Meta Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '296848806645102');
+    fbq('track', 'PageView');
+  </script>
+ 
+ <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=296848806645102&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel Code -->
+ 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11417764233">
+  </script>
+  
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-    <load ="partials/modal-development.html" />
-    <load ="partials/modal-privacy-policy.html" />
-    <load ="partials/footer.html" />
+    gtag('config', 'AW-11417764233');
+  </script>
+</head>
 
-    <script type="module" src="./main.js"></script>
-  </body>
+<body>
+  <load="partials/header.html" />
+  <load="partials/mobile-menu.html" />
+
+  <main>
+    <load="partials/hero.html" />
+    <load="partials/actuality.html" />
+    <load="partials/preference.html" />
+    <load="partials/result.html" />
+    <load="partials/program.html" />
+    <load="partials/progress-bar.html" />
+    <load="partials/success-story.html" />
+    <load="partials/author.html" />
+    <load="partials/feedback.html" />
+    <load="partials/tariffs.html" />
+    <load="partials/form-message.html" />
+  </main>
+
+  <load="partials/modal-development.html" />
+  <load="partials/modal-privacy-policy.html" />
+  <load="partials/footer.html" />
+
+  <script type="module" src="./main.js"></script>
+</body>
+
 </html>
